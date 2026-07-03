@@ -37,6 +37,9 @@ interface ScrapeJob {
   records_found: number;
   records_saved: number;
   error_message?: string;
+  failure_reason?: string;
+  last_successful_page?: number;
+  retry_count?: number;
 }
 
 interface PreviewDealer {
@@ -78,6 +81,7 @@ export default function ScraperController() {
   const [logsModalOpen, setLogsModalOpen] = useState(false);
   const [selectedJobLogs, setSelectedJobLogs] = useState<string[]>([]);
   const [selectedJobBrandName, setSelectedJobBrandName] = useState("");
+  const [selectedJob, setSelectedJob] = useState<ScrapeJob | null>(null);
 
   // Detection Results state
   const [detectionResult, setDetectionResult] = useState<{
@@ -255,6 +259,7 @@ export default function ScraperController() {
       const res = await fetch(`${BACKEND_URL}/api/v1/scraper/jobs/${job.id}`);
       const data = await res.json();
       if (res.ok && data.success && data.data) {
+        setSelectedJob(data.data);
         setSelectedJobLogs(data.data.execution_logs || []);
         setSelectedJobBrandName(data.data.brand_name || "Crawler Job");
         setLogsModalOpen(true);
@@ -280,13 +285,33 @@ export default function ScraperController() {
   return (
     <div className="space-y-6">
       {/* Header Panel */}
-      <div className="border-b border-slate-200 dark:border-zinc-800 pb-5">
-        <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
-          Scraping Controllers
-        </h1>
-        <p className="text-sm text-slate-500 dark:text-zinc-400 mt-1">
-          Perform website structure auto-detection, view live preview runs, and trace crawler execution logs.
-        </p>
+      <div className="border-b border-slate-200 dark:border-zinc-800 pb-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+            Scraping Controllers
+          </h1>
+          <p className="text-sm text-slate-500 dark:text-zinc-400 mt-1">
+            Perform website structure auto-detection, view live preview runs, and trace crawler execution logs.
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          <a
+            href={`${BACKEND_URL}/api/v1/scraper/export/dealers?format=csv`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-white dark:bg-zinc-800 text-slate-700 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700 rounded-md hover:bg-slate-50 dark:hover:bg-zinc-700 shadow-sm"
+          >
+            Export Dealers (CSV)
+          </a>
+          <a
+            href={`${BACKEND_URL}/api/v1/scraper/export/jobs?format=csv`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold bg-white dark:bg-zinc-800 text-slate-700 dark:text-zinc-300 border border-slate-200 dark:border-zinc-700 rounded-md hover:bg-slate-50 dark:hover:bg-zinc-700 shadow-sm"
+          >
+            Export Jobs (CSV)
+          </a>
+        </div>
       </div>
 
       {/* Selector & Actions Card */}
@@ -591,16 +616,16 @@ export default function ScraperController() {
       {/* ========================================================= */}
       {logsModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 dark:bg-black/80 backdrop-blur-sm">
-          <div className="w-full max-w-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[80vh]">
+          <div className="w-full max-w-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[85vh]">
             
             {/* Header */}
             <div className="px-6 py-4 border-b border-slate-200 dark:border-zinc-800 flex items-center justify-between">
               <div>
-                <h2 className="text-base font-bold text-slate-900 dark:text-zinc-50">
-                  Execution Logs: {selectedJobBrandName}
+                <h2 className="text-base font-bold text-slate-900 dark:text-zinc-50 font-sans">
+                  Scraper Console Diagnostics: {selectedJobBrandName}
                 </h2>
-                <p className="text-xs text-slate-500 dark:text-zinc-500">
-                  Historical step-by-step logs parsed from the crawler.
+                <p className="text-xs text-slate-500 dark:text-zinc-500 mt-0.5">
+                  Real-time step telemetry and execution logs retrieved from the database.
                 </p>
               </div>
               <button 
@@ -611,9 +636,64 @@ export default function ScraperController() {
               </button>
             </div>
 
+            {/* Diagnostic Metrics Grid */}
+            {selectedJob && (
+              <div className="px-6 py-3.5 bg-slate-50 dark:bg-zinc-900/50 border-b border-slate-200 dark:border-zinc-800 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-sans">
+                <div>
+                  <span className="text-slate-500 dark:text-zinc-500 block text-[10px] uppercase font-bold tracking-wider">Status</span>
+                  <span className={`inline-flex items-center gap-1.5 font-bold mt-1 ${
+                    selectedJob.status === "Completed" ? "text-emerald-600 dark:text-emerald-400" :
+                    selectedJob.status === "Running" ? "text-amber-600 dark:text-amber-400" :
+                    selectedJob.status === "Queued" ? "text-blue-600 dark:text-blue-400" :
+                    "text-red-600 dark:text-red-400"
+                  }`}>
+                    {selectedJob.status}
+                  </span>
+                </div>
+                <div>
+                  <span className="text-slate-500 dark:text-zinc-500 block text-[10px] uppercase font-bold tracking-wider">Dealers Saved</span>
+                  <span className="font-bold text-slate-800 dark:text-zinc-200 mt-1 block">{selectedJob.records_saved} records</span>
+                </div>
+                <div>
+                  <span className="text-slate-500 dark:text-zinc-500 block text-[10px] uppercase font-bold tracking-wider">Page Checkpoint</span>
+                  <span className="font-bold text-slate-800 dark:text-zinc-200 mt-1 block">page {selectedJob.last_successful_page || 1}</span>
+                </div>
+                <div>
+                  <span className="text-slate-500 dark:text-zinc-500 block text-[10px] uppercase font-bold tracking-wider">Retry frequency</span>
+                  <span className="font-bold text-slate-800 dark:text-zinc-200 mt-1 block">{selectedJob.retry_count || 0} retries</span>
+                </div>
+                <div>
+                  <span className="text-slate-500 dark:text-zinc-500 block text-[10px] uppercase font-bold tracking-wider">Duration</span>
+                  <span className="font-bold text-slate-800 dark:text-zinc-200 mt-1 block">{selectedJob.duration_seconds ? `${selectedJob.duration_seconds}s` : '--'}</span>
+                </div>
+                <div>
+                  <span className="text-slate-500 dark:text-zinc-500 block text-[10px] uppercase font-bold tracking-wider">Failure reason</span>
+                  <span className="font-bold text-red-600 dark:text-red-400 mt-1 block truncate max-w-[120px]" title={selectedJob.failure_reason || 'None'}>
+                    {selectedJob.failure_reason || 'None'}
+                  </span>
+                </div>
+                <div>
+                  <span className="text-slate-500 dark:text-zinc-500 block text-[10px] uppercase font-bold tracking-wider">Strategy used</span>
+                  <span className="font-bold text-slate-800 dark:text-zinc-200 mt-1 block">
+                    {selectedJobBrandName === "Lava" ? "API Driven" : "Static HTML"}
+                  </span>
+                </div>
+                <div>
+                  <span className="text-slate-500 dark:text-zinc-500 block text-[10px] uppercase font-bold tracking-wider">API Detected</span>
+                  <span className="font-bold text-slate-800 dark:text-zinc-200 mt-1 block">
+                    {selectedJobBrandName === "Lava" ? "Yes" : "No"}
+                  </span>
+                </div>
+              </div>
+            )}
+
             {/* Logs Body */}
-            <div className="flex-grow overflow-y-auto p-6">
-              <div className="bg-slate-950 text-zinc-350 font-mono text-[11px] p-5 rounded-xl min-h-64 max-h-96 overflow-y-auto space-y-1.5 shadow-inner leading-relaxed">
+            <div className="flex-grow overflow-y-auto p-6 flex flex-col min-h-0">
+              <h4 className="text-[10px] uppercase font-bold tracking-wider text-slate-500 dark:text-zinc-500 mb-2 flex items-center gap-1.5 font-sans">
+                <Terminal className="h-3.5 w-3.5 text-indigo-500" />
+                Live Execution Logs console
+              </h4>
+              <div className="bg-slate-950 text-zinc-350 font-mono text-[10px] p-5 rounded-xl flex-grow overflow-y-auto space-y-1.5 shadow-inner leading-relaxed min-h-[250px] max-h-[350px]">
                 {selectedJobLogs.length === 0 ? (
                   <p className="text-zinc-500 italic">No execution logs found for this job run.</p>
                 ) : (
@@ -623,7 +703,7 @@ export default function ScraperController() {
                       className={
                         logLine.includes("[ERROR]") || logLine.includes("failed") ? "text-red-400" :
                         logLine.includes("[WARN]") || logLine.includes("rejection") || logLine.includes("rejected") ? "text-amber-400" :
-                        logLine.includes("[INFO] Successfully") || logLine.includes("SUCCESS") ? "text-emerald-400" : 
+                        logLine.includes("[INFO] Successfully") || logLine.includes("SUCCESS") || logLine.includes("[OK]") ? "text-emerald-400" : 
                         "text-zinc-400"
                       }
                     >
@@ -635,7 +715,15 @@ export default function ScraperController() {
             </div>
 
             {/* Footer */}
-            <div className="px-6 py-4 bg-slate-50/50 dark:bg-zinc-900/50 border-t border-slate-200 dark:border-zinc-800 flex justify-end">
+            <div className="px-6 py-4 bg-slate-50/50 dark:bg-zinc-900/50 border-t border-slate-200 dark:border-zinc-800 flex justify-between items-center font-sans">
+              <a
+                href={`${BACKEND_URL}/api/v1/scraper/export/jobs`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300"
+              >
+                Export Diagnostics Log (CSV)
+              </a>
               <Button size="sm" onClick={() => setLogsModalOpen(false)} className="bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950">
                 Close Logs
               </Button>

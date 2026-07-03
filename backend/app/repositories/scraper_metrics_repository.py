@@ -9,6 +9,8 @@ logger = logging.getLogger(__name__)
 class ScraperMetricsRepository:
     """
     Repository layer for managing scraper performance metrics.
+    Includes advanced telemetry statistics like fuzzy duplicate ratios, response times,
+    invalid counts, selector fallback occurrences, and API discovery rates.
     """
 
     def _get_client(self) -> Any:
@@ -30,9 +32,22 @@ class ScraperMetricsRepository:
             logger.error(f"Error fetching scraper metrics for brand {brand_id}: {e}")
             raise e
 
-    def upsert_metrics(self, brand_id: UUID, is_success: bool, runtime: float, records_scraped: int) -> Dict[str, Any]:
+    def upsert_metrics(
+        self,
+        brand_id: UUID,
+        is_success: bool,
+        runtime: float,
+        records_scraped: int,
+        response_time: float = 0.0,
+        pages_crawled: int = 1,
+        duplicate_percentage: float = 0.0,
+        invalid_records: int = 0,
+        fallback_usage: int = 0,
+        retry_frequency: float = 0.0,
+        api_detection_rate: float = 0.0
+    ) -> Dict[str, Any]:
         """
-        Updates (or creates) metrics for a brand, recalculating moving averages.
+        Updates (or creates) metrics for a brand, recalculating rolling moving averages.
         """
         try:
             client = self._get_client()
@@ -47,7 +62,14 @@ class ScraperMetricsRepository:
                     "failed_jobs": 0 if is_success else 1,
                     "avg_runtime": float(runtime),
                     "avg_records_scraped": float(records_scraped),
-                    "last_run_at": now_str
+                    "last_run_at": now_str,
+                    "avg_response_time": float(response_time),
+                    "avg_pages_crawled": float(pages_crawled),
+                    "duplicate_percentage": float(duplicate_percentage),
+                    "invalid_records": int(invalid_records),
+                    "fallback_usage_count": int(fallback_usage),
+                    "retry_frequency": float(retry_frequency),
+                    "api_detection_rate": float(api_detection_rate)
                 }
                 res = client.table("scraper_metrics").insert(insert_data).execute()
                 if res.data and len(res.data) > 0:
@@ -63,6 +85,11 @@ class ScraperMetricsRepository:
                 # Recalculate rolling moving averages
                 new_avg_runtime = (existing["avg_runtime"] * total + runtime) / new_total
                 new_avg_records = (existing["avg_records_scraped"] * total + records_scraped) / new_total
+                new_avg_resp_time = (existing.get("avg_response_time", 0.0) * total + response_time) / new_total
+                new_avg_pages = (existing.get("avg_pages_crawled", 0.0) * total + pages_crawled) / new_total
+                new_dup_pct = (existing.get("duplicate_percentage", 0.0) * total + duplicate_percentage) / new_total
+                new_retry_freq = (existing.get("retry_frequency", 0.0) * total + retry_frequency) / new_total
+                new_api_rate = (existing.get("api_detection_rate", 0.0) * total + api_detection_rate) / new_total
 
                 update_data = {
                     "total_jobs": new_total,
@@ -70,7 +97,14 @@ class ScraperMetricsRepository:
                     "failed_jobs": failed_count,
                     "avg_runtime": float(new_avg_runtime),
                     "avg_records_scraped": float(new_avg_records),
-                    "last_run_at": now_str
+                    "last_run_at": now_str,
+                    "avg_response_time": float(new_avg_resp_time),
+                    "avg_pages_crawled": float(new_avg_pages),
+                    "duplicate_percentage": float(new_dup_pct),
+                    "invalid_records": existing.get("invalid_records", 0) + invalid_records,
+                    "fallback_usage_count": existing.get("fallback_usage_count", 0) + fallback_usage,
+                    "retry_frequency": float(new_retry_freq),
+                    "api_detection_rate": float(new_api_rate)
                 }
                 
                 res = client.table("scraper_metrics").update(update_data).eq("id", existing["id"]).execute()

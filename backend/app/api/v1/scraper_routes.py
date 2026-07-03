@@ -1,5 +1,9 @@
 from fastapi import APIRouter, HTTPException, status, BackgroundTasks
+from fastapi.responses import StreamingResponse
 from uuid import UUID
+from typing import Optional
+import io
+import csv
 from app.schemas.scrape_schema import (
     AutoDetectRequest, 
     PreviewRequest
@@ -145,4 +149,83 @@ async def cancel_job(id: UUID) -> StandardResponse:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to cancel job: {e}"
+        )
+
+@router.get("/export/dealers")
+async def export_dealers(brand_id: Optional[UUID] = None, format: str = "csv"):
+    """
+    Exports dealer data as CSV or JSON stream.
+    """
+    try:
+        if brand_id:
+            from app.repositories.dealer_repository import DealerRepository
+            dealers = DealerRepository().get_by_brand_id(brand_id)
+        else:
+            from app.database.supabase import supabase
+            if supabase is None:
+                raise RuntimeError("Database connection not initialized.")
+            res = supabase.table("dealers").select("*").execute()
+            dealers = res.data or []
+
+        if format == "json":
+            return {"success": True, "data": dealers}
+
+        output = io.StringIO()
+        writer = csv.writer(output)
+        
+        headers = [
+            "id", "brand_id", "dealer_name", "address", "city", "state", "pincode", 
+            "latitude", "longitude", "phone", "email", "website", "formatted_address", 
+            "country", "quality_score", "created_at"
+        ]
+        writer.writerow(headers)
+        
+        for d in dealers:
+            writer.writerow([d.get(h) for h in headers])
+            
+        output.seek(0)
+        return StreamingResponse(
+            io.StringIO(output.getvalue()),
+            media_type="text/csv",
+            headers={"Content-Disposition": "attachment; filename=dealers.csv"}
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to export dealers: {e}"
+        )
+
+@router.get("/export/jobs")
+async def export_jobs(format: str = "csv"):
+    """
+    Exports scrape jobs summary details.
+    """
+    try:
+        jobs = scraping_service.get_jobs()
+        if format == "json":
+            return {"success": True, "data": jobs}
+            
+        output = io.StringIO()
+        writer = csv.writer(output)
+        
+        headers = [
+            "id", "brand_id", "brand_name", "status", "started_at", "completed_at", 
+            "duration_seconds", "records_found", "records_scraped", "records_saved", 
+            "retry_count", "failure_reason", "last_successful_page"
+        ]
+        writer.writerow(headers)
+        
+        for j in jobs:
+            writer.writerow([j.get(h) for h in headers])
+            
+        output.seek(0)
+        return StreamingResponse(
+            io.StringIO(output.getvalue()),
+            media_type="text/csv",
+            headers={"Content-Disposition": "attachment; filename=scrape_jobs.csv"}
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to export jobs: {e}"
         )

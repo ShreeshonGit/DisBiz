@@ -38,7 +38,10 @@ class DealerRepository:
                     "longitude": d.get("longitude"),
                     "phone": d.get("phone"),
                     "email": d.get("email"),
-                    "website": d.get("website")
+                    "website": d.get("website"),
+                    "formatted_address": d.get("formatted_address") or d.get("address"),
+                    "country": d.get("country") or "India",
+                    "quality_score": d.get("quality_score") or 0
                 })
 
             chunk_size = 100

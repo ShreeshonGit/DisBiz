@@ -3,14 +3,47 @@ import httpx
 from fake_useragent import UserAgent
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 import logging
+import socket
+import ipaddress
+import urllib.parse
 
 logger = logging.getLogger(__name__)
 
 # Initialize fake-useragent fallback list
 ua = UserAgent(fallback="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
 
+def is_safe_url(url: str) -> bool:
+    """
+    Validates a URL to prevent Server-Side Request Forgery (SSRF).
+    Checks that the host resolves only to public, non-private IP addresses.
+    """
+    try:
+        parsed = urllib.parse.urlparse(url)
+        if parsed.scheme not in ["http", "https"]:
+            return False
+            
+        host = parsed.hostname
+        if not host:
+            return False
+            
+        # Resolve hostname to IP addresses
+        ips = socket.getaddrinfo(host, None)
+        for ip in ips:
+            ip_str = ip[4][0]
+            # Handle IPv6 brackets if present
+            ip_str = ip_str.split('%')[0].strip('[]')
+            ip_obj = ipaddress.ip_address(ip_str)
+            
+            if ip_obj.is_private or ip_obj.is_loopback or ip_obj.is_link_local:
+                logger.warning(f"SSRF Check: Rejected URL {url} resolving to private/local IP {ip_str}")
+                return False
+        return True
+    except Exception as e:
+        logger.warning(f"SSRF Check: Error resolving host for {url}: {e}")
+        return False
+
 def get_headers() -> Dict[str, str]:
-    """Generates realistic HTTP request headers to bypass basic scraper blocks."""
+    """Generates realistic HTTP request headers with rotating User Agents."""
     return {
         "User-Agent": ua.random,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
@@ -27,13 +60,18 @@ def get_headers() -> Dict[str, str]:
     retry=retry_if_exception_type(httpx.RequestError),
     reraise=True
 )
-async def fetch_url_with_retry(url: str, timeout: int = 15) -> httpx.Response:
+async def fetch_url_with_retry(url: str, timeout: int = 15, verify_ssl: bool = True) -> httpx.Response:
     """
-    Fetches a URL asynchronously using HTTPX with user-agent rotation and exponential backoff.
+    Fetches a URL asynchronously using HTTPX with User-Agent rotation, SSRF checks, and exponential backoff.
     """
-    async with httpx.AsyncClient(follow_redirects=True) as client:
-        logger.info(f"Fetching URL: {url} (attempt details: tenacity active)")
+    if not is_safe_url(url):
+        raise ValueError("SSRF Blocked: URL resolves to a local or private address range.")
+        
+    async with httpx.AsyncClient(follow_redirects=True, verify=verify_ssl) as client:
+        logger.info(f"Fetching URL: {url} (verify_ssl={verify_ssl})")
         headers = get_headers()
+        # Add Referer
+        headers["Referer"] = "/".join(url.split("/")[:3]) + "/"
         response = await client.get(url, headers=headers, timeout=timeout)
         response.raise_for_status()
         return response
@@ -45,7 +83,7 @@ def detect_content_type(response: httpx.Response) -> str:
     """
     content_type = response.headers.get("content-type", "").lower()
     
-    # 1. Check API endpoints (returns application/json)
+    # 1. Check API endpoints
     if "application/json" in content_type:
         return "API"
         

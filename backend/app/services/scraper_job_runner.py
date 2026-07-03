@@ -12,7 +12,10 @@ from app.repositories.dealer_repository import DealerRepository
 from app.repositories.scraper_metrics_repository import ScraperMetricsRepository
 from app.scrapers.scraper_factory import ScraperFactory
 from app.scrapers.normalizer import normalize_dealer
-from app.scrapers.validator import validate_dealer
+from app.scrapers.validator import validate_dealer, calculate_quality_score
+from app.scrapers.dealer_deduplicator import DealerDeduplicator
+from app.scrapers.network_detector import NetworkDetector
+from app.scrapers.selector_discovery import SelectorDiscovery
 from app.services.scraper_recovery_manager import ScraperRecoveryManager
 import logging
 
@@ -85,6 +88,36 @@ class ScraperJobRunner:
             log_warn("Job cancellation detected before loading configuration. Aborting.")
             return
 
+        # Fetch page for diagnostics, Network Detection & Auto Selector Discovery
+        html_diag = ""
+        api_detected = False
+        try:
+            from app.scrapers.utils import fetch_url_with_retry
+            # Bypass SSL verification for diagnostics (e.g. Lava cert expired)
+            res_diag = await fetch_url_with_retry(url, verify_ssl=False)
+            html_diag = res_diag.text
+            log_info("Diagnostics initial page load successful.")
+        except Exception as diag_exc:
+            log_warn(f"Diagnostics page fetch failed: {diag_exc}")
+
+        # Run Network Detection & Selector Discovery
+        if html_diag:
+            try:
+                detected_api = NetworkDetector.detect_api(html_diag, url)
+                if detected_api:
+                    log_info(f"API Detected: {detected_api['detected_endpoint']}")
+                    api_detected = True
+                    self.config_repo.upsert(brand_id, {"detected_api_metadata": detected_api})
+            except Exception as e:
+                logger.error(f"Failed running NetworkDetector: {e}")
+
+            try:
+                suggestions = SelectorDiscovery.discover_selectors(html_diag)
+                log_info("Selector Discovery complete. Saving suggestions to configuration.")
+                self.config_repo.upsert(brand_id, {"suggested_selectors": suggestions})
+            except Exception as e:
+                logger.error(f"Failed running SelectorDiscovery: {e}")
+
         # Load Scraper config
         db_config = self.config_repo.get_by_brand_id(brand_id) or {}
         config = dict(db_config)
@@ -113,6 +146,7 @@ class ScraperJobRunner:
         success = False
         retry_count = 0
         max_retries = 3
+        start_fetch_time = time.time()
 
         while retry_count < max_retries and not success:
             if retry_count > 0:
@@ -131,9 +165,11 @@ class ScraperJobRunner:
                 else:
                     err_msg = f"Scraping extraction failed after {max_retries} attempts."
                     log_error(err_msg)
-                    # Classify and record failure
                     self._mark_failed(job_id, err_msg, logs + scraper.logs, start_time, retry_count, exception=e)
                     return
+
+        end_fetch_time = time.time()
+        fetch_duration = end_fetch_time - start_fetch_time
 
         # Append scraper logs
         for line in scraper.logs:
@@ -156,22 +192,41 @@ class ScraperJobRunner:
             is_valid, errors = validate_dealer(normalized)
 
             if is_valid:
+                # Add geocoding placeholder metadata & calculate quality score
+                normalized["formatted_address"] = normalized.get("address")
+                normalized["country"] = "India"
+                normalized["quality_score"] = calculate_quality_score(normalized)
                 valid_dealers.append(normalized)
             else:
                 invalid_count += 1
                 rejection_reason = ", ".join(errors)
                 log_warn(f"Row {idx+1} ({normalized.get('dealer_name') or 'Unnamed'}) rejected. Reason: {rejection_reason}")
 
+        # Fetch existing dealers from database for duplicate filtering
+        existing_dealers = []
+        try:
+            existing_dealers = self.dealer_repo.get_by_brand_id(brand_id)
+        except Exception as e:
+            log_warn(f"Could not load existing dealers for deduplication check: {e}")
+
+        # Filter duplicates using fuzzy deduplication engine
+        unique_dealers = DealerDeduplicator.filter_duplicates(valid_dealers, existing_dealers)
+        duplicate_count = len(valid_dealers) - len(unique_dealers)
+        duplicate_percentage = (duplicate_count / len(valid_dealers) * 100.0) if len(valid_dealers) > 0 else 0.0
+
+        if duplicate_count > 0:
+            log_info(f"Deduplication: Removed {duplicate_count} duplicate dealer records ({duplicate_percentage:.1f}%).")
+
         if await self._is_cancelled(job_id):
             log_warn("Job cancellation detected. Aborting DB insert.")
             return
 
-        # Insert records into database
+        # Insert unique records into database
         records_saved = 0
-        if valid_dealers:
-            log_info(f"Inserting {len(valid_dealers)} valid records into database...")
+        if unique_dealers:
+            log_info(f"Inserting {len(unique_dealers)} unique records into database...")
             try:
-                records_saved = self.dealer_repo.create_batch(brand_id, valid_dealers)
+                records_saved = self.dealer_repo.create_batch(brand_id, unique_dealers)
                 log_info(f"Successfully saved {records_saved} dealers into database.")
             except Exception as e:
                 err_msg = f"Database bulk insert failed: {e}"
@@ -179,7 +234,7 @@ class ScraperJobRunner:
                 self._mark_failed(job_id, err_msg, logs, start_time, retry_count, exception=e)
                 return
         else:
-            log_warn("No valid dealer records to save.")
+            log_warn("No unique dealer records to save.")
 
         # Update job to COMPLETED
         end_time = datetime.now()
@@ -201,9 +256,25 @@ class ScraperJobRunner:
         except Exception as e:
             logger.error(f"Failed to update job {job_id} completion: {e}")
 
+        # Scan execution logs for selector fallbacks
+        fallback_usage = sum(1 for line in logs if "[WARN] Selector fallback used" in line)
+
         # Update Scraper metrics: success
         try:
-            self.metrics_repo.upsert_metrics(brand_id, is_success=True, runtime=duration, records_scraped=len(raw_records))
+            avg_resp_time = fetch_duration / max(1, max_pages)
+            self.metrics_repo.upsert_metrics(
+                brand_id=brand_id,
+                is_success=True,
+                runtime=duration,
+                records_scraped=len(raw_records),
+                response_time=avg_resp_time,
+                pages_crawled=max_pages,
+                duplicate_percentage=duplicate_percentage,
+                invalid_records=invalid_count,
+                fallback_usage=fallback_usage,
+                retry_frequency=float(retry_count),
+                api_detection_rate=1.0 if api_detected else 0.0
+            )
             logger.info(f"Metrics table successfully updated for brand {brand_id}.")
         except Exception as met_exc:
             logger.error(f"Failed to update metrics for success job: {met_exc}")
@@ -237,11 +308,22 @@ class ScraperJobRunner:
 
         # Update Scraper metrics: failure
         try:
-            # Extract brand_id
             job = self.job_repo.get_by_id(job_id)
             if job:
                 brand_id = UUID(job["brand_id"])
-                self.metrics_repo.upsert_metrics(brand_id, is_success=False, runtime=duration, records_scraped=0)
+                self.metrics_repo.upsert_metrics(
+                    brand_id=brand_id,
+                    is_success=False,
+                    runtime=duration,
+                    records_scraped=0,
+                    response_time=0.0,
+                    pages_crawled=1,
+                    duplicate_percentage=0.0,
+                    invalid_records=0,
+                    fallback_usage=0,
+                    retry_frequency=float(retries),
+                    api_detection_rate=0.0
+                )
                 logger.info(f"Metrics table successfully updated (failure) for brand {brand_id}.")
         except Exception as met_exc:
             logger.error(f"Failed to update metrics for failed job: {met_exc}")
