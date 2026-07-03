@@ -1,41 +1,50 @@
-# Dealer Discovery Platform - Sprint 3.5 Stable
+# Dealer Discovery Platform
 
-A production-grade, highly resilient data extraction engine and search locator portal designed to scrape, clean, deduplicate, validate, and search authorized retail outlets and service centers.
+A production-grade, highly resilient data extraction engine and dealer locator portal designed to scrape, clean, deduplicate, validate, and search authorized retail outlets and service centers across India.
 
 ---
 
-## 🏗️ System Architecture
+## 🚀 Project Highlights
+- **Universal Autonomous Scraper**: Automatically identifies site strategies (Hidden JSON API ➔ Static HTML ➔ Playwright rendering) without brand-specific code or hardcoded selectors. Handles cookie consent banner bypasses, infinite scroll, and coordinates mapping.
+- **Data Quality & Deduplication**: Employs Jaccard overlap algorithms, contact details scrubbing (emails, phones), and verification status flags to maintain data integrity.
+- **Redesigned Public Portal**: Premium customer-facing search dashboard built on **Next.js 15 + React 19 + Tailwind CSS + Framer Motion**, featuring category megamenu dropdowns, mobile drawer filters, dynamic brand counts, and coordinates maps.
+- **Admin Dashboard Console**: Real-time log streaming, job parameters configuration, telemetry monitoring, and data exports.
+
+---
+
+## 🏗️ System Architecture Overview
 
 ```mermaid
 graph TD
     PublicPortal[Next.js Public Portal<br>Port 3000] -->|Search API| FastAPI[FastAPI Backend<br>Port 8000]
     AdminPortal[Next.js Admin Console<br>Port 3001] -->|Scraper Controls| FastAPI
-    FastAPI -->|PostgREST Async| Supabase[(Supabase PostgreSQL)]
+    FastAPI -->|PostgREST Client| Supabase[(Supabase PostgreSQL)]
     FastAPI -->|Background Tasks| ScraperRunner[Scraper Job Runner]
     ScraperRunner -->|Strategy Selector| ScrapingEngine[API / Static / Playwright]
 ```
 
-### Key Subsystems:
-1. **Production Scraper Engine**: Real-time strategy detection (Hidden API ➔ Static HTML ➔ Playwright), selector fallback heuristics, and recovery manager (up to 3 retries, checkpoint saving).
-2. **Deduplication & Validation**: Normalizes geographic coordinates, cleans emails/phone values, and runs Jaccard overlap string deduplication.
-3. **Database Repository Layer**: Enforces relational data-integrity, connection pools, and logs real-time scraper metrics.
-4. **Admin Dashboard**: Real-time log streaming, job control parameters, strategy distribution, and CSV export capabilities.
-5. **Public Search Portal**: Fully responsive locator interface featuring dynamic keyword matching, state/city filters, quality-based sorting, and integrated Google Maps hooks.
+For a deep-dive into codebases, layouts, and data quality algorithms, please check [ARCHITECTURE.md](file:///D:/DisBiz/dealer-discovery-platform/ARCHITECTURE.md).
 
 ---
 
 ## 🛠️ Environment Configuration
 
-### Backend Setup:
-1. **Create Virtual Environment**:
+### 1. Backend Setup (FastAPI)
+1. **Navigate and Create Environment**:
    ```bash
    cd backend
    python -m venv venv
-   source venv/bin/activate  # venv\Scripts\activate on Windows
+   # On Windows:
+   .\venv\Scripts\activate
+   # On Linux/macOS:
+   source venv/bin/activate
+   ```
+2. **Install Dependencies**:
+   ```bash
    pip install -r requirements.txt
    ```
-2. **Configure `.env`**:
-   Create a `.env` in the `backend/` directory:
+3. **Configure Settings (`.env`)**:
+   Create a `.env` in `backend/` containing:
    ```env
    PROJECT_NAME="Dealer Discovery Platform"
    API_V1_STR="/api/v1"
@@ -44,45 +53,45 @@ graph TD
    SUPABASE_SERVICE_KEY="your-service-role-key"
    DATABASE_URL="postgresql://postgres:[password]@db.your-project.supabase.co:5432/postgres"
    ```
-
-3. **Run Schema Migrations**:
-   Execute our zero-dependency Python migration tool:
+4. **Execute Database Migrations**:
    ```bash
    python scripts/run_migrations.py
    ```
-
-4. **Start Backend Server**:
+5. **Start FastAPI Backend Server**:
    ```bash
    python main.py
    ```
-   The backend API will boot up on `http://localhost:8000`.
+   API runs at `http://localhost:8000`. Documentation available at `http://localhost:8000/docs`.
 
----
+### 2. Admin Console Setup (Next.js)
+1. **Navigate and Install**:
+   ```bash
+   cd frontend-admin
+   npm install
+   ```
+2. **Run Dev Environment**:
+   ```bash
+   npm run dev
+   ```
+   Runs at `http://localhost:3001`.
 
-## 💻 Frontend Configuration
-
-### Admin Frontend (Next.js):
-```bash
-cd frontend-admin
-npm install
-npm run dev
-```
-Accessible on `http://localhost:3001`.
-
-### Public Search Frontend (Next.js):
-```bash
-cd frontend-public
-npm install
-npm run dev
-```
-Accessible on `http://localhost:3000`.
+### 3. Public Portal Setup (Next.js 15)
+1. **Navigate and Install**:
+   ```bash
+   cd frontend-public
+   npm install
+   ```
+2. **Run Dev Environment**:
+   ```bash
+   npm run dev
+   ```
+   Runs at `http://localhost:3000`.
 
 ---
 
 ## 🧪 Testing Suite
-
-We maintain a 100% passing test coverage suite verifying core parsers, fallback engines, API routers, and deduplicators:
-
+We maintain unit and integration tests verifying parsers, scrapers, deduplication algorithms, and endpoints.
+To execute tests:
 ```bash
 cd backend
 python -m pytest -v
@@ -90,30 +99,24 @@ python -m pytest -v
 
 ---
 
-## 🧼 Standardized API Error Schemes
+## 📁 Repository Directory Structure
 
-All API endpoints intercept request parsing exceptions and raise a uniform production response shape, preventing database stack traces from leaking to the frontend client:
-
-```json
-{
-    "success": false,
-    "message": "Error details here...",
-    "error_code": "VALIDATION_ERROR | INTERNAL_SERVER_ERROR | HTTP_404_ERROR",
-    "details": {
-        "errors": ["Specific field validation failures..."]
-    }
-}
 ```
-
----
-
-## 🔧 Troubleshooting Guide
-
-### Lava Mobiles SSL Expiry:
-- The Lava Mobiles domain certificate occasionally expires. Our scraper engine overrides certificate validation in Python by passing `verify=False` to httpx clients to prevent connection blocks.
-
-### Playwright Headless Configuration:
-- If Playwright fails to initialize in Docker/VM environments, run the browser installer tool:
-  ```bash
-  playwright install chromium
-  ```
+├── backend/
+│   ├── app/
+│   │   ├── api/v1/          # FastAPI routers (brands, dealers, scrapers)
+│   │   ├── database/        # Supabase and PostgreSQL connections
+│   │   ├── models/          # DB schemas (pydantic & ORM structures)
+│   │   ├── repositories/    # Database Repository layers
+│   │   ├── scrapers/        # GenericScraper & strategy detection subclasses
+│   │   └── services/        # Business logic (job runners, deduplication, loggers)
+│   ├── scripts/             # Migration and testing utility scripts
+│   └── main.py              # Application entrypoint
+├── frontend-admin/          # Next.js Admin portal (Scraping logs & status)
+├── frontend-public/         # Next.js 15 Public Customer portal
+│   ├── src/
+│   │   ├── app/             # App Router layout and main pages
+│   │   ├── components/      # Reusable visual components (Navbar, Stats, Cards)
+│   │   └── lib/             # API clients and styles helpers
+└── README.md                # Project startup index (This file)
+```
