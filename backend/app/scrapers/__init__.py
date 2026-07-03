@@ -1,1 +1,1 @@
-# Dealer web scrapers package
+# Scraper core package

@@ -17,6 +17,7 @@ import {
   ExternalLink
 } from "lucide-react";
 import BrandsManager from "@/components/BrandsManager";
+import ScraperController from "@/components/ScraperController";
 
 type Tab = "Dashboard" | "Brands" | "Dealers" | "Scraping" | "Logs" | "Settings";
 
@@ -292,23 +293,8 @@ export default function AdminDashboard() {
           )}
 
           {activeTab === "Scraping" && (
-            <div className="space-y-6 animate-fade-in">
-              <div className="border-b border-slate-200 dark:border-zinc-800 pb-6">
-                <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-zinc-50 mb-2">
-                  Web Scraping Controllers
-                </h1>
-                <p className="text-slate-600 dark:text-zinc-400">
-                  Configure scraper templates, schedule automatic directory runs, and track scraping success metrics.
-                </p>
-              </div>
-              <div className="border border-dashed border-slate-300 dark:border-zinc-800 rounded-2xl p-16 text-center max-w-xl mx-auto">
-                <Cpu className="h-12 w-12 text-slate-300 dark:text-zinc-700 mx-auto mb-4" />
-                <h3 className="font-semibold text-slate-800 dark:text-zinc-200 mb-1">Scrapers Deactivated</h3>
-                <p className="text-sm text-slate-500 dark:text-zinc-500 mb-6">Web crawler engine triggers will be integrated in Sprint 3.</p>
-                <button disabled className="bg-slate-200 text-slate-400 dark:bg-zinc-800 dark:text-zinc-600 px-4 py-2 rounded-lg text-xs font-semibold select-none cursor-not-allowed">
-                  Configure Crawlers (Sprint 3)
-                </button>
-              </div>
+            <div className="animate-fade-in">
+              <ScraperController />
             </div>
           )}
 

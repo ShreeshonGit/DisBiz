@@ -5,6 +5,7 @@ from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from app.core.config import settings
 from app.api.v1.brand_routes import router as brand_router_v1
+from app.api.v1.scraper_routes import router as scraper_router_v1
 import uvicorn
 
 app = FastAPI(
@@ -26,6 +27,7 @@ if settings.BACKEND_CORS_ORIGINS:
 
 # Register Versioned Routers
 app.include_router(brand_router_v1, prefix=settings.API_V1_STR)
+app.include_router(scraper_router_v1, prefix=settings.API_V1_STR)
 
 @app.get("/health")
 async def health_check():
