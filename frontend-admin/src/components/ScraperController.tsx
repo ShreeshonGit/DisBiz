@@ -74,6 +74,10 @@ export default function ScraperController() {
   const [detecting, setDetecting] = useState(false);
   const [previewing, setPreviewing] = useState(false);
   const [cancellingJobId, setCancellingJobId] = useState<string | null>(null);
+  const [startingScrape, setStartingScrape] = useState(false);
+  const [logsModalOpen, setLogsModalOpen] = useState(false);
+  const [selectedJobLogs, setSelectedJobLogs] = useState<string[]>([]);
+  const [selectedJobBrandName, setSelectedJobBrandName] = useState("");
 
   // Detection Results state
   const [detectionResult, setDetectionResult] = useState<{
@@ -203,6 +207,28 @@ export default function ScraperController() {
     }
   };
 
+  const handleStartScrape = async () => {
+    if (!selectedBrandId) return;
+    setStartingScrape(true);
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/v1/scraper/start/${selectedBrandId}`, {
+        method: "POST"
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        addToast("success", "Scraping job queued successfully in background.");
+        fetchJobs(true);
+      } else {
+        throw new Error(data.message || "Failed to start scraping job.");
+      }
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Failed to initiate scraping job.";
+      addToast("error", msg);
+    } finally {
+      setStartingScrape(false);
+    }
+  };
+
   const handleCancelJob = async (jobId: string) => {
     setCancellingJobId(jobId);
     try {
@@ -221,6 +247,23 @@ export default function ScraperController() {
       addToast("error", msg);
     } finally {
       setCancellingJobId(null);
+    }
+  };
+
+  const handleViewLogs = async (job: ScrapeJob) => {
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/v1/scraper/jobs/${job.id}`);
+      const data = await res.json();
+      if (res.ok && data.success && data.data) {
+        setSelectedJobLogs(data.data.execution_logs || []);
+        setSelectedJobBrandName(data.data.brand_name || "Crawler Job");
+        setLogsModalOpen(true);
+      } else {
+        throw new Error(data.message || "Failed to load job details.");
+      }
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Error fetching job logs.";
+      addToast("error", msg);
     }
   };
 
@@ -335,21 +378,16 @@ export default function ScraperController() {
                   Preview Scrape
                 </Button>
                 
-                {/* Disabled Scraper Trigger */}
-                <div className="group relative">
-                  <Button
-                    id="btn-start-scrape"
-                    size="sm"
-                    disabled
-                    className="bg-slate-200 text-slate-400 dark:bg-zinc-800 dark:text-zinc-600 cursor-not-allowed select-none flex items-center gap-1.5"
-                  >
-                    <Play className="h-3.5 w-3.5" />
-                    Start Full Scrape
-                  </Button>
-                  <div className="absolute bottom-full mb-2 hidden group-hover:block bg-zinc-950 text-zinc-100 text-[10px] px-2 py-1.5 rounded-md shadow-md whitespace-nowrap z-50">
-                    * Full scraping runs will launch in Sprint 3.2.
-                  </div>
-                </div>
+                <Button
+                  id="btn-start-scrape"
+                  size="sm"
+                  onClick={handleStartScrape}
+                  disabled={detecting || previewing || startingScrape}
+                  className="flex items-center gap-1.5 bg-indigo-650 hover:bg-indigo-700 text-zinc-50 dark:bg-indigo-500 dark:hover:bg-indigo-600"
+                >
+                  {startingScrape ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Play className="h-3.5 w-3.5" />}
+                  Start Full Scrape
+                </Button>
               </div>
             </div>
           )}
@@ -414,18 +452,24 @@ export default function ScraperController() {
                       <td className="px-6 py-4 text-xs text-slate-500 dark:text-zinc-500">
                         {job.duration_seconds ? `${job.duration_seconds}s` : "--"}
                       </td>
-                      <td className="px-6 py-4 text-right">
+                      <td className="px-6 py-4 text-right flex items-center justify-end gap-3">
                         {(job.status === "Running" || job.status === "Queued") ? (
                           <button
                             onClick={() => handleCancelJob(job.id)}
                             disabled={cancellingJobId === job.id}
-                            className="text-xs font-semibold text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 disabled:opacity-50 inline-flex items-center gap-1.5"
+                            className="text-xs font-semibold text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 disabled:opacity-50 inline-flex items-center gap-1"
                           >
                             <Ban className="h-3 w-3" />
                             Cancel
                           </button>
                         ) : (
-                          <span className="text-xs text-slate-400 dark:text-zinc-600 font-normal">--</span>
+                          <button
+                            onClick={() => handleViewLogs(job)}
+                            className="text-xs font-semibold text-indigo-650 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-305 inline-flex items-center gap-1"
+                          >
+                            <Terminal className="h-3.5 w-3.5" />
+                            View Logs
+                          </button>
                         )}
                       </td>
                     </tr>
@@ -536,6 +580,64 @@ export default function ScraperController() {
             <div className="px-6 py-4 bg-slate-50/50 dark:bg-zinc-900/50 border-t border-slate-200 dark:border-zinc-800 flex justify-end">
               <Button size="sm" onClick={() => setPreviewOpen(false)} className="bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950">
                 Close Preview
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================= */}
+      {/* EXECUTION LOGS MODAL                                     */}
+      {/* ========================================================= */}
+      {logsModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 dark:bg-black/80 backdrop-blur-sm">
+          <div className="w-full max-w-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 flex flex-col max-h-[80vh]">
+            
+            {/* Header */}
+            <div className="px-6 py-4 border-b border-slate-200 dark:border-zinc-800 flex items-center justify-between">
+              <div>
+                <h2 className="text-base font-bold text-slate-900 dark:text-zinc-50">
+                  Execution Logs: {selectedJobBrandName}
+                </h2>
+                <p className="text-xs text-slate-500 dark:text-zinc-500">
+                  Historical step-by-step logs parsed from the crawler.
+                </p>
+              </div>
+              <button 
+                onClick={() => setLogsModalOpen(false)}
+                className="p-1 rounded-md text-slate-400 hover:bg-slate-100 dark:hover:bg-zinc-800 hover:text-slate-600 dark:hover:text-zinc-300"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Logs Body */}
+            <div className="flex-grow overflow-y-auto p-6">
+              <div className="bg-slate-950 text-zinc-350 font-mono text-[11px] p-5 rounded-xl min-h-64 max-h-96 overflow-y-auto space-y-1.5 shadow-inner leading-relaxed">
+                {selectedJobLogs.length === 0 ? (
+                  <p className="text-zinc-500 italic">No execution logs found for this job run.</p>
+                ) : (
+                  selectedJobLogs.map((logLine, i) => (
+                    <p 
+                      key={i} 
+                      className={
+                        logLine.includes("[ERROR]") || logLine.includes("failed") ? "text-red-400" :
+                        logLine.includes("[WARN]") || logLine.includes("rejection") || logLine.includes("rejected") ? "text-amber-400" :
+                        logLine.includes("[INFO] Successfully") || logLine.includes("SUCCESS") ? "text-emerald-400" : 
+                        "text-zinc-400"
+                      }
+                    >
+                      {logLine}
+                    </p>
+                  ))
+                )}
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="px-6 py-4 bg-slate-50/50 dark:bg-zinc-900/50 border-t border-slate-200 dark:border-zinc-800 flex justify-end">
+              <Button size="sm" onClick={() => setLogsModalOpen(false)} className="bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950">
+                Close Logs
               </Button>
             </div>
           </div>

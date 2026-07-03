@@ -1,13 +1,14 @@
 from typing import List, Dict, Any, Optional
 from uuid import UUID
 from datetime import datetime
-import time
+from fastapi import BackgroundTasks
 
 from app.repositories.brand_repository import BrandRepository
 from app.repositories.scraper_config_repository import ScraperConfigRepository
 from app.repositories.scrape_job_repository import ScrapeJobRepository
 from app.scrapers.scraper_factory import ScraperFactory
 from app.schemas.scrape_schema import AutoDetectResponse, PreviewResponse, PreviewDealer
+from app.services.scraper_job_runner import ScraperJobRunner
 import logging
 
 logger = logging.getLogger(__name__)
@@ -15,7 +16,7 @@ logger = logging.getLogger(__name__)
 class ScrapingService:
     """
     Service layer coordinating all web scraping tasks, auto-detection,
-    preview runs, and job management logs.
+    preview runs, background job queue trigger, and job management logs.
     """
 
     def __init__(self) -> None:
@@ -28,7 +29,6 @@ class ScrapingService:
         Fetches the brand locator URL, connects to the site, classifies its rendering type,
         and saves/updates the configuration table.
         """
-        # Fetch brand
         brand = self.brand_repository.get_by_id(brand_id)
         if not brand:
             raise ValueError(f"Brand with ID {brand_id} not found.")
@@ -36,18 +36,15 @@ class ScrapingService:
         url = brand["dealer_locator_url"]
         logger.info(f"Auto-detecting locator configuration for brand '{brand['name']}' at {url}")
 
-        # Instantiate generic scraper to run detection
         scraper = ScraperFactory.get_scraper(brand_id, brand["name"], url)
         locator_type = await scraper.detect_locator_type()
         
-        # Suggest corresponding scraper engine
         suggested_scraper = "STATIC_HTML"
         if locator_type == "JAVASCRIPT":
             suggested_scraper = "PLAYWRIGHT"
         elif locator_type == "API":
             suggested_scraper = "API"
 
-        # Update scraper_configs table
         config_data = {
             "scraper_type": suggested_scraper,
             "locator_type": locator_type,
@@ -56,7 +53,6 @@ class ScrapingService:
         
         self.config_repository.upsert(brand_id, config_data)
 
-        # Hit the site once more to check headers for response stats
         import httpx
         status_code = 200
         content_length = 0
@@ -88,22 +84,16 @@ class ScrapingService:
 
         url = brand["dealer_locator_url"]
         
-        # Load configuration
         db_config = self.config_repository.get_by_brand_id(brand_id) or {}
         config = dict(db_config)
         
-        # Apply temporary overrides if passed (e.g. from UI testing modal)
         if override_config:
             config.update(override_config)
 
-        logger.info(f"Running preview scrape for brand '{brand['name']}' using config: {config}")
-
-        # Instantiate scraper via Factory
         scraper = ScraperFactory.get_scraper(brand_id, brand["name"], url, config)
         scraper.log(f"Initialized preview job for brand '{brand['name']}'")
 
         try:
-            # Perform preview
             records = await scraper.preview(limit=10)
             scraper.log(f"Extraction successful. Retrieved {len(records)} preview records.")
             
@@ -135,6 +125,41 @@ class ScrapingService:
             scraper.log(f"CRITICAL ERROR during preview: {e}")
             raise ValueError(f"Preview scrape failed: {e}. Check execution logs:\n" + "\n".join(scraper.logs))
 
+    async def start_scrape_job(self, brand_id: UUID, background_tasks: BackgroundTasks) -> Dict[str, Any]:
+        """
+        Creates a new scrape job log in database as Queued, and triggers the background
+        execution runner asynchronously.
+        """
+        brand = self.brand_repository.get_by_id(brand_id)
+        if not brand:
+            raise ValueError(f"Brand with ID {brand_id} not found.")
+
+        # Prepare scrape job parameters
+        now = datetime.now().isoformat()
+        job_data = {
+            "brand_id": str(brand_id),
+            "status": "Queued",
+            "started_at": now,
+            "start_time": now,
+            "records_found": 0,
+            "records_saved": 0,
+            "retry_count": 0
+        }
+
+        # Create record in DB
+        created_job = self.job_repository.create(job_data)
+        job_id = UUID(created_job["id"])
+
+        logger.info(f"Queued scrape job {job_id} in database. Triggering background runner...")
+
+        # Add runner to FastAPI BackgroundTasks queue
+        runner = ScraperJobRunner()
+        background_tasks.add_task(runner.run_job, job_id, brand_id)
+
+        # Retrieve and return job details flattening brand name
+        job_details = self.job_repository.get_by_id(job_id)
+        return job_details if job_details else created_job
+
     def get_jobs(self) -> List[Dict[str, Any]]:
         """Retrieves history of all scraping runs."""
         return self.job_repository.get_all()
@@ -152,6 +177,7 @@ class ScrapingService:
         if not job:
             raise ValueError(f"Job with ID {job_id} not found.")
 
-        # Update status
+        # Update status to Cancelled in DB. The background thread will check
+        # this state to halt execution.
         updated = self.job_repository.update(job_id, {"status": "Cancelled"})
         return updated

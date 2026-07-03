@@ -1,7 +1,6 @@
 import sys
 import unittest
-from unittest.mock import patch, MagicMock
-from uuid import uuid4
+from unittest.mock import patch
 from fastapi.testclient import TestClient
 
 sys.path.insert(0, ".")
@@ -65,6 +64,24 @@ class TestScraperAPI(unittest.TestCase):
         self.assertEqual(data["data"]["total_extracted"], 1)
         self.assertEqual(len(data["data"]["preview_records"]), 1)
         self.assertEqual(data["data"]["preview_records"][0]["name"], "Dealer 1")
+
+    @patch("app.services.scraping_service.ScrapingService.start_scrape_job")
+    def test_start_endpoint(self, mock_start):
+        """Verify POST /api/v1/scraper/start/{brand_id}"""
+        mock_start.return_value = {
+            "id": self.job_id,
+            "brand_id": self.brand_id,
+            "status": "Queued",
+            "started_at": "2026-07-03T20:00:00Z",
+            "records_found": 0,
+            "records_saved": 0
+        }
+        
+        response = self.client.post(f"/api/v1/scraper/start/{self.brand_id}")
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        self.assertTrue(data["success"])
+        self.assertEqual(data["data"]["status"], "Queued")
 
     @patch("app.services.scraping_service.ScrapingService.get_jobs")
     def test_get_jobs_endpoint(self, mock_get_jobs):
