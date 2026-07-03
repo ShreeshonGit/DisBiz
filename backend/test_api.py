@@ -73,7 +73,7 @@ class TestBrandAPI(unittest.TestCase):
         
         data = response.json()
         self.assertFalse(data["success"])
-        self.assertIn("not found", data["errors"][0])
+        self.assertIn("not found", data["message"].lower())
 
     def test_get_brand_by_invalid_uuid(self):
         """Verify GET /api/v1/brands/{id} returns 422 standard validation error for invalid UUIDs"""
@@ -83,7 +83,7 @@ class TestBrandAPI(unittest.TestCase):
         data = response.json()
         self.assertFalse(data["success"])
         self.assertIn("Request validation failed.", data["message"])
-        self.assertTrue(len(data["errors"]) > 0)
+        self.assertTrue(len(data["details"]["errors"]) > 0)
 
     @patch("app.repositories.brand_repository.BrandRepository.create")
     @patch("app.repositories.brand_repository.BrandRepository.get_by_name")
@@ -125,7 +125,7 @@ class TestBrandAPI(unittest.TestCase):
         
         data = response.json()
         self.assertFalse(data["success"])
-        self.assertIn("already registered", data["errors"][0])
+        self.assertIn("already registered", data["message"].lower())
 
     @patch("app.repositories.brand_repository.BrandRepository.get_by_name")
     @patch("app.repositories.brand_repository.BrandRepository.get_by_dealer_locator_url")
@@ -146,7 +146,7 @@ class TestBrandAPI(unittest.TestCase):
         
         data = response.json()
         self.assertFalse(data["success"])
-        self.assertIn("already in use", data["errors"][0])
+        self.assertIn("already in use", data["message"].lower())
 
     def test_create_brand_invalid_official_url(self):
         """Verify invalid URL formats for official website are caught by validation (422)"""
@@ -162,7 +162,7 @@ class TestBrandAPI(unittest.TestCase):
         
         data = response.json()
         self.assertFalse(data["success"])
-        self.assertIn("valid absolute HTTP or HTTPS URL", data["errors"][0])
+        self.assertIn("valid absolute HTTP or HTTPS URL", data["details"]["errors"][0])
 
     def test_create_brand_invalid_dealer_url(self):
         """Verify invalid URL formats for dealer locator are caught by validation (422)"""
@@ -178,7 +178,7 @@ class TestBrandAPI(unittest.TestCase):
         
         data = response.json()
         self.assertFalse(data["success"])
-        self.assertIn("valid absolute HTTP or HTTPS URL", data["errors"][0])
+        self.assertIn("valid absolute HTTP or HTTPS URL", data["details"]["errors"][0])
 
     def test_create_brand_empty_name(self):
         """Verify empty brand name triggers 422 error"""
@@ -194,7 +194,7 @@ class TestBrandAPI(unittest.TestCase):
         
         data = response.json()
         self.assertFalse(data["success"])
-        self.assertIn("at least 1", data["errors"][0].lower())
+        self.assertIn("at least 1", data["details"]["errors"][0].lower())
 
     def test_create_brand_missing_category(self):
         """Verify missing category field triggers validation error (422)"""

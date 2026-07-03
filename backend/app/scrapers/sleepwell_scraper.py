@@ -1,18 +1,13 @@
-from typing import List, Dict, Any
 from app.scrapers.generic_scraper import GenericScraper
-import logging
-
-logger = logging.getLogger(__name__)
+from typing import List, Dict, Any
 
 class SleepwellScraper(GenericScraper):
     """
-    Brand-specific scraper subclass for Sleepwell.
-    Overrides parser methods to handle brand-specific DOM nesting layouts.
+    Sleepwell scraper subclass.
+    Inherits all core scraping and API extraction capabilities from GenericScraper.
     """
-
+    
     def parse(self, content: str) -> List[Dict[str, Any]]:
-        self.log("[Custom Scraper: Sleepwell] Running custom parser logic.")
-        # If configuration exists, fall back to GenericScraper parser behavior
         selectors = self.config.get("css_selector_config") or {}
         if selectors.get("container"):
             return super().parse(content)

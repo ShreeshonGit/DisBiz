@@ -112,7 +112,7 @@ def main() -> None:
             for file_path in sql_files:
                 filename = os.path.basename(file_path)
                 if filename in executed_versions:
-                    print(f"  {YELLOW}✓ Applied: {filename}{RESET}")
+                    print(f"  {YELLOW}[OK] Applied: {filename}{RESET}")
                 else:
                     print(f"  {GREEN}+ Pending: {filename}{RESET}")
             print("\n---------------------------------------------------------")

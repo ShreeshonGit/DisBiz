@@ -41,11 +41,10 @@ async def health_check():
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
     """
     Catches Pydantic validation errors and formats them in the standard
-    failure response structure: {"success": false, "message": "...", "errors": [...]}
+    failure response structure: {"success": false, "message": "...", "error_code": "...", "details": {...}}
     """
     errors = []
     for error in exc.errors():
-        # Get path to parameter and make it readable
         loc = " -> ".join(str(x) for x in error.get("loc", []))
         msg = error.get("msg", "Unknown error")
         errors.append(f"Field '{loc}': {msg}")
@@ -55,7 +54,8 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
         content={
             "success": False,
             "message": "Request validation failed.",
-            "errors": errors
+            "error_code": "VALIDATION_ERROR",
+            "details": {"errors": errors}
         }
     )
 
@@ -64,14 +64,13 @@ async def http_exception_handler(request: Request, exc: StarletteHTTPException):
     """
     Catches HTTPException raised inside endpoints or by FastAPI middlewares.
     """
-    detail = exc.detail
-    errors = [detail] if isinstance(detail, str) else detail
     return JSONResponse(
         status_code=exc.status_code,
         content={
             "success": False,
-            "message": "API request failed.",
-            "errors": errors
+            "message": str(exc.detail),
+            "error_code": f"HTTP_{exc.status_code}_ERROR",
+            "details": {"status_code": exc.status_code}
         }
     )
 
@@ -85,7 +84,8 @@ async def generic_exception_handler(request: Request, exc: Exception):
         content={
             "success": False,
             "message": "An unexpected internal server error occurred.",
-            "errors": [str(exc)]
+            "error_code": "INTERNAL_SERVER_ERROR",
+            "details": {"error": str(exc)}
         }
     )
 

@@ -229,3 +229,43 @@ async def export_jobs(format: str = "csv"):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to export jobs: {e}"
         )
+
+@router.get("/dealers/search", response_model=StandardResponse)
+async def search_dealers(
+    query: Optional[str] = None,
+    brand_id: Optional[UUID] = None,
+    city: Optional[str] = None,
+    state: Optional[str] = None,
+    pincode: Optional[str] = None,
+    sort_by: str = "name",
+    sort_order: str = "asc",
+    page: int = 1,
+    limit: int = 10
+) -> StandardResponse:
+    """
+    Search and filter authorized dealers.
+    """
+    try:
+        from app.repositories.dealer_repository import DealerRepository
+        repo = DealerRepository()
+        result = repo.search(
+            query=query,
+            brand_id=brand_id,
+            city=city,
+            state=state,
+            pincode=pincode,
+            sort_by=sort_by,
+            sort_order=sort_order,
+            page=page,
+            limit=limit
+        )
+        return StandardResponse(
+            success=True,
+            message="Dealers retrieved successfully.",
+            data=result
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to search dealers: {e}"
+        )
