@@ -19,7 +19,9 @@ import {
 import BrandsManager from "@/components/BrandsManager";
 import ScraperController from "@/components/ScraperController";
 
-type Tab = "Dashboard" | "Brands" | "Dealers" | "Scraping" | "Logs" | "Settings";
+import Link from "next/link";
+
+type Tab = "Dashboard" | "Brands" | "Dealers" | "Scraping" | "Automation" | "Logs" | "Settings";
 
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("Dashboard");
@@ -56,6 +58,7 @@ export default function AdminDashboard() {
     { name: "Brands" as Tab, icon: Award },
     { name: "Dealers" as Tab, icon: Users },
     { name: "Scraping" as Tab, icon: Cpu },
+    { name: "Automation" as Tab, icon: Clock },
     { name: "Logs" as Tab, icon: FileCode },
     { name: "Settings" as Tab, icon: SettingsIcon },
   ];
@@ -89,6 +92,21 @@ export default function AdminDashboard() {
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.name;
+            
+            if (item.name === "Automation") {
+              return (
+                <Link
+                  key={item.name}
+                  href="/automation"
+                  id={`sidebar-link-${item.name.toLowerCase()}`}
+                  className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 text-slate-650 dark:text-zinc-400 hover:bg-slate-50 dark:hover:bg-zinc-900 hover:text-slate-950 dark:hover:text-zinc-100"
+                >
+                  <Icon className="h-4.5 w-4.5 text-slate-400 dark:text-zinc-500" />
+                  {item.name}
+                </Link>
+              );
+            }
+            
             return (
               <button
                 key={item.name}
@@ -97,7 +115,7 @@ export default function AdminDashboard() {
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive
                     ? "bg-slate-100 text-slate-900 dark:bg-zinc-800 dark:text-zinc-50 shadow-sm"
-                    : "text-slate-600 dark:text-zinc-400 hover:bg-slate-50 dark:hover:bg-zinc-900 hover:text-slate-950 dark:hover:text-zinc-100"
+                    : "text-slate-650 dark:text-zinc-400 hover:bg-slate-50 dark:hover:bg-zinc-900 hover:text-slate-950 dark:hover:text-zinc-100"
                 }`}
               >
                 <Icon className={`h-4.5 w-4.5 ${isActive ? "text-slate-900 dark:text-zinc-50" : "text-slate-400 dark:text-zinc-500"}`} />
@@ -137,7 +155,7 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-3">
             {/* View Landing Page Shortcut */}
             <a
-              href="http://localhost:3000"
+              href="http://localhost:3002"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-800 dark:text-zinc-400 dark:hover:text-zinc-200 border border-slate-200 dark:border-zinc-800 px-3 py-1.5 rounded-lg bg-slate-50/50 dark:bg-zinc-900/50 transition-colors"

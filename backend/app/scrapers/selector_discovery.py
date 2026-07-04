@@ -127,7 +127,38 @@ class SelectorDiscovery:
             }
         }
         
+        synonyms = {
+            "name": ["name", "title", "store", "dealer", "outlet", "shop", "branch"],
+            "address": ["address", "addr", "street", "location", "formatted"],
+            "phone": ["phone", "tel", "mobile", "contact", "telephone"],
+            "email": ["email", "mail"],
+            "pincode": ["pincode", "zip", "postal", "pin"],
+            "city": ["city", "town", "locality"],
+            "state": ["state", "region", "province"],
+            "latitude": ["latitude", "lat"],
+            "longitude": ["longitude", "lng", "lon"],
+            "website": ["website", "web", "url", "link"]
+        }
+        
         for field, selectors in suggestions.items():
+            try:
+                sample_containers = soup.select(container_selector)[:5]
+                dynamic_classes = []
+                for container in sample_containers:
+                    for child in container.find_all(True):
+                        classes = child.get("class") or []
+                        if isinstance(classes, str):
+                            classes = [classes]
+                        for cls in classes:
+                            cls_lower = cls.lower()
+                            if any(syn in cls_lower for syn in synonyms[field]):
+                                selector_candidate = f".{cls}"
+                                if selector_candidate not in dynamic_classes:
+                                    dynamic_classes.append(selector_candidate)
+                selectors = dynamic_classes + selectors
+            except Exception:
+                pass
+                
             field_matches = []
             for selector in selectors:
                 try:

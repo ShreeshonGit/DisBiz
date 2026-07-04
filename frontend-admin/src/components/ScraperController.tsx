@@ -82,6 +82,7 @@ export default function ScraperController() {
   const [selectedJobLogs, setSelectedJobLogs] = useState<string[]>([]);
   const [selectedJobBrandName, setSelectedJobBrandName] = useState("");
   const [selectedJob, setSelectedJob] = useState<ScrapeJob | null>(null);
+  const [hasConfig, setHasConfig] = useState(false);
 
   // Detection Results state
   const [detectionResult, setDetectionResult] = useState<{
@@ -159,6 +160,22 @@ export default function ScraperController() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    if (selectedBrandId) {
+      setHasConfig(false);
+      fetch(`${BACKEND_URL}/api/v1/scraper/config/${selectedBrandId}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success && data.data) {
+            setHasConfig(true);
+          }
+        })
+        .catch((err) => console.error("Error fetching config:", err));
+    } else {
+      setHasConfig(false);
+    }
+  }, [selectedBrandId]);
+
   // Action Handlers
   const handleAutoDetect = async () => {
     if (!selectedBrandId) return;
@@ -173,6 +190,7 @@ export default function ScraperController() {
       const data = await res.json();
       if (res.ok && data.success) {
         setDetectionResult(data.data);
+        setHasConfig(true);
         addToast("success", "Locator type auto-detected successfully.");
       } else {
         throw new Error(data.message || "Detection request failed.");
@@ -403,13 +421,20 @@ export default function ScraperController() {
                   Preview Scrape
                 </Button>
                 
-                <Button
-                  id="btn-start-scrape"
-                  size="sm"
-                  onClick={handleStartScrape}
-                  disabled={detecting || previewing || startingScrape}
-                  className="flex items-center gap-1.5 bg-indigo-650 hover:bg-indigo-700 text-zinc-50 dark:bg-indigo-500 dark:hover:bg-indigo-600"
-                >
+              <Button
+                id="btn-start-scrape"
+                size="sm"
+                onClick={handleStartScrape}
+                disabled={
+                  !selectedBrandId || 
+                  !(hasConfig || detectionResult) || 
+                  jobs.some(j => j.brand_id === selectedBrandId && (j.status === "Running" || j.status === "Queued")) || 
+                  detecting || 
+                  previewing || 
+                  startingScrape
+                }
+                className="flex items-center gap-1.5 bg-indigo-650 hover:bg-indigo-700 text-zinc-50 dark:bg-indigo-500 dark:hover:bg-indigo-600"
+              >
                   {startingScrape ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Play className="h-3.5 w-3.5" />}
                   Start Full Scrape
                 </Button>

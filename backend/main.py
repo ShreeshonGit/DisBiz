@@ -1,19 +1,59 @@
+import sys
+import asyncio
+
+if sys.platform == "win32":
+    asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+
 from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from contextlib import asynccontextmanager
+
 from app.core.config import settings
 from app.api.v1.brand_routes import router as brand_router_v1
 from app.api.v1.scraper_routes import router as scraper_router_v1
+from app.api.v1.schedule_routes import router as schedule_router_v1
+from app.scheduler.scheduler_engine import SchedulerEngine
 import uvicorn
+
+from fastapi.openapi.docs import get_swagger_ui_html, get_redoc_html
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Initialize and boot scheduler engine
+    scheduler = SchedulerEngine()
+    await scheduler.start()
+    yield
+    # Gracefully terminate loops
+    await scheduler.stop()
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
-    openapi_url=f"{settings.API_V1_STR}/openapi.json",
-    docs_url=f"{settings.API_V1_STR}/docs",
-    redoc_url=f"{settings.API_V1_STR}/redoc"
+    openapi_url="/openapi.json",
+    docs_url="/docs",
+    redoc_url="/redoc",
+    lifespan=lifespan
 )
+
+@app.get("/api/v1/openapi.json", include_in_schema=False)
+async def get_v1_openapi():
+    return app.openapi()
+
+@app.get("/api/v1/docs", include_in_schema=False)
+async def get_v1_docs():
+    return get_swagger_ui_html(
+        openapi_url="/api/v1/openapi.json",
+        title=app.title + " - API v1 Docs"
+    )
+
+@app.get("/api/v1/redoc", include_in_schema=False)
+async def get_v1_redoc():
+    return get_redoc_html(
+        openapi_url="/api/v1/openapi.json",
+        title=app.title + " - API v1 Redoc"
+    )
 
 # Configure CORS Middleware
 if settings.BACKEND_CORS_ORIGINS:
@@ -28,6 +68,7 @@ if settings.BACKEND_CORS_ORIGINS:
 # Register Versioned Routers
 app.include_router(brand_router_v1, prefix=settings.API_V1_STR)
 app.include_router(scraper_router_v1, prefix=settings.API_V1_STR)
+app.include_router(schedule_router_v1, prefix=settings.API_V1_STR)
 
 @app.get("/health")
 async def health_check():

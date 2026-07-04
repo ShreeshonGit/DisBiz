@@ -230,6 +230,25 @@ async def export_jobs(format: str = "csv"):
             detail=f"Failed to export jobs: {e}"
         )
 
+@router.get("/config/{brand_id}", response_model=StandardResponse)
+async def get_scraper_config(brand_id: UUID) -> StandardResponse:
+    """
+    Retrieves the scraper configuration database record for a given brand.
+    """
+    try:
+        from app.repositories.scraper_config_repository import ScraperConfigRepository
+        config = ScraperConfigRepository().get_by_brand_id(brand_id)
+        return StandardResponse(
+            success=True,
+            message="Scraper configuration retrieved successfully.",
+            data=config
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to fetch scraper config: {e}"
+        )
+
 @router.get("/dealers/search", response_model=StandardResponse)
 async def search_dealers(
     query: Optional[str] = None,

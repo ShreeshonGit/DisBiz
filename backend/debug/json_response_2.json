@@ -1,0 +1,62 @@
+{
+  "url": "https://www.lavamobiles.com/api/getfeaturephones",
+  "method": "GET",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "body": {
+    "status": 200,
+    "msg": "Featurephone Datas",
+    "features_phones": [
+      {
+        "id": 17,
+        "name": "Hero 600+",
+        "slug": "hero-600-series",
+        "category": "featurephones",
+        "image": "media/work/image/hero-600-1723194825.webp",
+        "image_banner": "media/work/image_banner/hero-600+-1723194589.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/hero-600+-mobile-1723194589.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/h-hero-600-1723194826.webp"
+      },
+      {
+        "id": 7,
+        "name": "A1 Vibe",
+        "slug": "a1-star",
+        "category": "featurephones",
+        "image": "media/work/image/a1-star-1723195595.webp",
+        "image_banner": "media/work/image_banner/a1-vibe-1723194408.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/a1-vibe-mobile-1723194408.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/h-a1-star-1723195595.webp"
+      },
+      {
+        "id": 18,
+        "name": "A5",
+        "slug": "lava-a5-series",
+        "category": "featurephones",
+        "image": "media/work/image/300-1741758194.webp",
+        "image_banner": "media/work/image_banner/lava-a5-23-1723194621.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/lava-a5-23-mobile-1723194621.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/120-h-1741758194.webp"
+      },
+      {
+        "id": 6,
+        "name": "A7 Torch",
+        "slug": "a7-star",
+        "category": "featurephones",
+        "image": "media/work/image/a7-star-1723195730.webp",
+        "image_banner": "media/work/image_banner/a7-torch-1723194647.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/a7-torch-mobile-1723194647.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/h-a7-star-1723195730.webp"
+      },
+      {
+        "id": 15,
+        "name": "Gem Power",
+        "slug": "gem-power-series",
+        "category": "featurephones",
+        "image": "media/work/image/gem-power-1723195759.webp",
+        "image_banner": "media/work/image_banner/gem-power-1723194670.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/gem-power-mobile-1723194670.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/h-gem-power-1723195760.webp"
+      }
+    ]
+  }
+}

@@ -3,15 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "clean": "node -e \"['.next', 'node_modules/.cache', 'dist', 'coverage'].forEach(p => { try { require('fs').rmSync(p, {recursive: true, force: true}); } catch(e){} })\"",
+    "clean:windows": "powershell -Command \"Remove-Item -Recurse -Force .next, node_modules/.cache, dist, coverage -ErrorAction Ignore\"",
+    "clean:all": "npm run clean && node -e \"try { require('fs').rmSync('node_modules', {recursive: true, force: true}); } catch(e){}\" && npm install"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.42.2",
     "lucide-react": "^1.23.0",
     "next": "15.5.20",
     "react": "19.1.0",

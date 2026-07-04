@@ -1,0 +1,32 @@
+{
+  "url": "https://www.lavamobiles.com/api/getaccessories",
+  "method": "GET",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "body": {
+    "status": 200,
+    "msg": "Accessories Datas",
+    "accessories": [
+      {
+        "id": 10,
+        "name": "Smart Accessories",
+        "slug": "smart-accessories",
+        "category": "accessories",
+        "image": "media/work/image/smart-accessories-1723196404.webp",
+        "image_banner": "media/work/image_banner/smart-accessories-1722946012.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/mobile-768x550-2-1721470028.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/h-smart-accessories-1723196404.webp"
+      },
+      {
+        "id": 19,
+        "name": "Basic Accessories",
+        "slug": "basic-accessories",
+        "category": "accessories",
+        "image": "media/work/image/basic-accessories-1723196431.webp",
+        "image_banner": "media/work/image_banner/basic-accessories-1722945791.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/mobile-basic-accessories-1722945791.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/h-basic-accessories-1723196431.webp"
+      }
+    ]
+  }
+}

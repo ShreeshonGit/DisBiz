@@ -4,7 +4,9 @@ import json
 import re
 import urllib.parse
 import asyncio
-from bs4 import BeautifulSoup
+import traceback
+import random
+import sys
 from playwright.async_api import async_playwright
 import httpx
 import logging
@@ -14,282 +16,45 @@ from app.scrapers.utils import fetch_url_with_retry
 from app.scrapers.normalizer import normalize_dealer
 from app.scrapers.validator import validate_dealer
 from app.scrapers.selector_fallback_engine import SelectorFallbackEngine
+from app.scrapers.selector_discovery import SelectorDiscovery
+
+# Modular components
+from app.scrapers.human_mode import HumanMode
+from app.scrapers.network_recorder import NetworkRecorder
+from app.scrapers.blocking_detector import BlockingDetector
+from app.scrapers.diagnostic_reporter import DiagnosticReporter
+from app.scrapers.browser_manager import BrowserManager
+from app.scrapers.parser_utils import (
+    find_dealers_in_json,
+    parse_dealers_from_json_list,
+    parse_html_dealers,
+    safe_json_load
+)
 
 logger = logging.getLogger(__name__)
-
-def find_dealers_in_json(data: Any) -> Optional[List[Dict[str, Any]]]:
-    """
-    Recursively searches JSON for lists of objects containing dealer signatures.
-    """
-    if isinstance(data, list):
-        candidate_list = []
-        for item in data:
-            if isinstance(item, dict):
-                score = 0
-                keys = {k.lower() for k in item.keys()}
-                name_keys = {"name", "title", "store", "dealer", "outlet", "shop", "branch", "partner"}
-                addr_keys = {"address", "addr", "street", "location", "formatted_address", "address1", "address2"}
-                phone_keys = {"phone", "tel", "mobile", "contact", "phone1", "telephone"}
-                coord_keys = {"lat", "latitude", "lng", "longitude", "coordinates", "coords"}
-                
-                has_name = False
-                for nk in name_keys:
-                    if nk in keys:
-                        has_name = True
-                        break
-                    for k in keys:
-                        if nk in k:
-                            has_name = True
-                            break
-                    if has_name:
-                        break
-                if has_name:
-                    score += 2
-                    
-                has_addr = False
-                for ak in addr_keys:
-                    if ak in keys:
-                        has_addr = True
-                        break
-                    for k in keys:
-                        if ak in k:
-                            has_addr = True
-                            break
-                    if has_addr:
-                        break
-                if has_addr:
-                    score += 2
-                    
-                has_phone = False
-                for pk in phone_keys:
-                    if pk in keys:
-                        has_phone = True
-                        break
-                    for k in keys:
-                        if pk in k:
-                            has_phone = True
-                            break
-                    if has_phone:
-                        break
-                if has_phone:
-                    score += 1
-                    
-                has_coord = False
-                for ck in coord_keys:
-                    if ck in keys:
-                        has_coord = True
-                        break
-                    for k in keys:
-                        if ck in k:
-                            has_coord = True
-                            break
-                    if has_coord:
-                        break
-                if has_coord:
-                    score += 1
-                    
-                if score >= 3:
-                    candidate_list.append(item)
-                    
-        if len(candidate_list) > 0:
-            return candidate_list
-            
-        for item in data:
-            res = find_dealers_in_json(item)
-            if res:
-                return res
-                
-    elif isinstance(data, dict):
-        for k, v in data.items():
-            res = find_dealers_in_json(v)
-            if res:
-                return res
-                
-    return None
-
-def parse_dealers_from_json_list(json_list: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    parsed_dealers = []
-    for item in json_list:
-        keys = {k.lower(): k for k in item.keys()}
-        
-        def get_val(patterns: List[str], default="") -> Any:
-            for p in patterns:
-                for kl, k in keys.items():
-                    if p == kl or p in kl:
-                        val = item[k]
-                        if not isinstance(val, (dict, list)):
-                            return val
-            return default
-
-        dealer_name = get_val(["name", "title", "store", "dealer", "outlet", "shop", "branch"])
-        address = get_val(["address", "addr", "street", "location", "formatted_address"])
-        city = get_val(["city", "town", "district"])
-        state = get_val(["state", "region", "province"])
-        pincode = get_val(["pincode", "zip", "postal", "pin"])
-        phone = get_val(["phone", "tel", "mobile", "contact"])
-        email = get_val(["email", "mail"])
-        website = get_val(["website", "web", "url", "link"])
-        latitude = get_val(["latitude", "lat"])
-        longitude = get_val(["longitude", "lng", "lon"])
-        
-        lat_val = None
-        lon_val = None
-        
-        map_link = get_val(["map", "google_map", "gps"])
-        if map_link and isinstance(map_link, str) and "," in map_link:
-            parts = map_link.split(",")
-            if len(parts) == 2:
-                try:
-                    lat_val = float(parts[0].strip())
-                    lon_val = float(parts[1].strip())
-                except ValueError:
-                    pass
-                    
-        if latitude is not None and str(latitude).strip():
-            try:
-                lat_val = float(str(latitude).strip())
-            except ValueError:
-                pass
-        if longitude is not None and str(longitude).strip():
-            try:
-                lon_val = float(str(longitude).strip())
-            except ValueError:
-                pass
-
-        addr_str = str(address) if address else ""
-        city_str = str(city) if city else ""
-        state_str = str(state) if state else ""
-        if addr_str and (not city_str or not state_str):
-            parts = [p.strip() for p in addr_str.split(",")]
-            if len(parts) >= 3:
-                if not city_str:
-                    city_str = parts[-2]
-                if not state_str:
-                    state_str = parts[-1]
-
-        extra_fields = {}
-        standard_keys = {
-            "name", "title", "store", "dealer", "outlet", "shop", "branch",
-            "address", "addr", "street", "location", "formatted_address",
-            "city", "town", "state", "region", "province", "pincode", "zip", "postal", "pin",
-            "phone", "tel", "mobile", "contact", "email", "mail", "website", "web", "url", "link",
-            "latitude", "lat", "longitude", "lng", "lon"
-        }
-        for k, v in item.items():
-            k_lower = k.lower()
-            if k_lower not in standard_keys and not any(sk in k_lower for sk in standard_keys):
-                extra_fields[k] = v
-
-        parsed_dealers.append({
-            "dealer_name": str(dealer_name).strip() if dealer_name else "",
-            "address": addr_str.strip(),
-            "city": city_str.strip(),
-            "state": state_str.strip(),
-            "pincode": str(pincode).strip() if pincode else "",
-            "phone": str(phone).strip() if phone else "",
-            "email": str(email).strip() if email else "",
-            "website": str(website).strip() if website else "",
-            "latitude": lat_val,
-            "longitude": lon_val,
-            "extra_fields": extra_fields
-        })
-    return parsed_dealers
-
-def parse_html_dealers(html_content: str, selectors: Dict[str, Any]) -> List[Dict[str, Any]]:
-    # Normalize selectors
-    norm_selectors = {}
-    for k, v in selectors.items():
-        if isinstance(v, str):
-            norm_selectors[k] = {"selector": v}
-        elif isinstance(v, dict):
-            norm_selectors[k] = v
-        elif isinstance(v, list):
-            norm_selectors[k] = {"selector": v[0] if v else ""}
-            
-    soup = BeautifulSoup(html_content, "lxml")
-    container_sel = norm_selectors.get("container", {}).get("selector")
-    if not container_sel:
-        return []
-        
-    containers = soup.select(container_sel)
-    parsed = []
-    
-    for node in containers:
-        def get_field_text(field_name: str) -> str:
-            sel_info = norm_selectors.get(field_name, {})
-            sel = sel_info.get("selector")
-            if sel:
-                target = node.select_one(sel)
-                if target:
-                    if field_name == "website" and target.name == "a":
-                        return target.get("href", "").strip()
-                    elif field_name == "phone" and target.name == "a" and target.get("href", "").startswith("tel:"):
-                        return target.get("href", "")[4:].strip()
-                    elif field_name == "email" and target.name == "a" and target.get("href", "").startswith("mailto:"):
-                        return target.get("href", "")[7:].strip()
-                    return target.get_text().strip()
-            return ""
-
-        dealer_name = get_field_text("name")
-        address = get_field_text("address")
-        city = get_field_text("city")
-        state = get_field_text("state")
-        pincode = get_field_text("pincode")
-        phone = get_field_text("phone")
-        email = get_field_text("email")
-        website = get_field_text("website")
-        latitude = get_field_text("latitude")
-        longitude = get_field_text("longitude")
-        
-        if not dealer_name and not address:
-            continue
-            
-        parsed.append({
-            "dealer_name": dealer_name,
-            "address": address,
-            "city": city,
-            "state": state,
-            "pincode": pincode,
-            "phone": phone,
-            "email": email,
-            "website": website,
-            "latitude": float(latitude) if latitude and re.match(r'^-?\d+(\.\d+)?$', latitude) else None,
-            "longitude": float(longitude) if longitude and re.match(r'^-?\d+(\.\d+)?$', longitude) else None
-        })
-    return parsed
-
-def safe_json_load(res: Any) -> Any:
-    """
-    Safely deserializes JSON from a response object, handling either a dict,
-    a JSON string, or AsyncMock issues.
-    """
-    try:
-        if hasattr(res, "text") and isinstance(res.text, str):
-            return json.loads(res.text)
-        val = res.json()
-        if asyncio.iscoroutine(val):
-            if hasattr(res, "text") and isinstance(res.text, str):
-                return json.loads(res.text)
-        return val
-    except Exception:
-        if isinstance(res, dict):
-            return res
-        return {}
 
 class GenericScraper(BaseScraper):
     """
     Universal Autonomous Scraper implementation.
-    Enables automatic detection of strategy (Hidden API / Static HTML / Playwright),
-    network traffic sniffing, automated selector heuristics discovery, form iteration,
-    robust pagination traversal, validation, and deduplication.
+    Includes automated failover browsers, human interaction simulation,
+    network sniffing, Cloudflare/Captcha detection, and detailed failure reports.
     """
 
     def __init__(self, brand_id: UUID, brand_name: str, locator_url: str, config: Optional[Dict[str, Any]] = None) -> None:
         super().__init__(brand_id, brand_name, locator_url, config)
         self.fallback_engine = SelectorFallbackEngine()
+        self.search_diagnostics = {
+            "search_field_detected": None,
+            "keywords_entered": [],
+            "suggestions_detected": [],
+            "suggestions_selected": [],
+            "ajax_requests_fired": [],
+            "dealer_endpoints_discovered": [],
+            "dealers_extracted_count": 0
+        }
+        self.recovery_attempts = []
 
     def validate_url(self) -> bool:
-        self.log("Validating locator URL format.")
         url_regex = re.compile(
             r'^(?:http|ftp)s?://'
             r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|'
@@ -300,23 +65,16 @@ class GenericScraper(BaseScraper):
         return bool(url_regex.match(self.locator_url))
 
     async def detect_locator_type(self) -> str:
-        self.log(f"Auto-detecting locator type for: {self.locator_url}")
         try:
             res = await fetch_url_with_retry(self.locator_url, verify_ssl=False)
             from app.scrapers.utils import detect_content_type
-            loc_type = detect_content_type(res)
-            return loc_type
-        except Exception as e:
-            self.log(f"Auto-detection failed: {e}")
+            return detect_content_type(res)
+        except Exception:
             return "UNKNOWN"
 
     async def fetch_page(self) -> str:
-        try:
-            res = await fetch_url_with_retry(self.locator_url, verify_ssl=False)
-            return res.text
-        except Exception as e:
-            self.log(f"HTTPX fetch failed: {e}")
-            raise e
+        res = await fetch_url_with_retry(self.locator_url, verify_ssl=False)
+        return res.text
 
     def parse(self, content: str) -> List[Dict[str, Any]]:
         if content.strip().startswith(("{", "[")):
@@ -326,32 +84,20 @@ class GenericScraper(BaseScraper):
                 if dealers_list:
                     return parse_dealers_from_json_list(dealers_list)
                 return []
-            except Exception as e:
-                self.log(f"JSON parsing error: {e}")
+            except Exception:
                 return []
         else:
             selectors = self.config.get("css_selector_config") or {}
             if not selectors.get("container"):
-                from app.scrapers.selector_discovery import SelectorDiscovery
-                discovered = SelectorDiscovery.discover_selectors(content)
-                # Convert discovered structures to standard key-value
-                selectors = {k: v.get("selector") if isinstance(v, dict) else v for k, v in discovered.items()}
-                
+                selectors = {k: v.get("selector") if isinstance(v, dict) else v for k, v in SelectorDiscovery.discover_selectors(content).items()}
             return parse_html_dealers(content, selectors)
 
     async def preview(self, limit: int = 10) -> List[Dict[str, Any]]:
-        self.log(f"Generating preview list (max {limit} records)...")
-        try:
-            raw_records = await self.extract_dealers()
-            return raw_records[:limit]
-        except Exception as e:
-            self.log(f"[ERROR] Preview execution failed: {e}")
-            raise e
+        raw_records = await self.extract_dealers()
+        return raw_records[:limit]
 
     async def extract_dealers(self) -> List[Dict[str, Any]]:
         self.log(f"[STEP] Initiating universal scraping sequence for brand: {self.brand_name}")
-        self.log(f"[STEP] Target Locator URL: {self.locator_url}")
-        
         dealers = []
         api_detected = False
         strategy = "STATIC_HTML"
@@ -360,7 +106,6 @@ class GenericScraper(BaseScraper):
         
         # Priority 1: Fast HTTPX Diagnostic Check
         try:
-            self.log("[STEP] Running fast HTTPX diagnostic check...")
             headers = {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
                 "Accept": "application/json, text/plain, */*"
@@ -369,7 +114,6 @@ class GenericScraper(BaseScraper):
                 headers["api-key-HS256240625lava"] = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsYXZhYXBpIiwibmFtZSI6ImxhdmFtb2JpbGV3ZWIiLCJhZG1pbiI6dHJ1ZSwiaWF0IjoyNDA2MjAyNX0.4v7h6QZKgI4soVGtJfK55--2gfrLQh4RIui2OukrxgI"
                 headers["Referer"] = "https://www.lavamobiles.com/"
                 headers["Origin"] = "https://www.lavamobiles.com"
-                
             if self.config.get("headers"):
                 headers.update(self.config["headers"])
                 
@@ -378,382 +122,362 @@ class GenericScraper(BaseScraper):
             pages_crawled += 1
             
             content_type = ""
-            try:
-                ct_val = res.headers.get("content-type", "")
-                if isinstance(ct_val, str):
-                    content_type = ct_val.lower()
-            except Exception:
-                pass
-                
-            body_text = res.text
+            if hasattr(res, "headers") and res.headers:
+                try:
+                    raw_ct = res.headers.get("content-type", "")
+                    if isinstance(raw_ct, str):
+                        content_type = raw_ct.lower()
+                except Exception:
+                    pass
+            body_text = res.text or ""
             
-            # Check if res.json is mock and handle its return
             is_json_body = "application/json" in content_type or body_text.strip().startswith(("{", "["))
             if is_json_body:
-                self.log("[OK] JSON API payload detected in diagnostic check. Swapping to API mode.")
-                api_detected = True
                 strategy = "API"
                 data = safe_json_load(res)
                 dealers_list = find_dealers_in_json(data)
                 if dealers_list:
-                    dealers.extend(parse_dealers_from_json_list(dealers_list))
-                    
-                    # API Pagination
-                    parsed_url = urllib.parse.urlparse(self.locator_url)
-                    query_params = urllib.parse.parse_qs(parsed_url.query)
-                    page_param = None
-                    offset_param = None
-                    current_page_val = 1
-                    current_offset_val = 0
-                    for k in query_params.keys():
-                        if k.lower() == "page":
-                            page_param = k
-                            try: current_page_val = int(query_params[k][0])
-                            except Exception: pass
-                        elif k.lower() in ["offset", "skip"]:
-                            offset_param = k
-                            try: current_offset_val = int(query_params[k][0])
-                            except Exception: pass
-                            
-                    if page_param or offset_param:
-                        limit_val = len(dealers) if len(dealers) > 0 else 10
-                        max_pages = self.config.get("max_pages", 20)
-                        async with httpx.AsyncClient(verify=False) as client:
-                            for p in range(1, max_pages):
-                                next_params = query_params.copy()
-                                if page_param: next_params[page_param] = [str(current_page_val + p)]
-                                if offset_param: next_params[offset_param] = [str(current_offset_val + (p * limit_val))]
-                                
-                                next_query = urllib.parse.urlencode(next_params, doseq=True)
-                                next_api_url = urllib.parse.urlunparse((
-                                    parsed_url.scheme,
-                                    parsed_url.netloc,
-                                    parsed_url.path,
-                                    parsed_url.params,
-                                    next_query,
-                                    parsed_url.fragment
-                                ))
-                                res_next = await client.get(next_api_url, headers=headers, timeout=15)
-                                requests_made += 1
-                                if res_next.status_code == 200:
-                                    next_dealers_list = find_dealers_in_json(safe_json_load(res_next))
-                                    if next_dealers_list:
-                                        next_parsed = parse_dealers_from_json_list(next_dealers_list)
-                                        if not next_parsed: break
-                                        dealers.extend(next_parsed)
-                                    else: break
-                                else: break
-                    return dealers
+                    return parse_dealers_from_json_list(dealers_list)
+        except Exception:
+            pass
+
+        # Priority 2: Playwright Chromium browser automation with fallbacks
+        try:
+            # Check event loop compatibility on Windows
+            loop_compatible = True
+            try:
+                current_loop = asyncio.get_running_loop()
+                if sys.platform == "win32" and "SelectorEventLoop" in type(current_loop).__name__:
+                    loop_compatible = False
+            except RuntimeError:
+                loop_compatible = False
+
+            if not loop_compatible:
+                self.log("[EventLoop] Incompatible or missing event loop. Delegating Playwright to isolated Proactor loop...")
+                dealers = await self._run_in_isolated_thread(self._run_playwright_session)
             else:
-                # Run NetworkDetector to see if there is an API referenced in the HTML (STEP 2)
-                from app.scrapers.network_detector import NetworkDetector
-                detected_api = NetworkDetector.detect_api(body_text, self.locator_url)
-                if detected_api:
-                    self.log(f"[OK] NetworkDetector discovered API endpoint: {detected_api['detected_endpoint']}")
-                    api_url = detected_api["detected_endpoint"]
-                    api_headers = detected_api.get("request_headers") or {}
+                dealers = await self._run_playwright_session()
+        except Exception as e:
+            # Exception was already logged and reports generated inside session wrapper
+            raise e
+
+        self.search_diagnostics["dealers_extracted_count"] = len(dealers)
+        self.log(f"[DIAGNOSTICS_REPORT] {json.dumps(self.search_diagnostics, indent=2)}")
+        return dealers
+
+    async def _run_in_isolated_thread(self, coro_func) -> List[Dict[str, Any]]:
+        import threading
+        import sys
+        res_holder = []
+        err_holder = []
+        
+        def thread_worker():
+            if sys.platform == "win32":
+                asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            try:
+                res = loop.run_until_complete(coro_func())
+                res_holder.append(res)
+            except Exception as e:
+                err_holder.append(e)
+            finally:
+                try:
+                    # Clean up all pending tasks in the loop before closing
+                    pending = asyncio.all_tasks(loop)
+                    if pending:
+                        loop.run_until_complete(asyncio.gather(*pending, return_exceptions=True))
+                    loop.close()
+                except Exception:
+                    pass
                     
-                    self.log(f"[STEP] Querying detected API: {api_url}")
-                    async with httpx.AsyncClient(verify=False) as client:
-                        req_headers = {
-                            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                            "Accept": "application/json, text/plain, */*"
-                        }
-                        req_headers.update(api_headers)
-                        
-                        pincodes = [""]
-                        if "lavamobiles.com" in self.locator_url:
-                            pincodes = ["", "110001", "400001", "560001", "600001", "700001", "226016"]
-                            
-                        all_api_dealers = []
-                        for pin in pincodes:
-                            query_url = f"{api_url}?pincode={pin}" if pin else api_url
-                            res_api = await client.get(query_url, headers=req_headers, timeout=15)
-                            requests_made += 1
-                            if res_api.status_code == 200:
-                                try:
-                                    body_json = safe_json_load(res_api)
-                                    dealers_list = find_dealers_in_json(body_json)
-                                    if dealers_list:
-                                        raw_dealers = parse_dealers_from_json_list(dealers_list)
-                                        all_api_dealers.extend(raw_dealers)
-                                except Exception:
-                                    pass
-                                    
-                        if all_api_dealers:
-                            api_detected = True
-                            strategy = "API"
-                            dealers.extend(all_api_dealers)
-                            self.log(f"[OK] Extracted {len(all_api_dealers)} records from detected API.")
-                            return dealers
+        t = threading.Thread(target=thread_worker)
+        t.start()
+        # Join thread asynchronously using run_in_executor to avoid blocking the main event loop
+        await asyncio.get_running_loop().run_in_executor(None, t.join)
+        
+        if err_holder:
+            raise err_holder[0]
+        return res_holder[0] if res_holder else []
 
-                # Check for Static HTML list
-                selectors = self.config.get("css_selector_config") or {}
-                if selectors.get("container"):
-                    page_dealers = parse_html_dealers(body_text, selectors)
-                    if len(page_dealers) >= 2:
-                        self.log(f"[OK] Static HTML matching selectors. Parsing {len(page_dealers)} records.")
-                        dealers.extend(page_dealers)
-                        return dealers
-        except Exception as diag_err:
-            self.log(f"[WARN] Diagnostic request failed or skipped: {diag_err}")
-
-        # Priority 2: Playwright Chromium browser automation
+    async def _run_playwright_session(self) -> List[Dict[str, Any]]:
+        dealers = []
+        strategy = "STATIC_HTML"
+        browser = None
+        page = None
+        browser_name = "chromium"
         try:
             async with async_playwright() as p:
-                browser = await p.chromium.launch(headless=True)
+                try:
+                    browser, browser_name = await BrowserManager.launch_with_fallback(p, headless=True)
+                except Exception as b_err:
+                    self.recovery_attempts.append(f"Browser Launch Failed: {b_err}")
+                    raise b_err
+
+                viewport = HumanMode.get_random_viewport()
+                user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                
                 context = await browser.new_context(
-                    viewport={"width": 1280, "height": 800},
-                    user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                    ignore_https_errors=True # Crucial for expired domain certificates
+                    viewport=viewport,
+                    user_agent=user_agent,
+                    ignore_https_errors=True,
+                    locale="en-US",
+                    timezone_id="Asia/Kolkata"
                 )
+                await HumanMode.configure_context(context, user_agent)
+                
                 page = await context.new_page()
                 
+                # Network recording
+                recorder = NetworkRecorder(self.brand_name)
                 captured_apis = []
                 
                 async def handle_response(response):
+                    await recorder.record_response(response)
+                    url = response.url
+                    if url not in self.search_diagnostics["ajax_requests_fired"]:
+                        self.search_diagnostics["ajax_requests_fired"].append(url)
+                        
                     try:
                         content_type = response.headers.get("content-type", "").lower()
-                        url = response.url
-                        
-                        is_json = "application/json" in content_type or "/api/" in url.lower() or "graphql" in url.lower()
-                        if is_json:
-                            try:
-                                body = await response.json()
-                                dealers_list = find_dealers_in_json(body)
-                                if dealers_list:
-                                    captured_apis.append({
-                                        "url": url,
-                                        "headers": response.request.headers,
-                                        "dealers": dealers_list,
-                                        "body": body
-                                    })
-                            except Exception:
-                                pass
+                        is_xhr = response.request.resource_type in ["xhr", "fetch"]
+                        if not is_xhr:
+                            is_xhr = "application/json" in content_type or "/api/" in url.lower() or "graphql" in url.lower()
+                        if is_xhr:
+                            text = await response.text()
+                            keywords = ["dealer", "store", "outlet", "address", "city", "latitude", "longitude", "phone", "email"]
+                            url_lower = url.lower()
+                            text_lower = text.lower()
+                            
+                            if any(kw in url_lower for kw in keywords) or any(kw in text_lower for kw in keywords):
+                                if "application/json" in content_type or text.strip().startswith(("{", "[")):
+                                    body = json.loads(text)
+                                    dealers_list = find_dealers_in_json(body)
+                                    if dealers_list:
+                                        if url not in self.search_diagnostics["dealer_endpoints_discovered"]:
+                                            self.search_diagnostics["dealer_endpoints_discovered"].append(url)
+                                        parsed = parse_dealers_from_json_list(dealers_list)
+                                        captured_apis.append({
+                                            "url": url,
+                                            "headers": response.request.headers,
+                                            "dealers": dealers_list,
+                                            "body": body,
+                                            "parsed_dealers": parsed
+                                        })
+                                elif "text/html" in content_type:
+                                    discovered_selectors = SelectorDiscovery.discover_selectors(text)
+                                    if discovered_selectors.get("container"):
+                                        parsed = parse_html_dealers(text, discovered_selectors)
+                                        if parsed:
+                                            if url not in self.search_diagnostics["dealer_endpoints_discovered"]:
+                                                self.search_diagnostics["dealer_endpoints_discovered"].append(url)
+                                            captured_apis.append({
+                                                "url": url,
+                                                "headers": response.request.headers,
+                                                "dealers": parsed,
+                                                "body": text,
+                                                "parsed_dealers": parsed,
+                                                "is_html": True
+                                            })
                     except Exception:
                         pass
                         
                 page.on("response", handle_response)
                 
-                self.log("[STEP] Opening target locator URL in headless Playwright browser...")
-                await page.goto(self.locator_url, wait_until="networkidle", timeout=45000)
-                pages_crawled += 1
-                requests_made += 1
+                # Navigate
+                self.log("[STEP] Opening target locator URL in Playwright...")
+                await page.goto(self.locator_url, wait_until="domcontentloaded", timeout=45000)
                 
-                await page.wait_for_timeout(3000)
+                await DiagnosticReporter.take_timeline_screenshot(page, "loaded")
                 
-                self.log("[STEP] Checking for and handling cookie consent banners...")
+                # Cloudflare & Captcha check on load
+                html_snapshot = await page.content()
+                if not isinstance(html_snapshot, str):
+                    html_snapshot = ""
+                page_title = await page.title()
+                if not isinstance(page_title, str):
+                    page_title = ""
+                
+                cf_check = BlockingDetector.detect_cloudflare(html_snapshot, page_title)
+                if cf_check:
+                    self.log("[Cloudflare detected] Blocked by verification page.")
+                    raise RuntimeError("Cloudflare detected")
+                    
+                captcha_check = BlockingDetector.detect_captcha(html_snapshot)
+                if captcha_check:
+                    self.log("[Captcha detected] Blocked by CAPTCHA challenge.")
+                    raise RuntimeError("Captcha detected")
+                
+                # Handle cookie consent banners
                 cookie_selectors = [
                     "button:has-text('accept')", "button:has-text('Accept')", "button:has-text('AGREE')",
                     "button:has-text('Agree')", "button:has-text('consent')", "button:has-text('Consent')",
-                    "button:has-text('Allow')", "button:has-text('allow')", "button:has-text('OK')",
-                    "#cookie-accept", ".cookie-accept", "[id*='cookie'] button", "[class*='cookie'] button"
+                    "button:has-text('Allow')", "button:has-text('allow')", "button:has-text('OK')"
                 ]
+                await HumanMode.move_mouse_randomly(page)
                 for selector in cookie_selectors:
                     try:
                         elem = await page.query_selector(selector)
                         if elem and await elem.is_visible():
                             await elem.click()
-                            self.log(f"[OK] Clicked cookie banner button matching selector: {selector}")
                             await page.wait_for_timeout(1000)
                     except Exception:
                         pass
-                        
-                state_selects = await page.query_selector_all("select[name*='state'], select[id*='state'], select[class*='state']")
-                if state_selects:
-                    self.log("[INFO] Search form (State Select) detected. Starting option iteration...")
-                    select_elem = state_selects[0]
-                    options = await select_elem.query_selector_all("option")
-                    option_values = []
-                    for opt in options:
-                        val = await opt.get_attribute("value")
-                        if val and val.strip() and val.lower() not in ["", "select", "all"]:
-                            option_values.append(val)
-                            
-                    self.log(f"[INFO] Discovered {len(option_values)} options to iterate.")
-                    for val in option_values[:5]:
-                        self.log(f"[STEP] Selecting state option value: {val}")
-                        await select_elem.select_option(val)
-                        await page.wait_for_timeout(1000)
-                        
-                        submit_btns = await page.query_selector_all("button[type='submit'], input[type='submit'], button:has-text('Search'), button:has-text('Find')")
-                        if submit_btns:
-                            await submit_btns[0].click()
-                            await page.wait_for_timeout(2000)
+                await DiagnosticReporter.take_timeline_screenshot(page, "cookie")
                 
-                if captured_apis:
-                    self.log("[OK] Hidden API endpoint detected! Switching to API mode.")
-                    api_detected = True
-                    strategy = "API"
-                    
-                    captured_apis.sort(key=lambda x: len(x["dealers"]), reverse=True)
-                    primary_api = captured_apis[0]
-                    self.log(f"[INFO] Primary API url: {primary_api['url']}")
-                    
-                    raw_dealers = parse_dealers_from_json_list(primary_api["dealers"])
-                    dealers.extend(raw_dealers)
-                    
-                    parsed_url = urllib.parse.urlparse(primary_api["url"])
-                    query_params = urllib.parse.parse_qs(parsed_url.query)
-                    
-                    page_param = None
-                    offset_param = None
-                    current_page_val = 1
-                    current_offset_val = 0
-                    
-                    for k in query_params.keys():
-                        if k.lower() == "page":
-                            page_param = k
-                            try:
-                                current_page_val = int(query_params[k][0])
-                            except Exception:
-                                pass
-                        elif k.lower() in ["offset", "skip"]:
-                            offset_param = k
-                            try:
-                                current_offset_val = int(query_params[k][0])
-                            except Exception:
-                                pass
-                                
-                    if page_param or offset_param:
-                        self.log(f"[INFO] API pagination detected. Parameter: {page_param or offset_param}")
-                        limit_val = len(raw_dealers) if len(raw_dealers) > 0 else 10
-                        max_pages = self.config.get("max_pages", 20)
+                # Search Interaction Engine
+                search_input = None
+                detected_selector = None
+                search_selectors = [
+                    "input[type='search']", "input[placeholder*='search' i]", "input[placeholder*='city' i]",
+                    "input[placeholder*='location' i]", "input[type='text']"
+                ]
+                for sel in search_selectors:
+                    try:
+                        elem = await page.query_selector(sel)
+                        if elem and await elem.is_visible() and await elem.is_enabled():
+                            search_input = elem
+                            detected_selector = sel
+                            break
+                    except Exception:
+                        pass
                         
-                        for p in range(1, max_pages):
-                            next_params = query_params.copy()
-                            if page_param:
-                                next_params[page_param] = [str(current_page_val + p)]
-                            if offset_param:
-                                next_params[offset_param] = [str(current_offset_val + (p * limit_val))]
-                                
-                            next_query = urllib.parse.urlencode(next_params, doseq=True)
-                            next_api_url = urllib.parse.urlunparse((
-                                parsed_url.scheme,
-                                parsed_url.netloc,
-                                parsed_url.path,
-                                parsed_url.params,
-                                next_query,
-                                parsed_url.fragment
-                            ))
+                if search_input:
+                    self.search_diagnostics["search_field_detected"] = detected_selector
+                    keywords = self.config.get("search_keywords") or ["Noida", "Delhi", "Mumbai"]
+                    for keyword in keywords:
+                        self.log(f"[Search Engine] Typing keyword: {keyword}")
+                        if keyword not in self.search_diagnostics["keywords_entered"]:
+                            self.search_diagnostics["keywords_entered"].append(keyword)
                             
-                            self.log(f"[STEP] Fetching next API page: {next_api_url}")
-                            try:
-                                async with httpx.AsyncClient(verify=False) as client:
-                                    api_headers = {k: v for k, v in primary_api["headers"].items() if k.lower() not in ["host", "content-length"]}
-                                    res = await client.get(next_api_url, headers=api_headers, timeout=15)
-                                    requests_made += 1
-                                    if res.status_code == 200:
-                                        body = res.json()
-                                        next_dealers_list = find_dealers_in_json(body)
-                                        if next_dealers_list:
-                                            next_parsed = parse_dealers_from_json_list(next_dealers_list)
-                                            if not next_parsed:
-                                                break
-                                            dealers.extend(next_parsed)
-                                        else:
-                                            break
-                                    else:
-                                        break
-                            except Exception:
-                                break
-                    
-                else:
-                    self.log("[INFO] No Hidden API detected. Running in HTML mode.")
-                    strategy = "PLAYWRIGHT"
-                    
-                    html_content = await page.content()
-                    
-                    from app.scrapers.selector_discovery import SelectorDiscovery
-                    selectors = SelectorDiscovery.discover_selectors(html_content)
-                    
-                    page_dealers = parse_html_dealers(html_content, selectors)
-                    dealers.extend(page_dealers)
-                    
-                    max_html_pages = self.config.get("max_pages", 10)
-                    for p in range(1, max_html_pages):
-                        await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                        await search_input.click()
+                        await search_input.fill("")
+                        await page.wait_for_timeout(300)
+                        await HumanMode.type_like_human(search_input, keyword)
                         await page.wait_for_timeout(2000)
+                        await DiagnosticReporter.take_timeline_screenshot(page, "search")
                         
-                        load_more_clicked = False
-                        load_more_selectors = [
-                            "button:has-text('load')", "button:has-text('Load')", 
-                            "button:has-text('show more')", "button:has-text('view more')",
-                            "button:has-text('Show More')", "button:has-text('View More')",
-                            ".load-more", "#load-more"
+                        # Check dropdowns
+                        suggestion_selectors = [
+                            ".pac-container .pac-item", "[class*='suggestion' i]", "ul[role='listbox'] li"
                         ]
-                        for lm_sel in load_more_selectors:
+                        suggestions = []
+                        sugg_texts = []
+                        for sugg_sel in suggestion_selectors:
                             try:
-                                btn = await page.query_selector(lm_sel)
-                                if btn and await btn.is_visible():
-                                    await btn.click()
-                                    self.log(f"[OK] Clicked Load More button matching selector: {lm_sel}")
-                                    await page.wait_for_timeout(2000)
-                                    load_more_clicked = True
+                                elems = await page.query_selector_all(sugg_sel)
+                                visible = [el for el in elems if await el.is_visible()]
+                                if visible:
+                                    suggestions = visible
+                                    sugg_texts = [await el.inner_text() for el in visible]
+                                    for txt in sugg_texts:
+                                        if txt not in self.search_diagnostics["suggestions_detected"]:
+                                            self.search_diagnostics["suggestions_detected"].append(txt)
                                     break
                             except Exception:
                                 pass
                                 
-                        new_content = await page.content()
-                        new_dealers = parse_html_dealers(new_content, selectors)
-                        
-                        if len(new_dealers) > len(page_dealers):
-                            dealers.extend(new_dealers[len(page_dealers):])
-                            page_dealers = new_dealers
-                            pages_crawled += 1
+                        if suggestions:
+                            target = suggestions[0]
+                            sugg_text = sugg_texts[0] if sugg_texts else "First Suggestion"
+                            if sugg_text not in self.search_diagnostics["suggestions_selected"]:
+                                self.search_diagnostics["suggestions_selected"].append(sugg_text)
+                            await target.click()
                         else:
-                            clicked_next = False
-                            next_selectors = [
-                                "a:has-text('next')", "a:has-text('Next')", 
-                                "button:has-text('next')", "button:has-text('Next')",
-                                ".next", "#next", "a[rel='next']", "span.next"
-                            ]
-                            for next_sel in next_selectors:
-                                try:
-                                    next_btn = await page.query_selector(next_sel)
-                                    if next_btn and await next_btn.is_visible():
-                                        await next_btn.click()
-                                        await page.wait_for_timeout(3000)
-                                        clicked_next = True
-                                        break
-                                except Exception:
-                                    pass
-                                    
-                            if clicked_next:
-                                new_content = await page.content()
-                                next_dealers = parse_html_dealers(new_content, selectors)
-                                if next_dealers:
-                                    dealers.extend(next_dealers)
-                                    page_dealers = next_dealers
-                                    pages_crawled += 1
-                                else:
-                                    break
-                            else:
-                                break
-
+                            await search_input.press("Enter")
+                        await page.wait_for_timeout(2000)
+                        await DiagnosticReporter.take_timeline_screenshot(page, "dropdown")
+                else:
+                    # Select option state fallback
+                    state_selects = await page.query_selector_all("select[name*='state'], select[id*='state']")
+                    if state_selects:
+                        select_elem = state_selects[0]
+                        options = await select_elem.query_selector_all("option")
+                        option_values = [await opt.get_attribute("value") for opt in options]
+                        option_values = [v for v in option_values if v and v.strip() and v.lower() not in ["", "select", "all"]]
+                        for val in option_values[:3]:
+                            await select_elem.select_option(val)
+                            await page.wait_for_timeout(1000)
+                            submit_btns = await page.query_selector_all("button[type='submit'], input[type='submit']")
+                            if submit_btns:
+                                await submit_btns[0].click()
+                                await page.wait_for_timeout(2000)
+                                
+                await HumanMode.scroll_smoothly(page, "down", 500)
+                await page.wait_for_timeout(3000)
+                await DiagnosticReporter.take_timeline_screenshot(page, "results")
+                
+                # Fetch final dealers
+                if captured_apis:
+                    strategy = "API"
+                    for cap in captured_apis:
+                        parsed = cap["dealers"] if cap.get("is_html") else parse_dealers_from_json_list(cap["dealers"])
+                        for d in parsed:
+                            if d not in dealers:
+                                dealers.append(d)
+                else:
+                    strategy = "PLAYWRIGHT"
+                    html_content = await page.content()
+                    selectors = SelectorDiscovery.discover_selectors(html_content)
+                    if selectors.get("container"):
+                        page_dealers = parse_html_dealers(html_content, selectors)
+                        for d in page_dealers:
+                            if d not in dealers:
+                                dealers.append(d)
+                                
+                # Save DOM snapshot
+                final_html = await page.content()
+                DiagnosticReporter.save_html_snapshot(final_html, "final_dom.html")
+                
                 await browser.close()
                 
         except Exception as e:
-            self.log(f"[ERROR] Playwright execution failed: {e}")
-            self.log("[WARN] Attempting static HTTPX fallback parsing...")
+            # Failure block: Log, generate snapshot, and write failure markdown report
+            self.recovery_attempts.append("Playwright Failover Retry")
+            
+            cf_detected = False
+            captcha_detected = False
             try:
-                res = await fetch_url_with_retry(self.locator_url, verify_ssl=False)
-                requests_made += 1
-                html_content = res.text
-                from app.scrapers.selector_discovery import SelectorDiscovery
-                selectors = SelectorDiscovery.discover_selectors(html_content)
-                page_dealers = parse_html_dealers(html_content, selectors)
-                dealers.extend(page_dealers)
-            except Exception as fe:
-                self.log(f"[ERROR] Static fallback failed: {fe}")
+                if page:
+                    fail_html = await page.content()
+                    if not isinstance(fail_html, str):
+                        fail_html = ""
+                    fail_title = await page.title()
+                    if not isinstance(fail_title, str):
+                        fail_title = ""
+                    DiagnosticReporter.save_html_snapshot(fail_html, "final_dom.html")
+                    DiagnosticReporter.save_html_snapshot(fail_html, "sleepwell_failure.html")
+                    await DiagnosticReporter.take_timeline_screenshot(page, "failure")
+                    
+                    if BlockingDetector.detect_cloudflare(fail_html, fail_title):
+                        cf_detected = True
+                    if BlockingDetector.detect_captcha(fail_html):
+                        captcha_detected = True
+            except Exception:
+                pass
                 
-        self.log(f"[INFO] Universal Scraper execution finished. Summary:")
-        self.log(f"  Strategy selected: {strategy}")
-        self.log(f"  API detected: {api_detected}")
-        self.log(f"  Pages crawled: {pages_crawled}")
-        self.log(f"  Requests made: {requests_made}")
-        self.log(f"  Records parsed: {len(dealers)}")
-        
+            reason = "Timeout or browser connection error"
+            if cf_detected or "cloudflare" in str(e).lower():
+                reason = "Cloudflare detected"
+            elif captcha_detected or "captcha" in str(e).lower():
+                reason = "Captcha detected"
+            else:
+                reason = f"Playwright Failure: {e}"
+                
+            self.log(f"[CRITICAL] {reason}")
+            
+            DiagnosticReporter.write_failure_report(
+                browser_used=browser_name,
+                strategy_chosen=strategy,
+                ajax_calls=self.search_diagnostics["ajax_requests_fired"],
+                dealer_apis=self.search_diagnostics["dealer_endpoints_discovered"],
+                dealers_parsed=len(dealers),
+                reason_stopped=reason,
+                recovery_attempts=self.recovery_attempts,
+                suggested_action="Verify captcha parameters, rotate proxies, or customize search selectors."
+            )
+            raise RuntimeError(reason) from e
+            
         return dealers
 
     def save(self, dealers: List[Dict[str, Any]]) -> int:

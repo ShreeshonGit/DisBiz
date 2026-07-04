@@ -94,23 +94,29 @@ class ScrapingService:
         scraper.log(f"Initialized preview job for brand '{brand['name']}'")
 
         try:
+            from app.scrapers.normalizer import normalize_dealer
+            from app.scrapers.validator import validate_dealer
+
             records = await scraper.preview(limit=10)
             scraper.log(f"Extraction successful. Retrieved {len(records)} preview records.")
             
             preview_dealers = []
             for item in records:
+                normalized = normalize_dealer(item)
+                is_valid, errors = validate_dealer(normalized)
+                
                 preview_dealers.append(PreviewDealer(
-                    name=item["dealer_name"],
-                    address=item["address"],
-                    city=item.get("city"),
-                    state=item.get("state"),
-                    pincode=item.get("pincode"),
-                    phone=item.get("phone"),
-                    email=item.get("email"),
-                    latitude=item.get("latitude"),
-                    longitude=item.get("longitude"),
-                    validation_status=item["validation_status"],
-                    validation_errors=item["validation_errors"]
+                    name=normalized.get("dealer_name") or "Unnamed Dealer",
+                    address=normalized.get("address") or "No Address Provided",
+                    city=normalized.get("city"),
+                    state=normalized.get("state"),
+                    pincode=normalized.get("pincode"),
+                    phone=normalized.get("phone"),
+                    email=normalized.get("email"),
+                    latitude=normalized.get("latitude"),
+                    longitude=normalized.get("longitude"),
+                    validation_status="VALID" if is_valid else "INVALID",
+                    validation_errors=errors
                 ))
             
             return PreviewResponse(

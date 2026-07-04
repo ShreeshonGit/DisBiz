@@ -1,0 +1,47 @@
+{
+  "url": "https://www.lavamobiles.com/api/getheadermenu",
+  "method": "GET",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "body": {
+    "status": 200,
+    "msg": "Header Menu Datas",
+    "header_menu": [
+      {
+        "id": 1,
+        "name": "Home",
+        "slug": "/"
+      },
+      {
+        "id": 2,
+        "name": "Smartphones",
+        "slug": "smartphones"
+      },
+      {
+        "id": 3,
+        "name": "Features Phones",
+        "slug": "featurephones"
+      },
+      {
+        "id": 4,
+        "name": "Tablets & Laptops",
+        "slug": "tablets-data-cards"
+      },
+      {
+        "id": 5,
+        "name": "Accessories",
+        "slug": "accessories"
+      },
+      {
+        "id": 6,
+        "name": "LAVA Care",
+        "slug": "lava-care"
+      },
+      {
+        "id": 7,
+        "name": "Store",
+        "slug": "store"
+      }
+    ]
+  }
+}

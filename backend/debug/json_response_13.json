@@ -1,0 +1,13 @@
+{
+  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/terms-and-conditions.json",
+  "method": "GET",
+  "status": 200,
+  "content_type": "application/json",
+  "body": {
+    "pageProps": {
+      "TandC": {},
+      "revalidate": 10
+    },
+    "__N_SSG": true
+  }
+}
