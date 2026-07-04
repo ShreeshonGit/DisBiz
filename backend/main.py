@@ -15,13 +15,19 @@ from app.core.config import settings
 from app.api.v1.brand_routes import router as brand_router_v1
 from app.api.v1.scraper_routes import router as scraper_router_v1
 from app.api.v1.schedule_routes import router as schedule_router_v1
+from app.api.v1.analytics_routes import router as analytics_router_v1
 from app.scheduler.scheduler_engine import SchedulerEngine
+from app.core.logging_config import setup_memory_logging
+from app.utils.monitoring import record_api_request
 import uvicorn
+import time
 
 from fastapi.openapi.docs import get_swagger_ui_html, get_redoc_html
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # Set up memory logging handler
+    setup_memory_logging()
     # Initialize and boot scheduler engine
     scheduler = SchedulerEngine()
     await scheduler.start()
@@ -36,6 +42,21 @@ app = FastAPI(
     redoc_url="/redoc",
     lifespan=lifespan
 )
+
+@app.middleware("http")
+async def log_api_latency(request: Request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    duration_ms = (time.time() - start_time) * 1000
+    # Filter out SSE / stream calls from averaging calculations
+    if not request.url.path.endswith(("/stream", "/ws", "/logs/stream", "/scheduler/stream")):
+        record_api_request(
+            path=request.url.path,
+            method=request.method,
+            duration_ms=duration_ms,
+            status_code=response.status_code
+        )
+    return response
 
 @app.get("/api/v1/openapi.json", include_in_schema=False)
 async def get_v1_openapi():
@@ -69,6 +90,7 @@ if settings.BACKEND_CORS_ORIGINS:
 app.include_router(brand_router_v1, prefix=settings.API_V1_STR)
 app.include_router(scraper_router_v1, prefix=settings.API_V1_STR)
 app.include_router(schedule_router_v1, prefix=settings.API_V1_STR)
+app.include_router(analytics_router_v1, prefix=settings.API_V1_STR)
 
 @app.get("/health")
 async def health_check():

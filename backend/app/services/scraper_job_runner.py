@@ -253,6 +253,24 @@ class ScraperJobRunner:
                 "execution_logs": logs,
                 "retry_count": retry_count
             })
+            
+            # Fire notifications
+            try:
+                from app.services.notification_service import NotificationService
+                NotificationService.create_notification(
+                    "job_completed",
+                    f"Scraper job completed successfully for brand '{brand_name}'. Extracted {len(raw_records)} records.",
+                    brand_id
+                )
+                if records_saved > 0:
+                    NotificationService.create_notification(
+                        "new_dealers_discovered",
+                        f"Discovered and saved {records_saved} new dealer records for brand '{brand_name}'.",
+                        brand_id
+                    )
+            except Exception as n_err:
+                logger.error(f"Failed to fire success notifications: {n_err}")
+                
         except Exception as e:
             logger.error(f"Failed to update job {job_id} completion: {e}")
 
@@ -303,6 +321,20 @@ class ScraperJobRunner:
                 "duration_seconds": duration,
                 "execution_logs": logs
             })
+            
+            # Fire failure notification
+            try:
+                from app.services.notification_service import NotificationService
+                job = self.job_repo.get_by_id(job_id)
+                bid = UUID(job["brand_id"]) if job else None
+                NotificationService.create_notification(
+                    "job_failed",
+                    f"Scraper job failed: {error_msg}",
+                    bid
+                )
+            except Exception as n_err:
+                logger.error(f"Failed to fire failure notification: {n_err}")
+                
         except Exception as e:
             logger.error(f"Failed to write final timestamps for failed job {job_id}: {e}")
 

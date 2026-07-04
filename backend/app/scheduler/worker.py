@@ -152,6 +152,24 @@ class Worker:
                 safe_create_task(delayed_enqueue(), name=f"RetryDelayedEnqueue_{brand_id}")
             else:
                 self._log("Worker", f"Job failed permanently: {error_msg}")
+                
+                # Fire permanent failure & retry exhausted alerts
+                try:
+                    from app.services.notification_service import NotificationService
+                    NotificationService.create_notification(
+                        "schedule_failed",
+                        f"Schedule run failed permanently: {error_msg}",
+                        brand_id
+                    )
+                    if job.get("retries", 0) >= max_retries:
+                        NotificationService.create_notification(
+                            "retry_exhausted",
+                            f"Scraper retries exhausted ({job.get('retries')}/{max_retries}) for brand ID {brand_id}.",
+                            brand_id
+                        )
+                except Exception as n_err:
+                    self._log("Worker", f"Failed to fire worker alerts: {n_err}", logging.ERROR)
+
                 if sched_id:
                     now = datetime.now()
                     try:

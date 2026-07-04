@@ -1,46 +1,91 @@
 {
-  "url": "https://www.lavamobiles.com/api/getheadermenu",
+  "url": "https://www.lavamobiles.com/api/getsmartphones",
   "method": "GET",
   "status": 200,
   "content_type": "application/json; charset=utf-8",
   "body": {
     "status": 200,
-    "msg": "Header Menu Datas",
-    "header_menu": [
+    "msg": "Smartphone Datas",
+    "smartphones": [
       {
         "id": 1,
-        "name": "Home",
-        "slug": "/"
-      },
-      {
-        "id": 2,
-        "name": "Smartphones",
-        "slug": "smartphones"
+        "name": "New Launches",
+        "slug": "new-launches",
+        "category": "smartphones",
+        "image": "media/work/image/newlaunchagni300x300-1731402563.webp",
+        "image_banner": "media/work/image_banner/new-launches-1721025658.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/new-launce-m-1705657665.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/newlaunchagni120x120-1731402563.webp"
       },
       {
         "id": 3,
-        "name": "Features Phones",
-        "slug": "featurephones"
-      },
-      {
-        "id": 4,
-        "name": "Tablets & Laptops",
-        "slug": "tablets-data-cards"
+        "name": "Blaze Series",
+        "slug": "blaze-series",
+        "category": "smartphones",
+        "image": "media/work/image/curve-1723196175.webp",
+        "image_banner": "media/work/image_banner/blaze-series-1723080814.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/blaze-seriesmobile-768x550-1723080814.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/h-curve-1723196175.webp"
       },
       {
         "id": 5,
-        "name": "Accessories",
-        "slug": "accessories"
+        "name": "Yuva Series",
+        "slug": "yuva-series",
+        "category": "smartphones",
+        "image": "media/work/image/yuva-5g-1723196239.webp",
+        "image_banner": "media/work/image_banner/yuva-1722945978.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/frame-157516-1703587842.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/h-yuva-5g-1723196239.webp"
       },
       {
-        "id": 6,
-        "name": "LAVA Care",
-        "slug": "lava-care"
+        "id": 4,
+        "name": "Storm Series",
+        "slug": "storm",
+        "category": "smartphones",
+        "image": "media/work/image/storm-1723196283.webp",
+        "image_banner": "media/work/image_banner/storm-1722946112.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/storm-mobile-1722946112.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/h-storm-1723196283.webp"
       },
       {
-        "id": 7,
-        "name": "Store",
-        "slug": "store"
+        "id": 2,
+        "name": "Agni Series",
+        "slug": "agni-series",
+        "category": "smartphones",
+        "image": "media/work/image/agni300x300-1731402522.webp",
+        "image_banner": "media/work/image_banner/agni-series-1723080756.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/agni-series-mobile-768x550-1723080757.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/agni120x120-1731402522.webp"
+      },
+      {
+        "id": 1023,
+        "name": "Shark Series",
+        "slug": "shark-series",
+        "category": "smartphones",
+        "image": "media/work/image/lava_mobiles_300x300-1743513550.webp",
+        "image_banner": "media/work/image_banner/lava_mobiles_1408-x332-1743513551.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/lava_mobiles_768-x550-1743513551.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/lava_mobiles_120x120-1743513551.webp"
+      },
+      {
+        "id": 1024,
+        "name": "BOLD Series",
+        "slug": "bold-series",
+        "category": "smartphones",
+        "image": "media/work/image/lava_mobiles_300x300-1744047300.webp",
+        "image_banner": "media/work/image_banner/lava_mobiles_1408-x332-1744047300.webp",
+        "image_banner_mobile": null,
+        "image_thumbnail": "media/product_cate_thumbnail/lava_mobiles_120x120-1744047300.webp"
+      },
+      {
+        "id": 1025,
+        "name": "PLAY Series",
+        "slug": "play-series",
+        "category": "smartphones",
+        "image": "media/work/image/dropdown-menu-300x300-1756111997.webp",
+        "image_banner": "media/work/image_banner/play-category-desk-1756111997.webp",
+        "image_banner_mobile": "media/work/image_banner_mobile/play-category-m-1756111997.webp",
+        "image_thumbnail": "media/product_cate_thumbnail/dropdown-menu-120x120-1756111997.webp"
       }
     ]
   }

