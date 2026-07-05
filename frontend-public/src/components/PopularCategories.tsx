@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { 
   Smartphone, Bed, Car, Stethoscope, 
-  Hammer, Sprout, Wrench, Sparkles 
+  Hammer, Sprout, Wrench, Sparkles, ArrowRight 
 } from "lucide-react";
 
 interface PopularCategoriesProps {
@@ -12,47 +12,94 @@ interface PopularCategoriesProps {
 }
 
 const categories = [
-  { name: "Electronics", icon: Smartphone, gradient: "from-blue-500/10 to-indigo-500/10 text-blue-600 dark:text-blue-400" },
-  { name: "Furniture", icon: Bed, gradient: "from-emerald-500/10 to-teal-500/10 text-emerald-600 dark:text-emerald-400" },
-  { name: "Automotive", icon: Car, gradient: "from-cyan-500/10 to-sky-500/10 text-cyan-600 dark:text-cyan-400" },
-  { name: "Healthcare", icon: Stethoscope, gradient: "from-purple-500/10 to-violet-500/10 text-purple-600 dark:text-purple-400" },
-  { name: "Building Materials", icon: Hammer, gradient: "from-rose-500/10 to-pink-500/10 text-rose-600 dark:text-rose-450" },
-  { name: "Agriculture", icon: Sprout, gradient: "from-green-500/10 to-emerald-500/10 text-green-600 dark:text-green-400" },
-  { name: "Industrial", icon: Wrench, gradient: "from-zinc-500/10 to-slate-500/10 text-slate-700 dark:text-slate-350" },
-  { name: "Lifestyle", icon: Sparkles, gradient: "from-amber-500/10 to-orange-500/10 text-amber-600 dark:text-amber-450" }
+  { 
+    name: "Electronics", 
+    icon: Smartphone, 
+    desc: "Verify authorized retail shops, repair labs, and electronics outlets." 
+  },
+  { 
+    name: "Furniture", 
+    icon: Bed, 
+    desc: "Locate authorized showrooms, sleep centers, and wooden furniture dealers." 
+  },
+  { 
+    name: "Automotive", 
+    icon: Car, 
+    desc: "Find verified car showrooms, service garages, and tire retailers." 
+  },
+  { 
+    name: "Healthcare", 
+    icon: Stethoscope, 
+    desc: "Search approved pharmacies, diagnostic clinics, and wellness clinics." 
+  },
+  { 
+    name: "Building Materials", 
+    icon: Hammer, 
+    desc: "Check certified sanitaryware outlets, tile stores, and hardware shops." 
+  },
+  { 
+    name: "Agriculture", 
+    icon: Sprout, 
+    desc: "Explore authorized pump retailers, fertilizer stores, and tractor dealers." 
+  },
+  { 
+    name: "Industrial", 
+    icon: Wrench, 
+    desc: "Verify machine tools outlets, industrial bearings, and pump suppliers." 
+  },
+  { 
+    name: "Lifestyle", 
+    icon: Sparkles, 
+    desc: "Discover official clothing boutiques, watch dealers, and optical stores." 
+  }
 ];
 
 export default function PopularCategories({ onSelectCategory }: PopularCategoriesProps) {
   return (
     <section className="space-y-6 select-none font-sans">
       <div>
-        <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-zinc-50">
-          Browse by Popular Category
+        <h2 className="text-xl sm:text-2xl font-bold text-[#0F172A] dark:text-white font-serif tracking-tight">
+          Browse by Category
         </h2>
-        <p className="text-xs text-slate-500 dark:text-zinc-400 mt-1 font-medium">
+        <p className="text-xs text-slate-500 dark:text-[#A1A1AA] mt-1">
           Quickly discover authorized vendors matching your specific product segment.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      {/* Grid: 4x2 on desktop, scrollable on mobile */}
+      <div className="flex overflow-x-auto pb-4 gap-4 md:grid md:grid-cols-4 md:gap-6 scrollbar-thin scrollbar-track-transparent">
         {categories.map((cat, i) => {
           const IconComponent = cat.icon;
           return (
             <motion.div
               key={cat.name}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: i * 0.04 }}
+              transition={{ duration: 0.35, delay: i * 0.03 }}
               onClick={() => onSelectCategory(cat.name)}
-              className="group bg-white dark:bg-zinc-900 border border-slate-200/80 dark:border-zinc-800/80 rounded-2xl p-5 hover:shadow-md cursor-pointer transition-all duration-300 hover:-translate-y-0.5 flex flex-col items-center justify-center text-center space-y-3 relative overflow-hidden"
+              className="group min-w-[240px] md:min-w-0 bg-white dark:bg-[#111113] border border-[#E5E7EB] dark:border-white/10 rounded-[20px] p-6 flex flex-col justify-between hover:border-[#2563EB] dark:hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
             >
-              <div className={`p-3.5 rounded-2xl bg-gradient-to-br ${cat.gradient} group-hover:scale-110 transition-transform duration-300 shadow-inner`}>
-                <IconComponent className="h-6 w-6" />
+              <div className="space-y-4">
+                {/* Large Icon Container */}
+                <div className="h-12 w-12 rounded-[14px] bg-[#F8FAFC] dark:bg-[#09090B] border border-[#E5E7EB] dark:border-white/10 text-[#2563EB] flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shadow-xs">
+                  <IconComponent className="h-5.5 w-5.5" />
+                </div>
+                
+                <div className="space-y-1 text-left">
+                  <h3 className="text-sm font-bold text-[#0F172A] dark:text-white group-hover:text-[#2563EB] transition-colors leading-tight">
+                    {cat.name}
+                  </h3>
+                  <p className="text-[11px] text-slate-400 dark:text-[#A1A1AA] leading-relaxed">
+                    {cat.desc}
+                  </p>
+                </div>
               </div>
-              <span className="text-xs font-bold text-slate-800 dark:text-zinc-200 group-hover:text-indigo-650 dark:group-hover:text-indigo-400 transition-colors">
-                {cat.name}
-              </span>
+
+              {/* Bottom Arrow Indicator */}
+              <div className="flex justify-end pt-4 mt-2 border-t border-slate-50 dark:border-white/5">
+                <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all" />
+              </div>
             </motion.div>
           );
         })}
